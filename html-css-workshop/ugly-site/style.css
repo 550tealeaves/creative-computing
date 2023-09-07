@@ -1,0 +1,10 @@
+body{
+    background: conic-gradient(#f69d3c, #205267);
+}
+
+h1{
+    font-size: 80px;
+    color: rgb(255, 66, 255);
+    text-align: center;
+    transform: rotate(-30deg); /*this rotates the text*/
+}
