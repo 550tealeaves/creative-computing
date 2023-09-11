@@ -21,3 +21,16 @@ h1{
     color: darkkhaki;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.change{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:rgb(236, 16, 20);
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.alter{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: floralwhite;
+    text-decoration: overline;
+}
