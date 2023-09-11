@@ -34,3 +34,27 @@ h1{
     color: floralwhite;
     text-decoration: overline;
 }
+
+.pants{
+    border: 4mm ridge rgb(234, 246, 4);   
+}
+
+.one{
+    width: 20%;
+}
+
+.update{
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    color: lightseagreen;
+}
+
+.trends{
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    font-size: 24px;
+}
+
+.advance{
+    text-shadow: coral 3px 5px;
+}
