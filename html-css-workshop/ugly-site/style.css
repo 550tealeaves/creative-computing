@@ -108,3 +108,48 @@ h1{
     margin-left: 170px;
 }
 
+.culture{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 80px;
+    color: darkgoldenrod;
+    margin: 12%;
+}
+
+p.real{
+    color: rgb(245, 201, 201);
+    font-size: 19px;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+.pop-one{
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+.pop-two{
+    width: 81%;
+    border-radius: 182px;
+    background: crimson;
+    padding: 70px;
+    height: 300px;
+}
+
+.pop-three{
+    width: 68%;
+    border-radius: 20px;
+    background: mediumslateblue;
+    padding-left: 38px;
+    
+}
+
+.pop-four{
+    height: 400px;
+    width: 100px;
+    border-radius: 70px;
+    background: darkblue;
+    padding-top: 358px;
+}
