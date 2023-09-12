@@ -60,3 +60,51 @@ h1{
     float: right;
     font-size: 24px;
 }
+
+.tech   {
+    border: thick double #7032ce;
+    border-style: dashed groove none dotted;
+    box-shadow: 60px -12px rgb(154, 223, 223);
+}
+
+.tech.first{
+    width: 48%;
+    height: 490px;
+}
+
+.tech.second{
+    width: 90%;
+    margin: 30px;
+}
+
+.tech.third{
+    height: 80px;
+}
+
+.tech.fourth{
+    margin-left: 25px;
+}
+
+.edit{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    color: fuchsia;
+}
+
+.moment{
+    border-style: dashed double none;
+    color: chartreuse;
+    margin: 40px;
+    margin-left: 120px;
+    font-size: x-large;
+}
+
+.move {
+    width: 80%;
+    border-style: inset;
+    border: thick dashed rgb(180, 63, 253);
+    box-shadow: 23px 6px rgb(255, 19, 19), -8em 0 1.9em rgb(229, 229, 126);
+    margin: 30px auto;
+    margin-left: 170px;
+}
+
