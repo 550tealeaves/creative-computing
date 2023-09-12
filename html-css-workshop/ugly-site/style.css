@@ -56,5 +56,7 @@ h1{
 }
 
 .advance{
-    text-shadow: coral 3px 5px;
+    text-shadow: forestgreen 3px 5px;
+    float: right;
+    font-size: 24px;
 }
