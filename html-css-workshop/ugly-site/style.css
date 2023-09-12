@@ -136,13 +136,15 @@ p.real{
     background: crimson;
     padding: 70px;
     height: 300px;
+    margin: 52px;
 }
 
 .pop-three{
     width: 68%;
     border-radius: 20px;
     background: mediumslateblue;
-    padding-left: 38px;
+    padding-left: 88px;
+    margin-left: 22px;
     
 }
 
@@ -152,4 +154,5 @@ p.real{
     border-radius: 70px;
     background: darkblue;
     padding-top: 358px;
+    float: right;
 }
