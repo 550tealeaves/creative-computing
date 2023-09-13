@@ -8,15 +8,17 @@ body {
     height: 100%;
 }
 
-.outer-box {
-    background: darkgray;
+.cont {
     width: 50%;
     height: 50%;
 }
 
-.inner-box {
+.outer {
+    background: darkgray;
+    height: 300px auto;
+}
+
+.inner {
     background: black;
-    width: 50%;
-    height: 50%;
 }
 
