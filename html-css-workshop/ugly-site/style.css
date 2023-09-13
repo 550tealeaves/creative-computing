@@ -106,7 +106,7 @@ h1{
 .move {
     width: 80%;
     border-style: inset;
-    border: thick dashed rgb(180, 63, 253);
+    border: 25px dashed rgb(180, 63, 253);
     box-shadow: 23px 6px rgb(255, 19, 19), -8em 0 1.9em rgb(229, 229, 126);
     margin: 30px auto;
     margin-left: 170px;
@@ -115,6 +115,8 @@ h1{
 .primary {
     width: 21%;
     border: 10px dashed cornflowerblue;
+    transform: rotate(-199deg);
+    margin-top: 70px;
 }
 
 .secondary {
