@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.outer-cont {
+    background: lightgray;
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.square {
+    background: black;
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+}
+
+.inner.cont{
+    border: 2px solid cornflowerblue;
+}
+
