@@ -10,3 +10,14 @@ h1 {
 h2{
   color: chartreuse;
 }
+
+/* Have to use :hover if you want to change the styling upon hovering cursor */
+#Ellipse_two:hover{
+  fill: blue; /*use fill to change colors of SVG, NOT color*/
+}
+
+/* Don't have to use :hover - can just change styling */
+#Star_two{
+  fill: green;
+}
+
