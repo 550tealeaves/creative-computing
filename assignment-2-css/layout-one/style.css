@@ -9,20 +9,20 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
-    border-top: 2px solid black;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .1);
-    height: 50px;
-    align-items: center;
+    justify-content: center; /*moves elements to the center*/
+    border-top: 2px solid black; /*adds line on top of header*/
+    border-bottom: 1px solid rgba(0, 0, 0, .1); /*adds line on bottom of header*/
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .1); /*adds a shadow at bottom border*/
+    height: 50px; /*header height*/ 
+    align-items: center; /*shifts elements down to midpt b/w border-top/bottom*/
 }
 
 .header-inner {
-    width: 90%;
-    max-width: 1000px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    width: 90%; /*separates the elements - they are stuck at center if w/o this */
+    max-width: 1000px; /*sets limits to how wide elements are*/
+    display: flex; /*moves the home/about/more to right side*/
+    justify-content: space-between; /*spaces out the elements*/
+    flex-direction: row; /*unsure of what this does*/
 }
 
 .links {
