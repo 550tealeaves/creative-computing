@@ -15,10 +15,10 @@ body {
 }
 
 .card-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex; /*displays cards in-line (on same line) - w/o it's block (new line for each card*/
+    flex-direction: row; /*all elements in same row*/
+    flex-wrap: wrap; /*wraps the text/elements - moves to new line*/
+    justify-content: space-between; /*adds space b/w elements*/
     align-items: center;
 }
 
