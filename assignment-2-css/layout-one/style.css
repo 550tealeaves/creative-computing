@@ -26,12 +26,11 @@ header {
 }
 
 .links {
-    display: flex;
-    ;
+    display: flex; /*puts the links side-by-side*/
 }
 
 .site-link {
-    margin-right: 10px;
+    margin-right: 10px; /*adds space b/w the links*/
     color: gray;
 }
 
@@ -41,10 +40,10 @@ header {
 }
 
 main {
-    height: calc(100vh - 50px);
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+    height: calc(100vh - 50px); /*makes main element this height (stretches down to bottom of user's screen)*/
+    width: 100%; /*full-width of screen*/
+    display: flex; /*puts the 2 divs side-by-side w/o it, 1 on top of other*/
+    flex-direction: row; /*not sure what this does*/
 }
 
 .main-inner {
@@ -53,16 +52,16 @@ main {
 }
 
 .left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /*allows website.com to move*/
+    justify-content: center; /*moves website.com to center*/
+    align-items: center; /*helps move it down center of middle of column*/
 }
 
 .right {
     background-color: rgba(0, 0, 0, .6);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 30px;
+    padding-left: 20px; /*adds space from left col edge*/
+    padding-right: 20px; /*adds space from right col edge*/
+    padding-top: 30px; /*adds space from top col edge*/
     color: white;
 }
 
