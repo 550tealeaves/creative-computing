@@ -19,6 +19,16 @@ svg{
   height: auto;
 }
 
+p{
+  font-family: 'Allura', cursive;
+    font-family: 'Oleo Script', cursive;
+  font-size: 22px;
+}
+
+ul,li{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /*Text sits on image even if you comment out the .container style*/
 .container{
   position: relative;
