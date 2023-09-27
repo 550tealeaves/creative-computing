@@ -19,10 +19,17 @@ svg{
   height: auto;
 }
 
-.containerBox{
+/*Text sits on image even if you comment out the .container style*/
+.container{
   position: relative;
-  display: inline-block;
-  height: 100%;
-  text-align: center;
-  width: 100%;
+    color: white;
+    float: left;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.top-left {
+  position: absolute; /*superimposes text on image*/
+  top: 152px; /*moves text down*/
+  left: 12px; /*moves text to right*/
 }
