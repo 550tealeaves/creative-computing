@@ -89,5 +89,14 @@ a:hover{
       left: 12px; /*moves text to right*/
     }
  
+    .top-right{
+      position: absolute;
+        top: 350px;
+        left: 32px;
+    }
+
+    .change-font{
+      font-size: 8px;
+    }
 }
 
