@@ -1,6 +1,6 @@
 console.log('blah');
 
-//was trying to create JS scrolling text but not working
+//Used https://www.youtube.com/watch?v=nHwwCGIRzGo to create scrolling text
 var style = document.createElement('style');
 var position = 'left'; //determines direction text move - l,r,t,b
 
