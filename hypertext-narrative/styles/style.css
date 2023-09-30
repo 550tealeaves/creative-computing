@@ -39,15 +39,18 @@ ul,li{
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+/*Adding styling for scrolling*/
 .top-left {
   position: relative; /*superimposes text on image*/
-  top: 750px; /*moves text down*/
+  top: 850px; /*moves text down*/
   left: 32px; /*moves text to right*/
   overflow: hidden;
-  height: 400px;
+  width: max-content;
+  height: max-content;
+  animation: my-animation 24s linear infinite;
 }
 
-.move-this{
+/* .move-this{
   position: absolute;
     width: max-content;
     animation: my-animation 23.5s linear infinite;
@@ -60,7 +63,7 @@ ul,li{
   font-weight: 400;
   width: max-content;
   animation: my-animation 24s linear infinite;
-}
+} */
 
 
 
