@@ -40,10 +40,29 @@ ul,li{
 }
 
 .top-left {
-  position: absolute; /*superimposes text on image*/
-  top: 402px; /*moves text down*/
+  position: relative; /*superimposes text on image*/
+  top: 750px; /*moves text down*/
   left: 32px; /*moves text to right*/
+  overflow: hidden;
+  height: 400px;
 }
+
+.move-this{
+  position: absolute;
+    width: max-content;
+    animation: my-animation 23.5s linear infinite;
+}
+
+.moving-parts{
+  position: absolute;
+  margin: 5px 0;
+  padding: 0;
+  font-weight: 400;
+  width: max-content;
+  animation: my-animation 24s linear infinite;
+}
+
+
 
 .change-font{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
