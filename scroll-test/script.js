@@ -1,3 +1,4 @@
+//https://stackoverflow.com/questions/58879033/most-minimalist-way-to-build-a-scroller-for-interactive-storytelling
 // using d3 for convenience
 var main = d3.select('main')
 var scrolly = main.select('#scrolly');
