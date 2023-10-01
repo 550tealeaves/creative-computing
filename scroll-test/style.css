@@ -42,7 +42,7 @@ figure p {
     transform: translate(-50%, -50%);
     font-size: 8rem;
     font-weight: 900;
-    color: #fff;
+    color: #e2805f;
 }
 
 
@@ -57,7 +57,7 @@ figure p {
 }
 
 .step.is-active {
-    background-color: goldenrod;
+    background-color: rgb(14, 192, 109);
     color: #3b3b3b;
 }
 
