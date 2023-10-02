@@ -4,6 +4,7 @@
 
 h1{
   color: mediumpurple;
+  text-decoration: underline dashed 15px; /*added thickness for dashed line*/
 }
 
 .graphic {
@@ -49,7 +50,7 @@ section {
   height: 500px;
   border: 3px dashed rgb(145, 0, 0);
   color: midnightblue;
-  text-decoration: underline wavy;
+  text-decoration: underline wavy 2px;
   font-weight: 700;
 }
 
