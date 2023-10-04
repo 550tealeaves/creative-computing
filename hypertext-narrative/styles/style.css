@@ -48,7 +48,7 @@ a:hover {
 
 
 /*SVG styling makes the graphic very large*/
-svg {
+img {
     position: sticky;
     border: 2px solid red;
     border-radius: 1%;

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function () {
     function changeBallSize(width, height) {
         console.log(width, height);
-        let ball = document.querySelector('svg');
+        let ball = document.querySelector('img');
         ball.style.width = width + 'px';
         ball.style.height = height + 'px';
     }
@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     // instantiate the scrollama
     const scroller = scrollama();
 
-    let numberSteps = document.querySelectorAll('.text-holder').length;
+    let numberSteps = document.querySelectorAll('.scroll-step').length;
     console.log(numberSteps);
 
     // setup the instance, pass callback functions
     scroller
         .setup({
-            step: '.text-holder',
+            step: '.scroll-step',
         })
         .onStepEnter((response) => {
             let desiredSize = response.element.getAttribute('data-size');
