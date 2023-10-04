@@ -31,16 +31,30 @@ a:hover {
 }
 
 
-.graphic {
+/* .graphic {
     position: sticky;
-    top: 40%;
-    left: 70%;
+    top: 100%;
+    left: 100%;
     background: rgb(182, 177, 123);
-    height: 300px;
+    max-width: 250%;
+    max-height: 250%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/*SVG styling makes the graphic very large*/
+svg {
+    position: sticky;
+    display: block;
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .ball {
     border-radius: 100%;
@@ -53,7 +67,7 @@ a:hover {
 
 #scrolly {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: auto;
     position: relative;
 }
@@ -62,12 +76,12 @@ section {
     flex-basis: 50%;
 }
 
-.scroll-step {
+.text-holder {
     height: 500px;
-    border: 3px dashed rgb(145, 0, 0);
-    color: midnightblue;
-    text-decoration: underline wavy 2px;
-    font-weight: 700;
+    /* border: 3px dashed rgb(145, 0, 0); */
+    color: white;
+    font-weight: 400;
+    width: 30%;
 }
 
 
