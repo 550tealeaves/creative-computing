@@ -47,23 +47,26 @@ a:hover {
 /*SVG styling makes the graphic very large*/
 svg {
     position: sticky;
+    border: 2px solid red;
+    border-radius: 1%;
     display: block;
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s linear;
 }
 
 
-.ball {
+/* .ball {
     border-radius: 100%;
     width: 30px;
     height: 30px;
     color: 'blue';
     background: rgb(255, 0, 191);
     transition: all 0.3s linear;
-}
+} */
 
 #scrolly {
     display: flex;
@@ -83,6 +86,7 @@ section {
     font-weight: 400;
     width: 30%;
 }
+
 
 
 @media (max-width: 1200px) {
