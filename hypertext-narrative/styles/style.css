@@ -50,12 +50,12 @@ svg {
     border: 2px solid red;
     border-radius: 1%;
     display: block;
-    width: 100%;
-    height: auto;
+    width: 300%;
+    height: 300%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s linear;
+    transition: all 5s linear;
 }
 
 
