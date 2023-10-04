@@ -33,14 +33,17 @@ a:hover {
 
 /* .graphic {
     position: sticky;
+    border: 2px solid red;
+    border-radius: 1%;
     top: 100%;
     left: 100%;
     background: rgb(182, 177, 123);
-    max-width: 250%;
-    max-height: 250%;
+    width: 300%;
+    height: 300%;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 5s linear;
 } */
 
 
@@ -65,7 +68,7 @@ svg {
     height: 30px;
     color: 'blue';
     background: rgb(255, 0, 191);
-    transition: all 0.3s linear;
+    transition: all 5s linear;
 } */
 
 #scrolly {
@@ -79,7 +82,7 @@ section {
     flex-basis: 50%;
 }
 
-.text-holder {
+.scroll-step {
     height: 500px;
     /* border: 3px dashed rgb(145, 0, 0); */
     color: white;
