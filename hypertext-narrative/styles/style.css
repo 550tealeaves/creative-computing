@@ -10,10 +10,6 @@ h1 {
     font-size: 48px;
 }
 
-h2 {
-    color: chartreuse;
-}
-
 p {
     font-family: 'Allura', cursive;
     font-family: 'Oleo Script', cursive;
@@ -32,6 +28,46 @@ a {
 
 a:hover {
     color: rgb(209, 159, 240);
+}
+
+
+.graphic {
+    position: sticky;
+    top: 40%;
+    left: 70%;
+    background: rgb(182, 177, 123);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ball {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    color: 'blue';
+    background: rgb(255, 0, 191);
+    transition: all 0.3s linear;
+}
+
+#scrolly {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    position: relative;
+}
+
+section {
+    flex-basis: 50%;
+}
+
+.scroll-step {
+    height: 500px;
+    border: 3px dashed rgb(145, 0, 0);
+    color: midnightblue;
+    text-decoration: underline wavy 2px;
+    font-weight: 700;
 }
 
 
