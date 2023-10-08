@@ -1,0 +1,21 @@
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%; 
+  left: 0%; 
+  /* transform: translate(-50%, -50%);   */
+  color: #fff; 
+  padding: 30px 20px;
+  margin-left: 15px;; 
+  font-size: 20px; 
+}
