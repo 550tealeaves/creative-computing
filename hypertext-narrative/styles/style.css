@@ -1,87 +1,66 @@
+/*https: //www.bannerbear.com/blog/how-to-overlay-text-on-an-image-in-html-and-css/#:~:text=First%2C%20create%20a%20new%20HTML,the%20head%20and%20body%20sections.&text=In%20the%20body%20section%2C%20create,and%20add%20your%20text%20inside.*/
+
 body {
     background-color: black;
     color: white;
+    font-family: 'Allura', cursive;
+    font-family: 'Oleo Script', cursive;
 }
 
 h1 {
     color: rgb(161, 30, 30);
-    font-family: 'Allura', cursive;
-    font-family: 'Oleo Script', cursive;
     font-size: 48px;
-}
-
-p {
-    font-family: 'Allura', cursive;
-    font-family: 'Oleo Script', cursive;
-    font-size: 22px;
-}
-
-ul,
-li {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 a {
     color: rgb(127, 219, 255);
+    font-size: 32px;
 }
 
 a:hover {
     color: rgb(209, 159, 240);
 }
 
-
-/* .graphic {
-    position: sticky;
-    border: 2px solid red;
-    border-radius: 1%;
-    top: 100%;
-    left: 100%;
-    background: rgb(182, 177, 123);
-    width: 300%;
-    height: 300%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 5s linear;
+/* .image-container {
+  position: relative;
+  display: inline-block;
 } */
 
-
-/*Img styling makes the graphic very large*/
 img {
-    position: absolute;
+position: absolute;
     top: 0;
     left: 0;
-    border: 2px solid red;
-    border-radius: 1%;
     display: block;
     width: 300%;
     height: 300%;
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    transition: all 5s linear;
+    transition: all 10s linear;
 }
 
 
-/* .ball {
-    border-radius: 100%;
-    width: 30px;
-    height: 30px;
-    color: 'blue';
-    background: rgb(255, 0, 191);
-    transition: all 5s linear;
-} */
+.overlay-text {
+  position: absolute;
+  top: 90%; 
+  left: 0%; 
+  /* transform: translate(-50%, -50%);   */
+  color: #fff; 
+  padding: 30px 20px;
+  margin-left: 15px;
+  font-size: 26px; 
+}
 
-#scrolly {
+div {
+    flex-basis: 50%;
+}
+
+.scrolly {
     display: flex;
     flex-direction: column;
     height: auto;
     position: relative;
-}
-
-section {
-    flex-basis: 50%;
 }
 
 .scroll-step {
@@ -92,6 +71,10 @@ section {
     width: 30%;
 }
 
+.breadcrumb-item{
+    color: greenyellow;
+}
+
 
 
 @media (max-width: 1200px) {
@@ -100,7 +83,7 @@ section {
         font-size: 24px;
     }
 
-    svg {
+    img {
         max-width: 100%;
         max-height: 100%;
     }
