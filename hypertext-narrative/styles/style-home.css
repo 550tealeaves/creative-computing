@@ -5,6 +5,19 @@ body {
     font-family: 'Oleo Script', cursive;
 }
 
+h1{
+    font-size: 47px;
+}
+
+a {
+    color: rgb(127, 219, 255);
+    font-size: 32px;
+}
+
+a:hover {
+    color: rgb(209, 159, 240);
+}
+
 .image-container {
     position: relative;
     display: inline-block;
