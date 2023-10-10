@@ -17,19 +17,23 @@ document.addEventListener('DOMContentLoaded', async function () {
         .setup({
             step: '.scroll-step',
         })
-        .onStepEnter((response) => {
+        .onStepEnter((response, direction) => {
             let desiredSize = response.element.getAttribute('data-size');
 
             if (desiredSize) {
                 changeBallSize(desiredSize, desiredSize);
+            } else if (direction) {
+                changeBallSize(-desiredSize, -desiredSize);
             }
 
             // { element, index, direction }
         })
-        .onStepExit((response) => {
+        .onStepExit((response, direction) => {
             //detect if it's the last step
             if (response.index == numberSteps - 1) {
-                changeBallSize(1000, 1000); //this changes the size
+                changeBallSize(1500, 1000); //this changes the size
+            } else if (direction == "up") {
+                changeBallSize(200, 200);
             }
         });
 });
