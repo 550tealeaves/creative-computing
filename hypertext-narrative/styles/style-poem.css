@@ -37,7 +37,7 @@ position: fixed;
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    transition: all 30s linear;
+    transition: all 90s linear;
 }
 
 .style-pic{
@@ -65,7 +65,7 @@ position: fixed;
   position: absolute;
   top: 90%; 
   left: 0%; 
-  /* transform: translate(-50%, -50%);   */
+  transform: translate(5%, -160%); 
   color: #fff; 
   padding: 30px 20px;
   margin-left: 15px;
@@ -73,7 +73,7 @@ position: fixed;
 }
 
 .freeze-tag{
-    margin-bottom: 90px;
+    margin-bottom: 50px;
 }
 
 div {
@@ -101,7 +101,7 @@ div {
 
 
 .stretch-text {
-    animation-duration: 10s;
+    animation-duration: 5s;
     animation-name: slidein;
 }
 
@@ -109,16 +109,15 @@ div {
 
 @keyframes slidein {
     from {
-        margin-left: 60%;
-        width: 50%;
+        margin-top: 60%;
+        width: 30%;
     }
 
     to {
-        margin-bottom: 100%;
-        width: 40%;
+        margin-bottom: 10%;
+        width: 30%;
     }
 }
-
 
 
 
