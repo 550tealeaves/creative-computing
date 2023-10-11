@@ -46,21 +46,6 @@ position: fixed;
     height: 100%;
 }
 
-.frost-tag {
-    position: relative;
-    top: 60;
-    /*smaller the #, higher up the element*/
-    left: 0;
-    /*smaller the #, more left the element is*/
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-
-
 .overlay-text {
   position: absolute;
   top: 90%; 
@@ -73,7 +58,7 @@ position: fixed;
 }
 
 .freeze-tag{
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 div {
