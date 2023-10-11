@@ -45,7 +45,7 @@ position: fixed;
   position: absolute;
   top: 90%; 
   left: 0%; 
-  transform: translate(5%, -120%); 
+  transform: translate(5%, -100%); 
   color: #fff; 
   padding: 30px 20px;
   margin-left: 15px;
