@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         .onStepExit((response) => {
             //detect if it's the last step
             if (response.index == numberSteps - 1) {
-                changeBallSize(1500, 1000); //this changes the size
+                changeBallSize(900, 1000); //this changes the size
             }
         });
 });

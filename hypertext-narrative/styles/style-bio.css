@@ -28,6 +28,7 @@ a:hover {
     position: fixed;
     top: 0; /*smaller the #, higher up the element*/
     left: 0; /*smaller the #, more left the element is*/
+    margin: 20px;
 }
 
 img {
