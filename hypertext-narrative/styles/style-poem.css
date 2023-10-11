@@ -7,15 +7,10 @@ body {
     font-family: 'Oleo Script', cursive;
 }
 
-h1 {
-    color: rgb(161, 30, 30);
-    font-size: 48px;
-}
-
 
 a {
     color: rgb(127, 219, 255);
-    font-size: 32px;
+    font-size: 28px;
 }
 
 a:hover {
@@ -50,11 +45,11 @@ position: fixed;
   position: absolute;
   top: 90%; 
   left: 0%; 
-  transform: translate(5%, -140%); 
+  transform: translate(5%, -120%); 
   color: #fff; 
   padding: 30px 20px;
   margin-left: 15px;
-  font-size: 26px; 
+  font-size: 24px; 
 }
 
 .freeze-tag{
@@ -104,8 +99,8 @@ div {
 
 
 @media (max-width: 1200px) {
-    h1 {
-        font-size: 24px;
+    h3 {
+        font-size: 18px;
     }
 
     img {
