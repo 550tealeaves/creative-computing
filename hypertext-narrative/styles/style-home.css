@@ -78,7 +78,7 @@ img {
 
 
 .stretch-text {
-    animation-duration: 10s;
+    animation-duration: 5s;
     animation-name: slidein;
 }
 
@@ -87,12 +87,12 @@ img {
 @keyframes slidein {
     from {
         margin-left: 60%;
-        width: 50%;
+        width: 45%;
     }
 
     to {
         margin-bottom: 100%;
-        width: 40%;
+        width: 45%;
     }
 }
 
