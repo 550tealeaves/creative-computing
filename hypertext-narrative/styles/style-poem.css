@@ -100,6 +100,28 @@ div {
 }
 
 
+.stretch-text {
+    animation-duration: 10s;
+    animation-name: slidein;
+}
+
+
+
+@keyframes slidein {
+    from {
+        margin-left: 60%;
+        width: 50%;
+    }
+
+    to {
+        margin-bottom: 100%;
+        width: 40%;
+    }
+}
+
+
+
+
 
 @media (max-width: 1200px) {
     h1 {
