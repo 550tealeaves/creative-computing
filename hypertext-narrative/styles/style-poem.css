@@ -50,7 +50,7 @@ position: fixed;
   position: absolute;
   top: 90%; 
   left: 0%; 
-  transform: translate(5%, -150%); 
+  transform: translate(5%, -140%); 
   color: #fff; 
   padding: 30px 20px;
   margin-left: 15px;
@@ -78,10 +78,6 @@ div {
     color: white;
     font-weight: 400;
     width: 30%;
-}
-
-.breadcrumb-item{
-    color: greenyellow;
 }
 
 
