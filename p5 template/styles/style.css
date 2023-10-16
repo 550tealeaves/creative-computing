@@ -1,0 +1,18 @@
+canvas {
+    border: 1px solid rgba(0,0,0,.1);
+}
+/*Asterisk means to apply styling to ALL ELEMENTS*/
+* {   
+    font-family: monospace;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-weight: 400;
+}
