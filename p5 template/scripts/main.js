@@ -12,7 +12,7 @@ function setup() {
 function draw() {
     //this functions runs many times every second!
     //w/in this function, you can use p5 syntax
-    noStroke();
+    noStroke();//no outline on the circles - stroke("color") would give outline
     fill(random(colorlist)); //apply the colorlist array as fill for circles
     //ellipse(mouseX, mouseY, 25, 25);
     ellipse(mouseX, mouseY, 55, 29); //changes shape of ellipse
