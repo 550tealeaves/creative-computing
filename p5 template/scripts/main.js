@@ -1,6 +1,12 @@
+//Code must always be inside a function
+
+
 //Can add as many colors
 let colorlist = ["gold", "yellow", "turquoise", "red", 'green', 'indigo', 'pink'];
 
+//(0,0) coordinates starts at top left of window
+//X moves left to right (+)
+//Y moves top to bottom (+)
 function setup() {
     //this function runs once when the webpage is loaded
     //w/in this function, you can use p5
