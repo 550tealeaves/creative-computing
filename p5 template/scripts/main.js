@@ -15,7 +15,7 @@ function draw() {
     noStroke();//no outline on the circles - stroke("color") would give outline
     fill(random(colorlist)); //apply the colorlist array as fill for circles
     //ellipse(mouseX, mouseY, 25, 25);
-    ellipse(mouseX, mouseY, 55, 29); //changes shape of ellipse
+    ellipse(mouseX, mouseY, 55, 29); //x,y,w,h (adjust the last 2 to change size but the 1st 2 mean ellipse x/y will start where mouse cursor is)
 }
 
 
