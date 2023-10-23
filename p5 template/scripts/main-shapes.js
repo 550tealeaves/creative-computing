@@ -1,10 +1,12 @@
 //Code must live within functions
 
-//function setup() performs an action upon start of programs
+//function setup() performs an action 1x upon start of programs
 function setup() {
     createCanvas(640, 360); //canvas size - 640px wide and 360px high
 }
 
+
+//function draw() runs continuously
 function draw() {
     rect(100, 200, 75, 150); //(x,y,w,h)
     circle(320, 162, 63); //(x,y,d)
