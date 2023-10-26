@@ -144,3 +144,35 @@ function draw() {
 //         console.log(x); //show 0-9
 //     }
 // }
+
+
+//DRAWING A GRID
+function setup() {
+    createCanvas(700, 700);
+    noLoop();
+
+    noStroke();
+    fill(255, 255, 255);
+    background(250, 250, 250);
+}
+
+function draw() {
+
+    fill(90, 50, 80);
+
+    let rows = height / 80;
+    let cols = width / 20;
+
+    for (row = 0; row < rows; row++) {
+        for (col = 0; col < rows; col++) {
+            drawThing(col * 80 + 25, row * 50 + 25);
+        }
+
+
+    }
+}
+
+function drawThing(x, y) {
+    let radius = random(0, 50);
+    ellipse(x, y, radius, radius);
+}
