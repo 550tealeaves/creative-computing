@@ -12,16 +12,16 @@ function draw() {
     drawGrid();
 
     fill(150, 83, 222);
-    circle(275, 225, 49);
+    circle(250, 250, 100);
 
     fill('orange');
-    circle(325, 125, 49);
+    circle(350, 350, 100);
 
     fill('#d4cf55');
-    circle(425, 475, 49);
+    circle(450, 250, 100);
 
     fill(63, 161, 146);
-    circle(75, 325, 49);
+    circle(150, 350, 100);
 }
 
 function drawGrid() {
