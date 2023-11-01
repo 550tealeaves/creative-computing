@@ -4,7 +4,7 @@
 //text(string, x, y, [maxWidth], [maxHeight]); (w/h optional)
 
 function setup() {
-    createCanvas(600, 500);
+    createCanvas(400, 400);
     //createCanvas(400, 400); - this creates 8x8 board which is good for checkers
     background('#c700ff');
 }
@@ -12,8 +12,8 @@ function setup() {
 function draw() {
     drawGrid();
 
-    fill(150, 83, 222);
-    circle(225, 225, 49);
+    // fill(150, 83, 222);
+    // circle(225, 225, 49);
 
     // fill('orange');
     // circle(325, 125, 49);
@@ -57,8 +57,14 @@ function drawGrid() {
             fill('red');
             circle((i * 100) + 25, 25, 49);//created 1st row of circles
             circle((i * 100) + 75, 75, 49);//created 2nd row of circles
-            circle((i * 100) -75, 125, 49);//created 3rd row of circles
-            circle((i * 100) + 75, 175, 49);
+            circle((i * 100) - 75, 125, 49);//created 3rd row of circles
+            //circle((i * 100) + 75, 175, 49);
+            fill('seagreen');
+            circle((i * 100) + 75, 275, 49);
+            circle((i * 100) - 75, 325, 49);
+            circle((i * 100) + 75, 375, 49);
+            circle((i * 100) - 75, 425, 49);
+            circle((i * 100) + 75, 475, 49);
         }
     }
 }
