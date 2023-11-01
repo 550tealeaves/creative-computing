@@ -5,6 +5,7 @@
 
 function setup() {
     createCanvas(600, 500);
+    //createCanvas(400, 400); - this creates 8x8 board which is good for checkers
     background('#c700ff');
 }
 
@@ -14,14 +15,14 @@ function draw() {
     fill(150, 83, 222);
     circle(225, 225, 49);
 
-    fill('orange');
-    circle(325, 125, 49);
+    // fill('orange');
+    // circle(325, 125, 49);
 
-    fill('#d4cf55');
-    circle(375, 475, 49);
+    // fill('#d4cf55');
+    // circle(375, 475, 49);
 
-    fill(63, 161, 146);
-    circle(125, 325, 49);
+    // fill(63, 161, 146);
+    // circle(125, 325, 49);
 }
 
 function drawGrid() {
@@ -51,6 +52,13 @@ function drawGrid() {
             square((i * 100) + 50, 350, 50);//8th row of black squares
             square((i * 100), 400, 50)//9th row of black squares
             square((i * 100) + 50, 450, 50);//10th row of black squares
+
+            //CREATE AND POSITION THE "CHECKER" PIECES
+            fill('red');
+            circle((i * 100) + 25, 25, 49);//created 1st row of circles
+            circle((i * 100) + 75, 75, 49);//created 2nd row of circles
+            circle((i * 100) -75, 125, 49);//created 3rd row of circles
+            circle((i * 100) + 75, 175, 49);
         }
     }
 }
