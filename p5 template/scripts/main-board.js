@@ -61,10 +61,10 @@ function drawGrid() {
             //circle((i * 100) + 75, 175, 49);
             fill('seagreen');
             circle((i * 100) + 75, 275, 49);
-            circle((i * 100) - 75, 325, 49);
+            circle((i * 100) - 275, 325, 49); //creates 2nd row of other pieces
             circle((i * 100) + 75, 375, 49);
-            circle((i * 100) - 75, 425, 49);
-            circle((i * 100) + 75, 475, 49);
+            // circle((i * 100) - 75, 425, 49); //not needed b/c of reduced canvas size
+            // circle((i * 100) + 75, 475, 49); //not needed b/c of reduced canvas size
         }
     }
 }
