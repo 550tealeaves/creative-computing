@@ -6,9 +6,9 @@ let noiseOff = 0.4;
 
 function draw() {
     background(220);
-    //noStroke();
-    stroke(212, 188, 95);
-    strokeWeight(.3);
+    noStroke();
+    // stroke(212, 188, 95);
+    // strokeWeight(.3);
 
 
     let rowWidth = width / 50;
