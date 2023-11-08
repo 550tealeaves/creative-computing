@@ -35,7 +35,7 @@ function draw() {
     //square(600, 20, 40);
 
     //create the lookout post
-    arc(645, 20, 75, 15, 45, 50 - 45);
+    arc(640, 20, 75, 15, 45, 50 - 45);
     
     //fill('rgba(51, 200, 132, 0.6)'); //colors the noise wave - added transparency
     fill('rgba(8, 36, 96, 0.8)'); //colors the noise wave - added transparency
