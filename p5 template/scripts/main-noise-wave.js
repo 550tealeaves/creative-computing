@@ -1,18 +1,21 @@
 let yoff = 0.0; // 2nd dimension of perlin noise
 
 function setup() {
-    createCanvas(710, 400);
+    createCanvas(710, 500);
 }
 
 function draw() {
     background(30);
-
     fill('silver'); //colors rectangle
-    rect(0, 120, 300);
+    rect(0, 60, 200, 400);
 
-    fill('navy');
-    //triangle(200, 200, 200, 350, 710,280);
-    quad(200, 200, 200, 350, 710, 350, 710, 200)
+    //construct and color the hull 
+    fill('#35393b');
+    quad(200, 200, 220, 350, 710, 350, 710, 200);
+    fill('#940404');
+    quad(220, 351, 240, 380, 710, 380, 710, 351);
+    //build the lines
+    line(200, 200, 300, 0);
     
     fill('rgba(51, 200, 132, 0.6)'); //colors the noise wave - added transparency
     
