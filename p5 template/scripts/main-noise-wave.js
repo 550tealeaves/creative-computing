@@ -7,12 +7,13 @@ function setup() {
 function draw() {
     background(30);
     //construct iceberg
-    fill('#d8d6d6'); //colors rectangle
+    stroke('black');
+    fill('#2F2C2C'); //colors rectangle
     quad(0, 60, 200, 400, 0, 600, 130, 5);
     quad(0, 40, 20, 500, 70, 300, 230, 19);
 
     //construct and color the hull
-    
+    stroke('black');
     fill('#35393b');
     quad(200, 200, 220, 350, 710, 350, 710, 200);
     fill('white');
@@ -20,13 +21,21 @@ function draw() {
     fill('#940404');
     quad(220, 351, 240, 380, 710, 380, 710, 351);
     
-    //build the lines that hold the columns
+    //build the lines that hold the mast
+    stroke('silver');
     line(200, 180, 300, 0);
     line(400, 180, 500, 0);
     line(550, 180, 580, 0);
     line(450, 180, 500, 0);
     fill('#8c7c6c');
+    //build the lookout mast
+    stroke('black');
     rect(640, 0, 50, 180);
+    fill('white');
+    //square(600, 20, 40);
+
+    //create the lookout post
+    arc(645, 20, 75, 15, 45, 50 - 45);
     
     //fill('rgba(51, 200, 132, 0.6)'); //colors the noise wave - added transparency
     fill('rgba(8, 36, 96, 0.8)'); //colors the noise wave - added transparency
@@ -43,10 +52,6 @@ function draw() {
         // Option #1: 2D Noise
         let y = map(noise(xoff, yoff), 0, 1, 400, 300);
 
-        
-        // Option #2: 1D Noise
-        // let y = map(noise(xoff), 0, 1, 200,300);
-
         // Set the vertex
         vertex(x, y);
         // Increment x dimension for noise
@@ -61,13 +66,16 @@ function draw() {
     drawGrid();
 }
 
+//create the port holes alongside the hull
 function drawGrid(){
     fill('#ccad00');
     for (var i = 0; i < 12; i++) {
         for (var j = 0; j < 10; j++) {
-            circle((i * 100) + 255, 250, 15);
-            circle((i * 100) + 255, 285, 15);
-            circle((i * 100) + 300, 320, 15);
+            circle((i * 45) + 220, 190, 10);
+            circle((i * 60) + 490, 220, 12);
+            circle((i * 60) + 250, 250, 12);
+            circle((i * 60) + 310, 285, 12);
+            circle((i * 60) + 430, 320, 12);
            }  
     }
 }
