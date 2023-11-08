@@ -1,4 +1,6 @@
-//inspiration - https://editor.p5js.org/wvnl/sketches/5wnuHAXKd (star twinkle)
+//INSPIRATIONS
+//https://editor.p5js.org/wvnl/sketches/5wnuHAXKd (star twinkle) 
+//https://p5js.org/examples/math-noise-wave.html (noise wave)
 
 let yoff = 0.0; // 2nd dimension of perlin noise
 let stars = [];
@@ -12,18 +14,18 @@ function setup() {
 }
 
 function draw() {
-    background(30);
+    background(20);
 
     for (var i = 0; i < stars.length; i++) {
 		stars[i].draw();
 	}
-    //construct iceberg
+    //BUILD AND COLOR ICEBERG
     stroke('black');
-    fill('#2F2C2C'); //colors rectangle
+    fill('#2F2C2C'); //colors iceberg
     quad(0, 60, 200, 400, 0, 600, 130, 5);
     quad(0, 40, 20, 500, 70, 300, 230, 19);
 
-    //construct and color the hull
+    //BUILD AND COLOR THE HULL
     stroke('black');
     fill('#35393b');
     quad(200, 200, 220, 350, 710, 350, 710, 200);
@@ -32,26 +34,27 @@ function draw() {
     fill('#940404');
     quad(220, 351, 240, 380, 710, 380, 710, 351);
     
-    //build the lines that hold the mast
+    //BUILD THE LINES THAT HOLD THE MAST
     stroke('silver');
     line(200, 180, 300, 0);
     line(400, 180, 500, 0);
     line(550, 180, 580, 0);
     line(450, 180, 500, 0);
     fill('#8c7c6c');
-    //build the lookout mast
+    
+    //BUILD THE LOOKOUT MAST
     stroke('black');
     rect(640, 0, 50, 180);
     fill('white');
     //square(600, 20, 40);
 
-    //create the lookout post
-    arc(640, 20, 75, 15, 45, 50 - 45);
+    //CREATE THE LOOKOUT POST
+    arc(640, 50, 85, 18, 45, 50 - 45);
     
-    //fill('rgba(51, 200, 132, 0.6)'); //colors the noise wave - added transparency
+    
     fill('rgba(8, 36, 96, 0.85)'); //colors the noise wave - added transparency
 
-    // Draw a polygon out of the wave points
+    // DRAW A POLYGON OUT OF THE WAVE POINTS
     beginShape();
 
     let xoff = 0; // Option #1: 2D Noise
@@ -77,21 +80,21 @@ function draw() {
     drawGrid();
 }
 
-//create the port holes alongside the hull
+//CREATE THE PORT HOLES ALONGSIDE THE HULL
 function drawGrid(){
     fill('#ccad00');
     for (var i = 0; i < 12; i++) {
         for (var j = 0; j < 10; j++) {
-            circle((i * 45) + 220, 190, 10);
-            circle((i * 60) + 490, 220, 12);
-            circle((i * 60) + 250, 250, 12);
-            circle((i * 60) + 310, 285, 12);
-            circle((i * 60) + 430, 320, 12);
+            circle((i * 45) + 220, 190, 10); //1st row along white part of hull
+            circle((i * 60) + 490, 220, 12); //2nd row - stars about 5 holes behind the 3rd row
+            circle((i * 60) + 250, 250, 12); //3rd row - starts the closest to the edge of hull
+            circle((i * 60) + 310, 285, 12); //4th row - starts 1 port hole behind 3rd
+            circle((i * 60) + 430, 320, 12); //5th row - starts 3 holes behind the 4th row
            }  
     }
 }
 
-//draw stars
+// DRAW STARS
 class Star {
 	constructor() {
 		this.x = random(width);
@@ -101,8 +104,8 @@ class Star {
 	}
 	
 	draw() {
-		this.t += 0.1;
-		var scale = this.size + sin(this.t) * 1;
+		this.t += 0.1; //higher #, the faster stars move 
+		var scale = this.size + sin(this.t) * 1; //higher #, bigger the dots
 		noStroke();
         fill('white');
 		ellipse(this.x, this.y, scale, scale);
