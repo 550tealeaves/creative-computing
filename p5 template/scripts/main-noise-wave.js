@@ -5,10 +5,18 @@ function setup() {
 }
 
 function draw() {
-    background(255);
+    background(30);
 
-    fill(51, 200, 132);
-    // We are going to draw a polygon out of the wave points
+    fill('silver'); //colors rectangle
+    rect(0, 120, 300);
+
+    fill('navy');
+    //triangle(200, 200, 200, 350, 710,280);
+    quad(200, 200, 200, 350, 710, 350, 710, 200)
+    
+    fill('rgba(51, 200, 132, 0.6)'); //colors the noise wave - added transparency
+    
+    // Draw a polygon out of the wave points
     beginShape();
 
     let xoff = 0; // Option #1: 2D Noise
@@ -28,6 +36,7 @@ function draw() {
         vertex(x, y);
         // Increment x dimension for noise
         xoff += 0.05;
+
     }
     // increment y dimension for noise
     yoff += 0.01;
