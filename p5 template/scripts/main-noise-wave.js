@@ -1,11 +1,22 @@
+//inspiration - https://editor.p5js.org/wvnl/sketches/5wnuHAXKd (star twinkle)
+
 let yoff = 0.0; // 2nd dimension of perlin noise
+let stars = [];
 
 function setup() {
     createCanvas(710, 500);
+
+    for (var i = 0; i < 1000; i++) {
+		stars[i] = new Star();
+	}
 }
 
 function draw() {
     background(30);
+
+    for (var i = 0; i < stars.length; i++) {
+		stars[i].draw();
+	}
     //construct iceberg
     stroke('black');
     fill('#2F2C2C'); //colors rectangle
@@ -38,7 +49,7 @@ function draw() {
     arc(640, 20, 75, 15, 45, 50 - 45);
     
     //fill('rgba(51, 200, 132, 0.6)'); //colors the noise wave - added transparency
-    fill('rgba(8, 36, 96, 0.8)'); //colors the noise wave - added transparency
+    fill('rgba(8, 36, 96, 0.85)'); //colors the noise wave - added transparency
 
     // Draw a polygon out of the wave points
     beginShape();
@@ -79,3 +90,22 @@ function drawGrid(){
            }  
     }
 }
+
+//draw stars
+class Star {
+	constructor() {
+		this.x = random(width);
+		this.y = random(height);
+		this.size = random(0.25, 3);
+		this.t = random(TAU);
+	}
+	
+	draw() {
+		this.t += 0.1;
+		var scale = this.size + sin(this.t) * 1;
+		noStroke();
+        fill('white');
+		ellipse(this.x, this.y, scale, scale);
+	}
+}
+
