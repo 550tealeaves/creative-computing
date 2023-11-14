@@ -24,3 +24,12 @@ img {
     left: 10%;
     top: 25%;
 }
+
+/*Trying to style the images but the images don't show up on DOM*/
+.img-links{
+    position: relative;
+    border: 3px solid rgb(153, 88, 109);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -19,14 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    let container = document.querySelector('#container');
+    let container = document.querySelector('#container'); 
     imgLinks.forEach(function (d) {
         console.log(d);
         let newImg = document.createElement('img');
+        newImg.classList.add("img-links"); //add class to img element
         newImg.src = d;
         //we've created a new image element, with a 'src' attribute that links to the url
         //now you have to add randomized styling to place it somewhere on the page
+        document.querySelector('#container').append(newImg); //this places small images on the page but imgs don't look "defined"
     })
+    
 
 
 });
