@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    function setup() {
+        createCanvas(600, 500);
+        background('#FDD8F6');
+    }
+
     //an array holding links to all of the images (some of the repeat)
     let imgLinks = [
         'https://unsplash.com/photos/pasta-with-sauce-on-white-ceramic-plate-0y6eMd8vevA',
@@ -18,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //same as a for loop, just a simpler syntax since you don't have to specify the start and end
 
 
+    
 
     let container = document.querySelector('#container'); 
     imgLinks.forEach(function (d) {
@@ -28,8 +34,24 @@ document.addEventListener('DOMContentLoaded', function () {
         //we've created a new image element, with a 'src' attribute that links to the url
         //now you have to add randomized styling to place it somewhere on the page
         document.querySelector('#container').append(newImg); //this places small images on the page but imgs don't look "defined"
+        
+    
+    
     })
+
     
 
+
+    // //not working 
+    function draw() {
+        let imgRandom = random(newImg);
+        text(imgRandom, 50, 50);
+        
+        // frameRate(7);
+        // let x = random(40, 60);
+        // let y = random(40, 60);
+        // newImg(x, y);
+
+    }  
 
 });
