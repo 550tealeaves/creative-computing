@@ -29,9 +29,6 @@ position: fixed;
     display: block;
     width: 300%;
     height: 300%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     transition: all 90s linear;
 }
 

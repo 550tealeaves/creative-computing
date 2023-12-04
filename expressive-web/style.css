@@ -1,20 +1,31 @@
 img{
+    position: fixed;
     width: 100%;
     height: 100%;
-    position: sticky;
 }
 
-body{
+.body-tag{
     background-color: black;
 }
 
 .home-link{
-    display: block;
-    justify-content: center;
-    color: orange;
-    font-size: 12px;
+    position: relative;
+        top: 20%;
+        left: 0%;
+        transform: translate(15%, -100%);
+        color: orange;
+        padding: 10px 15px;
+        margin-left: 15px;
+        font-size: 12px;
 }
 
 .home-link:hover{
     color: silver;
 }
+
+/* .freeze-tag {
+    position: fixed;
+    top: 0;
+    left: 3.5%;
+    margin: 20px;
+} */
