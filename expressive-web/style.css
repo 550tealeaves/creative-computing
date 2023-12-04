@@ -2,15 +2,23 @@
     white-space: pre-wrap;
 } */
 
-img{
+.train-pic{
     position: sticky;
     height: 100%;
     width: 100%;
 }
 
+.train-path{
+    background-color: blue;
+    
+}
+
+
 .body-tag{
-    background-color: black;
-    color: white;
+    background-color: rgb(109, 109, 109);
+    background-image: url(images/F-train.jpg);
+    background-repeat: no-repeat; /*stops the image from repeating*/
+
 }
 
 .home-link{
