@@ -2,15 +2,14 @@
     white-space: pre-wrap;
 } */
 
-.train-pic{
+/* .train-pic{
     position: sticky;
     height: 100%;
     width: 100%;
-}
+} */
 
-.train-path{
-    background-color: blue;
-    
+.rocks{
+    margin-left: 150px;
 }
 
 
@@ -18,7 +17,10 @@
     background-color: rgb(109, 109, 109);
     background-image: url(images/F-train.jpg);
     background-repeat: no-repeat; /*stops the image from repeating*/
-
+    /* background-position: center sticky; */
+    position: sticky;
+    background-size: cover; /*covers the entire screen and stays full during zoom*/
+    color: bisque;
 }
 
 .home-link{

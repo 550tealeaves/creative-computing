@@ -35,7 +35,8 @@ function draw() {
     quad(220, 351, 240, 380, 710, 380, 710, 351);
     
     //BUILD THE LINES THAT HOLD THE MAST
-    stroke('silver');
+    stroke('darkgray');
+    strokeWeight(3); //changed the strokeweight for all lines outside of mast lines to default
     line(200, 180, 300, 0);
     line(400, 180, 500, 0);
     line(550, 180, 580, 0);
@@ -44,8 +45,9 @@ function draw() {
     
     //BUILD THE LOOKOUT MAST
     stroke('black');
+    strokeWeight(1);
     rect(640, 0, 50, 180);
-    fill('white');
+    fill('beige');
     //square(600, 20, 40);
 
     //CREATE THE LOOKOUT POST
