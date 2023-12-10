@@ -30,7 +30,7 @@ background-color: rgb(109, 109, 109);
     /* background-image: url(images/F-train.jpg); */
     background-repeat: no-repeat; /*stops the image from repeating*/
     /* background-position: center sticky; */
-    position: sticky;
+    position: fixed;
     /* background-size: 100%; covers the entire screen and stays full during zoom */
 }
 
@@ -62,6 +62,12 @@ ul{
   list-style: none;
 }
 
+.overlay-text {
+  position: absolute;
+  top: 200%;
+  left: 0%;
+  transform: translate(5%, -10%);
+}
 
 
 /* :root {
