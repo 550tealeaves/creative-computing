@@ -8,6 +8,13 @@
     width: 100%;
 } */
 
+#scrolly{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    position: relative;
+}
+
 .rocks{
     margin-left: 150px;
 }
@@ -18,7 +25,7 @@
     background-image: url(images/F-train.jpg);
     background-repeat: no-repeat; /*stops the image from repeating*/
     /* background-position: center sticky; */
-    position: sticky;
+    position: fixed;
     background-size: 100%; /*covers the entire screen and stays full during zoom*/
     color: bisque;
     width: 100%;
@@ -37,7 +44,6 @@
 }
 
 .stations{
-    display: block;
     text-align: center;
 }
 
@@ -45,6 +51,15 @@
     display: flex;
     justify-content: space-around;
 }
+
+.scroll-step {
+  height: 500px;
+  border: 3px dashed rgb(145, 0, 0);
+  color: midnightblue;
+  text-decoration: underline wavy 2px;
+}
+
+
 
 /* :root {
     overflow: hidden;
