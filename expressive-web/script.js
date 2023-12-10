@@ -1,27 +1,27 @@
-function setup() {
-    createCanvas(innerWidth, innerHeight);
-    // By default angles in p5js are specified in radians.
-    // This switches to degree mode so we can specify
-    // angles from 0 to 360 instead of 0 to 2 * PI
-    angleMode(DEGREES);
-    // Let's make our canvas light blue
-    background(51, 0.4);
-}
+// function setup() {
+//     createCanvas(innerWidth, innerHeight);
+//     // By default angles in p5js are specified in radians.
+//     // This switches to degree mode so we can specify
+//     // angles from 0 to 360 instead of 0 to 2 * PI
+//     angleMode(DEGREES);
+//     // Let's make our canvas light blue
+//     background(51, 0.4);
+// }
 
-function draw() {    
-   // line(x1, y1, x2, y2)
-    stroke('red');
-    strokeWeight(2);
-    line(width, height, (width/10), (height/6));
-}
+// function draw() {    
+//    // line(x1, y1, x2, y2)
+//     stroke('red');
+//     strokeWeight(2);
+//     line(width, height, (width/10), (height/6));
+// }
 
 
 document.addEventListener('DOMContentLoaded', async function () {
-    function changeBallSize(width, height) {
-        console.log(width, height);
-        let ball = document.querySelector('.ball');
-        ball.style.width = width + 'px';
-        ball.style.height = height + 'px';
+    function changeRouteSize(width, height) {
+        console.log('measures', width, height);
+        let route = document.querySelector('.route');
+        route.style.width = width + 'px';
+        route.style.height = height + 'px';
     }
 
     // instantiate the scrollama
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             let desiredSize = response.element.getAttribute('data-size');
 
             if (desiredSize) {
-                changeBallSize(desiredSize, desiredSize);
+                changeRouteSize(desiredSize, desiredSize);
             }
 
             // { element, index, direction }
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         .onStepExit((response) => {
             //detect if it's the last step
             if (response.index == numberSteps - 1) {
-                changeBallSize(30, 30);
+                changeRouteSize(30, 30);
             }
         });
 });
