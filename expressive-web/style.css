@@ -6,12 +6,12 @@
     color: bisque;
 }
 
-.route{
+/* .route{
     margin-left: 135px;
     position: sticky;
     height: 60%;
     width: 100%;
-}
+} */
 
 body{
 background-color: rgb(46, 46, 46);
@@ -31,13 +31,9 @@ background-color: rgb(46, 46, 46);
 .home-link{
     color: orange;
     font-size: 12px;
-    /* position: relative; */
     left: 4px;
     position: relative;
-      /*smaller the #, higher up the element*/
-      /* left: 0.5%;
-      /*smaller the #, more left the element is*/
-      /* margin: 10px; */
+    z-index: 1; /*This will bring the element forward and place it on top of another element provided the two are on the same level (non-nested)*/
 }
 
 .home-link:hover{
@@ -48,10 +44,11 @@ background-color: rgb(46, 46, 46);
     text-align: center;
 }
 
-/* .sights{
-    display: inline-flex;
-    text-align: center;
-} */
+.sights{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .scroll-step {
   height: 500px;
