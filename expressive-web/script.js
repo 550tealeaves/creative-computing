@@ -19,9 +19,9 @@
 document.addEventListener('DOMContentLoaded', async function () {
     function changeRouteSize(width, height) {
         console.log('measures', width, height);
-        let route = document.querySelector('.route');
-        route.style.width = width + 'px';
-        route.style.height = height + 'px';
+        let trainPic = document.querySelector('.image-container');
+        trainPic.style.width = width + 'px';
+        trainPic.style.height = height + 'px';
     }
 
     // instantiate the scrollama
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             let desiredSize = response.element.getAttribute('data-size');
 
             if (desiredSize) {
-                changeRouteSize(desiredSize, desiredSize);
+                changetrainPicSize(desiredSize, desiredSize);
             }
 
             // { element, index, direction }
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         .onStepExit((response) => {
             //detect if it's the last step
             if (response.index == numberSteps - 1) {
-                changeRouteSize(30, 30);
+                changetrainPicSize(30, 30);
             }
         });
 });

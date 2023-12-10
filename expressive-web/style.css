@@ -8,7 +8,9 @@
 
 .route{
     margin-left: 135px;
-    position: absolute;
+    position: sticky;
+    height: 60%;
+    width: 100%;
 }
 
 body{
@@ -16,17 +18,26 @@ background-color: rgb(46, 46, 46);
 }
 
 .train-pic{
+    top: 0;
+    left: 0;
+    display: block;
     width: 100%;
     height: 100%;
     position: fixed;
+    transition: all 90s linear;
 
 }
 
 .home-link{
     color: orange;
     font-size: 12px;
-    position: relative;
+    /* position: relative; */
     left: 4px;
+    position: relative;
+      /*smaller the #, higher up the element*/
+      /* left: 0.5%;
+      /*smaller the #, more left the element is*/
+      /* margin: 10px; */
 }
 
 .home-link:hover{
@@ -55,44 +66,19 @@ ul{
   top: 200%;
   left: 0%;
   transform: translate(5%, -10%);
+  animation-duration: 10s;
+  animation-name: slidein;
 }
 
 
-/* :root {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+/* @keyframes slidein {
+  from {
+    margin-top: 60%;
+    width: 30%;
   }
-  
-  .container {
-    background-color: transparent;
-    border-radius: 50%;
-    height: 100vh;
-    aspect-ratio: 1 / 1;
-    /*
-      animations declared later in the cascade will override the
-      properties of previously declared animations
-    */
-    /* bounce 'overwrites' the transform set by rise, hence the sun only moves horizontally */
-    /* animation:
-      4s linear 0s infinite alternate rise,
-      4s linear 0s infinite alternate bounce;
+
+  to {
+    margin-bottom: 10%;
+    width: 30%;
   }
-  
-  @keyframes rise {
-    from {
-      transform: translateY(110vh);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes bounce {
-    from {
-      transform: translateX(-50vw);
-    }
-    to {
-      transform: translateX(50vw);
-    }
-  }  */
+} */
