@@ -67,9 +67,6 @@ ul{
   animation-name: slidein;
 }
 
-video{
-  z-index: 1;
-}
 
 /* @keyframes slidein {
   from {
