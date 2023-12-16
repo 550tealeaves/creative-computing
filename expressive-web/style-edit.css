@@ -37,14 +37,22 @@ section {
   flex-basis: 50%;
 }
 
+/*style the stations*/
 .scroll-step {
   height: 500px;
   width: 360px;
   border: 3px dashed rgb(145, 0, 0);
   color: bisque;
   font-weight: 700;
-  background-color: rgb(245, 223, 185);
+  
 }
+
+.first{
+  background: linear-gradient(to right,
+        rgb(157, 128, 101) 20% 90%,
+        rgb(224, 191, 131) 90% 10%);
+}
+
 
 /* .route{
     margin-left: 135px;
