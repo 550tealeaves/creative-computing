@@ -56,3 +56,29 @@ changeText.textContent = "STAND CLEAR THE CLOSING DOORS, PLEASE";
 changeText.style.color = 'red';
 changeText.style.position = 'relative';
 });
+
+//MOVE THE TRAIN ONTO THE TRACK
+let moveTrain = document.querySelector('.ball');
+moveTrain.addEventListener('click', function(){
+    // moveTrain.style.transform = 'rotate(20deg)';
+    moveTrain.style.position = 'relative';
+    moveTrain.style.right= '165%';
+});
+
+//STOP AUDIO FROM PLAYING ON LOAD
+let audio;
+
+function pauseAudio() {
+    if (audio && !audio.paused) {
+        audio.pause();
+        audio.currentTime = 0; //starts sound at the beginning
+    }
+}
+
+function playAudio(sound) {
+    pauseAudio(); //pause current audio
+    audio = new Audio(); //saves reference
+    audio.sound = sound;
+    audio.play();
+}
+
