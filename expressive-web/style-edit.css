@@ -131,19 +131,19 @@ ul,a:hover{
 
 /*space out the stops*/
 .short-stop{
-    margin-bottom: 80%;
+    margin-bottom: 130%;
 }
 
 .med-stop{
-  margin-bottom: 130%;
-}
-
-.long-stop{
   margin-bottom: 180%;
 }
 
+.long-stop{
+  margin-bottom: 300%;
+}
+
 .longest-stop{
-  margin-bottom: 230%;
+  margin-bottom: 500%;
 }
 
 
