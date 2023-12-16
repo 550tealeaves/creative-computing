@@ -1,7 +1,14 @@
 body{
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(22, 20, 20);
+  background-image: url(images/train-tracks.svg);
+  background-repeat: repeat-y;
+  /*will repeat image vertically*/
+  background-size: 30%;
+  background-position: center;
 }
 
+/*STYLE THE CONTAINER AND TRAIN IMAGE*/
 .graphic {
   position: sticky;
   top: 20%;
@@ -22,6 +29,17 @@ body{
   /* mix-blend-mode: multiply; */
 }
 
+.img-edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*STYLE THE SECTION AND SCROLLY*/
+section {
+  flex-basis: 50%;
+}
+
 .text-holder{
   color: white;
 }
@@ -33,15 +51,12 @@ body{
   position: relative;
 }
 
-section {
-  flex-basis: 50%;
-}
 
-/*style the stations*/
+/*STYLE THE STATIONS*/
 .scroll-step {
   height: 500px;
   width: 360px;
-  border: 3px dashed rgb(145, 0, 0);
+  border: none;
   color: bisque;
   font-weight: 700;
   
@@ -123,49 +138,17 @@ section {
 }
 
 
-/* .route{
-    margin-left: 135px;
-    position: sticky;
-    height: 60%;
-    width: 100%;
-} */
-
-body{
-background-color: rgb(32, 28, 28);
-background-image: url(images/train-tracks.svg);
-background-repeat: repeat-y; /*will repeat image vertically*/
-background-size: 30%;
-background-position: center;
-
-}
-
+/*STYLE STATION NAMES*/
 p{
   border: 2px solid black;
   background-color: black;
   font-size: 24px;
   margin: auto;
   text-align: center;
-  /* color: rgb(30, 14, 120); */
   color: white;
 }
 
-.f-train-path{
-  mix-blend-mode: multiply; /*removes the whitespace behind image*/
-  filter: saturate(6);
-  height: 100vh;
-}
-
-/* .train-pic{
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    transition: all 60s linear;
-
-} */
-
+/*STYLE HOME LINK*/
 .home-link{
     color: orange;
     font-size: 12px;
@@ -182,12 +165,8 @@ p{
     text-align: center;
 }
 
-.img-edit{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
+/*STYLE THE STATION CONTAINER, SIGHT IMAGES, AND LINKS*/
 .sights{
     display: flex;
     flex-direction: column;
@@ -215,21 +194,21 @@ ul,a:hover{
 }
 
 
-/*space out the stops*/
+/*SPACE OUT STATIONS*/
 .short-stop{
     margin-bottom: 130%;
 }
 
 .med-stop{
-  margin-bottom: 180%;
+  margin-bottom: 200%;
 }
 
 .long-stop{
-  margin-bottom: 300%;
+  margin-bottom: 350%;
 }
 
 .longest-stop{
-  margin-bottom: 500%;
+  margin-bottom: 600%;
 }
 
 .overlay-text {
@@ -244,6 +223,7 @@ ul,a:hover{
   animation-name: slidein;
 }
 
+/*STYLE SCROLLY ELEMENTS*/
 .intro{
   color: red;
   animation: 2s linear 5s infinite alternate slidein;
