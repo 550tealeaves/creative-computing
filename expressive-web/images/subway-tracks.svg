@@ -1,0 +1,16 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="800" fill="#F5F5F5"/>
+<g id="train-tracks">
+<g id="Group">
+<g id="Group_2">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M234.776 776.471H188.753L282.871 23.5294H328.894L234.776 776.471Z" fill="#434343"/>
+<path id="Vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M658.306 776.471H612.282L518.165 23.5294H564.188L658.306 776.471Z" fill="#434343"/>
+<path id="Vector_3" d="M705.882 635.294H141.176V678.4H705.882V635.294Z" fill="#434343"/>
+<path id="Vector_4" d="M705.882 494.118H141.176V537.224H705.882V494.118Z" fill="#434343"/>
+<path id="Vector_5" d="M658.824 352.941H188.235V396.047H658.824V352.941Z" fill="#434343"/>
+<path id="Vector_6" d="M658.824 211.765H188.235V254.871H658.824V211.765Z" fill="#434343"/>
+<path id="Vector_7" d="M611.765 70.5883H235.294V113.694H611.765V70.5883Z" fill="#434343"/>
+</g>
+</g>
+</g>
+</svg>
