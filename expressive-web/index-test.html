@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #movingImage {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img id="movingImage" src="images/179th street.jpg" alt="Moving Image">
+
+    <script>
+        // Get the image element
+            var image = document.getElementById('movingImage');
+
+            // Set initial position
+            var initialX = 0;
+            var initialY = 0;
+
+            // Set the interval for animation
+            var interval = setInterval(moveImage, 7);
+
+            function moveImage() {
+                // Update position
+                initialX += 6; // Change this value to control horizontal movement
+                initialY += 2; // Change this value to control vertical movement
+
+                // Apply new position
+                image.style.left = initialX + 'px';
+                image.style.top = initialY + 'px';
+
+                //Optional: Stop the animation after a certain condition (e.g., reached a specific position)
+                if (initialX >= 400) {
+                  clearInterval(interval);
+                }
+            }
+    </script>
+</body>
+</html>

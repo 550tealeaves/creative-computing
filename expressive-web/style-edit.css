@@ -242,7 +242,17 @@ ul,a:hover{
 
 .end {
   margin-top: 200px;
+  color: bisque;
+  font-size: 20px;
+  text-align: center;
+  text-wrap: wrap;
+  animation-name: fadeInOut, moveLeft300px, bounce;
+    animation-duration: 5.5s, 5s, 1s;
+    animation-iteration-count: 2, 1, 5;
+    animation-delay: 3s;
+  
 }
+
 
 .scrolling-text {
   position: relative;
@@ -250,13 +260,18 @@ ul,a:hover{
   animation: scroll-left 20s linear infinite;
 }
 
-audio{
-  background-color: red;
-  color: aquamarine;
-  width: 80%;
-  height: 60%;
-  z-index: 1;
+button{
+  color: blueviolet;
+  font-weight: 700;
+  background: linear-gradient(rgb(255, 94, 0) 40%,
+    yellow 30%,
+    rgb(176, 176, 199) 65%);
+  margin: 30px auto;
+  border: 2px solid rgb(234, 241, 21);
+  border-radius: 10%;
 }
+
+
 
 @keyframes scroll-left {
   from {
@@ -270,10 +285,25 @@ audio{
   }
 }
 
-/*/
-@keyframes slidein {
+
+
+@keyframes fadeInOut{
   from {
-    top: 10%; /*div container starts from 10% at top of page */
+      left: 100%;
+      width: 500%;
+    }
+  
+    to {
+      left: -100%;
+      width: 500%;
+    }
+}  
+
+
+/*/
+/* @keyframes slidein {
+  from {
+    top: 10%; div container starts from 10% at top of page */
     /* left: 50%; div moves to the left to the middle of the screen */
    /* margin-right: 25%; /*moves the div to the left [ use 50% to move to middle of the screen]*/
  /* } */
