@@ -36,9 +36,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
 let openStatement = document.querySelector('.intro');
-openStatement.addEventListener('load', function(){
+openStatement.addEventListener('click', function(){
     let start = document.querySelector('.intro');
     start.style.transition = 'transform 0.2s ease-in-out';
     start.style.position = 'absolute';
     start.style.position.top = '10%';
+    start.style.color = 'red';
 });
