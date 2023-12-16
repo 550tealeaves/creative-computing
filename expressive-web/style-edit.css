@@ -225,7 +225,7 @@ ul,a:hover{
 
 /*STYLE SCROLLY ELEMENTS*/
 .intro{
-  color: red;
+  color: bisque;
   animation: 2s linear 5s infinite alternate slidein;
   text-transform: uppercase;
   font-size: 20px;
@@ -244,20 +244,37 @@ ul,a:hover{
   margin-top: 200px;
 }
 
+.scrolling-text {
+  position: relative;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
 
-
-@keyframes slidein {
+@keyframes scroll-left {
   from {
-    top: 10%; /*div container starts from 10% at top of page */
-    left: 50%; /*div moves to the left to the middle of the screen*/
-    margin-right: 25%; /*moves the div to the left [ use 50% to move to middle of the screen]*/
+    left: 100%;
+    width: 500%;
   }
 
   to {
-    bottom: 50%; /*div moves to the bottom of the screen*/
+    left: -100%;
+    width: 500%;
   }
 }
 
+/*/
+@keyframes slidein {
+  from {
+    top: 10%; /*div container starts from 10% at top of page */
+    /* left: 50%; div moves to the left to the middle of the screen */
+   /* margin-right: 25%; /*moves the div to the left [ use 50% to move to middle of the screen]*/
+ /* } */
+/*
+  to {
+    bottom: 50%; /*div moves to the bottom of the screen*/
+  /* }
+} */
+/* **/ 
 
 
 

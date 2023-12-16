@@ -34,12 +34,25 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
 });
 
+//CHANGE THE STARTING STATEMENT WITH CLICK AND THEN USE scrollLeft FUNCTION TO MOVE IT ACROSS THE SCREEN
+// let changeText = document.querySelector('.intro');
+// changeText.addEventListener('click', function(scrollLeft){
+//     changeText.textContent = "STAND CLEAR THE CLOSING DOORS, PLEASE";
+//     changeText.style.color = 'red';
+//     changeText.style.position = 'relative';
+//     changeText.style.left = '100%';
+//     document.getElementById("intro");
+//     setTimeout(scrollLeft, 10);
+// });
+// scrollLeft();
 
-let openStatement = document.querySelector('.intro');
-openStatement.addEventListener('click', function(){
-    let start = document.querySelector('.intro');
-    start.style.transition = 'transform 3.2s ease-in';
-    start.style.position = 'absolute';
-    start.style.position.top = '10%';
-    start.style.color = 'red';
+
+//ALTERNATIVE WAY TO WRITE//
+
+//CHANGE THE TEXT FIRST USING CLICK EVENT
+let changeText = document.querySelector('.intro');
+changeText.addEventListener('click', function () {
+changeText.textContent = "STAND CLEAR THE CLOSING DOORS, PLEASE";
+changeText.style.color = 'red';
+changeText.style.position = 'relative';
 });
