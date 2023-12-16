@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 let openStatement = document.querySelector('.intro');
 openStatement.addEventListener('click', function(){
     let start = document.querySelector('.intro');
-    start.style.transition = 'transform 0.2s ease-in-out';
+    start.style.transition = 'transform 3.2s ease-in';
     start.style.position = 'absolute';
     start.style.position.top = '10%';
     start.style.color = 'red';

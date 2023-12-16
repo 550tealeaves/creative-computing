@@ -1,8 +1,12 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .graphic {
   position: sticky;
   top: 20%;
   left: 70%;
-  background: none;
+  /* background: none; not working */
   height: 300px;
   display: flex;
   justify-content: center;
@@ -14,6 +18,8 @@
   width: 100px;
   height: 100px;
   transition: all 10s ease-in-out;
+  margin-left: 50px;
+  /* mix-blend-mode: multiply; */
 }
 
 .text-holder{
@@ -49,7 +55,8 @@ section {
 
 body{
 background-color: rgb(37, 32, 32);
-background-image: url(images/train-track-svgrepo-com.svg);
+/* background-image: url(images/train-track-svgrepo-com.svg); */
+background-image: url(images/train-tracks.svg);
 background-repeat: repeat-y; /*will repeat image vertically*/
 background-size: 30%;
 background-position: center;
@@ -146,10 +153,6 @@ ul,a:hover{
   margin-bottom: 500%;
 }
 
-
-
-
-
 .overlay-text {
   display: flex;
     flex-direction: row;
@@ -163,7 +166,10 @@ ul,a:hover{
 }
 
 .intro{
-  animation: 3s linear 1s infinite alternate slidein;
+  color: red;
+  animation: 2s linear 5s infinite alternate slidein;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .intro.visible{
