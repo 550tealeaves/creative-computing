@@ -33,6 +33,7 @@ section {
 
 .scroll-step {
   height: 500px;
+  width: 360px;
   border: 3px dashed rgb(145, 0, 0);
   color: bisque;
   font-weight: 700;
@@ -89,10 +90,11 @@ p{
   flex-direction: row;
   justify-content: space-between;
 }
+
 .sights{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
     font-size: 18px;
     align-items: center;
 }
