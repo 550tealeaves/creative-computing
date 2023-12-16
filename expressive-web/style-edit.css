@@ -49,6 +49,11 @@ section {
 
 body{
 background-color: rgb(37, 32, 32);
+background-image: url(images/train-track-svgrepo-com.svg);
+background-repeat: repeat-y; /*will repeat image vertically*/
+background-size: 30%;
+background-position: center;
+
 }
 
 p{
@@ -122,6 +127,28 @@ ul,a,img{
 ul,a:hover{
   color: silver;
 }
+
+
+/*space out the stops*/
+.short-stop{
+    margin-bottom: 80%;
+}
+
+.med-stop{
+  margin-bottom: 130%;
+}
+
+.long-stop{
+  margin-bottom: 180%;
+}
+
+.longest-stop{
+  margin-bottom: 230%;
+}
+
+
+
+
 
 .overlay-text {
   display: flex;
