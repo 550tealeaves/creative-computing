@@ -1,0 +1,12 @@
+.open-text {
+    color: lightskyblue;
+}
+
+.start-link {
+    color: orange;
+    margin-top: 100px;
+}
+
+.start-link:hover {
+    color: silver;
+}
