@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function () {
     function changeTrainPicSize(width, height) {
         console.log('measures', width, height);
-        let trainPic = document.querySelector('.image-container');
+        let trainPic = document.querySelector('.ball');
         trainPic.style.width = width + 'px';
         trainPic.style.height = height + 'px';
     }

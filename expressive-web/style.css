@@ -69,12 +69,12 @@ ul{
   left: 0%;
   transform: translate(5%, -10%);
   animation-duration: 10s;
-  animation-name: slidein;
+  animation-name: bounce;
 }
 
 
 
-@keyframes slidein {
+@keyframes bounce {
   from {
     top: 10%; /*div container starts from 10% at top of page */
     left: 50%; /*div moves to the left to the middle of the screen*/
