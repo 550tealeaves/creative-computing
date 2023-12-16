@@ -47,11 +47,29 @@ section {
   
 }
 
-.first{
+/*Use linear gradient to style station (rgb(a,b,c) x% y% - x% = where color starts on page, y% = where it terminates*/
+.first,.sixth{
   background: linear-gradient(to right,
-        rgb(157, 128, 101) 20% 90%,
-        rgb(224, 191, 131) 90% 10%);
+        rgb(117, 105, 79) 20% 90%,
+          rgb(218, 166, 45) 90%);
 }
+
+.second,.third,.fourth,.fifth,.seventh{
+  background: linear-gradient(to right,
+        rgb(96, 95, 95) 20% 75%,
+        rgb(224, 122, 53) 75% 85%,
+        rgb(96, 95, 95) 85% 95%,
+        rgb(229, 194, 20) 95%);
+}
+
+.eighth{
+  background: linear-gradient(to right,
+        rgb(117, 105, 79) 20% 90%,
+        rgb(224, 122, 53) 90%, 93%,
+        rgb(218, 166, 45) 93%);
+}
+
+
 
 
 /* .route{
