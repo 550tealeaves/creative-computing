@@ -47,7 +47,7 @@ section {
   
 }
 
-/*Use linear gradient to style station (rgb(a,b,c) x% y% - x% = where color starts on page, y% = where it terminates*/
+/*Use linear gradient to style station (rgb(a,b,c) x% y% - x% = where color starts on page, y% = where it terminates.*/
 .first,.sixth,.ninth{
   background: linear-gradient(to right,
         rgb(117, 105, 79) 20% 90%,
@@ -81,6 +81,23 @@ section {
         rgb(218, 166, 45) 90%);
 }
 
+.fifteenth{
+  background: linear-gradient(to right,
+        rgb(126, 113, 94) 20% 80%,
+        rgb(56, 45, 37) 80%, 90%,
+        rgb(218, 166, 45) 90%);
+}
+
+.sixteenth{
+  background: linear-gradient(to right,
+      rgb(218, 166, 45) 0% 10%,
+        rgb(101, 84, 72) 10% 15%,
+        rgb(96, 96, 108) 15% 30%,
+      rgb(173, 101, 90) 30% 70%,
+        rgb(96, 96, 108) 70%, 85%,
+        rgb(101, 84, 72) 85% 90%,
+        rgb(218, 166, 45) 90%);
+}
 
 
 /* .route{
@@ -163,7 +180,7 @@ ul{
 }
 
 ul,a{
-  color: rgb(217, 182, 241);
+  color: rgb(108, 247, 163);
 }
 
 ul,a,img{
@@ -171,7 +188,7 @@ ul,a,img{
 }
 
 ul,a:hover{
-  color: silver;
+  color: rgb(134, 51, 189);
 }
 
 
