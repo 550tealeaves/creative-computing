@@ -48,13 +48,13 @@ section {
 }
 
 /*Use linear gradient to style station (rgb(a,b,c) x% y% - x% = where color starts on page, y% = where it terminates*/
-.first,.sixth{
+.first,.sixth,.ninth{
   background: linear-gradient(to right,
         rgb(117, 105, 79) 20% 90%,
           rgb(218, 166, 45) 90%);
 }
 
-.second,.third,.fourth,.fifth,.seventh{
+.second,.third,.fourth,.fifth,.seventh,.tenth,.eleventh{
   background: linear-gradient(to right,
         rgb(96, 95, 95) 20% 75%,
         rgb(224, 122, 53) 75% 85%,
@@ -69,6 +69,17 @@ section {
         rgb(218, 166, 45) 93%);
 }
 
+.twelfth,.thirteenth{
+  background: linear-gradient(to right,
+        rgb(150, 138, 132) 20% 90%,
+        rgb(218, 166, 45) 90%);
+}
+
+.fourteenth{
+  background: linear-gradient(to right,
+        rgb(51, 40, 33) 20% 90%,
+        rgb(218, 166, 45) 90%);
+}
 
 
 
@@ -81,7 +92,6 @@ section {
 
 body{
 background-color: rgb(37, 32, 32);
-/* background-image: url(images/train-track-svgrepo-com.svg); */
 background-image: url(images/train-tracks.svg);
 background-repeat: repeat-y; /*will repeat image vertically*/
 background-size: 30%;
@@ -90,10 +100,13 @@ background-position: center;
 }
 
 p{
+  border: 2px solid black;
+  background-color: black;
   font-size: 24px;
   margin: auto;
   text-align: center;
-  color: rgb(14, 120, 14);
+  /* color: rgb(30, 14, 120); */
+  color: white;
 }
 
 .f-train-path{
@@ -150,7 +163,7 @@ ul{
 }
 
 ul,a{
-  color: indigo;
+  color: rgb(217, 182, 241);
 }
 
 ul,a,img{
