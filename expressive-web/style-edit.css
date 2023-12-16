@@ -37,7 +37,7 @@ section {
   border: 3px dashed rgb(145, 0, 0);
   color: bisque;
   font-weight: 700;
-  background-color: palegreen;
+  background-color: rgb(251, 210, 152);
 }
 
 /* .route{
@@ -106,15 +106,15 @@ ul{
 }
 
 ul,a{
-  color: chocolate;
-}
-
-ul,a,img{
-  margin: 3px;
+  color: purple;
 }
 
 ul,a:hover{
   color: silver;
+}
+
+ul,a,img{
+  margin: 3px;
 }
 
 .overlay-text {
