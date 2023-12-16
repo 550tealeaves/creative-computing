@@ -250,6 +250,14 @@ ul,a:hover{
   animation: scroll-left 20s linear infinite;
 }
 
+audio{
+  background-color: red;
+  color: aquamarine;
+  width: 80%;
+  height: 60%;
+  z-index: 1;
+}
+
 @keyframes scroll-left {
   from {
     left: 100%;

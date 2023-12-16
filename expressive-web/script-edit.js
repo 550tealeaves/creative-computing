@@ -65,20 +65,44 @@ moveTrain.addEventListener('click', function(){
     moveTrain.style.right= '165%';
 });
 
-//STOP AUDIO FROM PLAYING ON LOAD
-let audio;
 
-function pauseAudio() {
-    if (audio && !audio.paused) {
-        audio.pause();
-        audio.currentTime = 0; //starts sound at the beginning
+//STOP AUDIO FROM PLAYING ON LOAD
+// window.ismuted = true; //doesn't work
+
+
+document.onload = function () {
+    var audios = document.getElementById('embed');
+
+    for (var i = 0; i < audios.length; i++) {
+        audios[i].muted = true;
     }
 }
 
-function playAudio(sound) {
-    pauseAudio(); //pause current audio
-    audio = new Audio(); //saves reference
-    audio.sound = sound;
-    audio.play();
-}
+
+
+// let audio = document.getElementsByTagName('embed');
+// if (ismuted === true) {
+//     audio.muted = false;
+//     ismuted = false;
+// } else {
+//     audio.muted = true;
+//     ismuted = true;
+// }
+
+// function pauseAudio() {
+//     if (audio && !audio.paused) {
+//         audio.pause();
+//         // audio.currentTime = 0; //starts sound at the beginning
+//     }
+// }
+
+// function playAudio(sound) {
+//     pauseAudio(); //pause current audio
+//     audio = new Audio(); //saves reference
+//     audio.sound = sound;
+//     audio.play();
+// }
+
+
+//TRY TO GET THE SCROLLY SECTION AUTOMATICALLY MOVING UP WHEN PAGE LOADS
 

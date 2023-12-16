@@ -11,7 +11,12 @@
 <body>
     <a href="home.html" class="home-link">Home</a>
     <br />
-    <embed src="audio/169th street.mp3" type="audio/mp3" width="130px" height="100px" class="mt-5" />
+    <div>
+        <embed src="audio/169th street.mp3" type="audio/mp3" width="130px" height="100px" class="mt-5" />
+        <!--Audio element would not work just wouldn't show up on the DOM, even tried testing on a blank index.html-->
+        <!-- <audio src="audio/169th street.mp3" type="audio/mp3" autoplay="false" muted="true" width="130px" height="100px"></audio> -->
+    </div>
+    
     <!--Create the starting statement-->
     <h3 class="intro scrolling-text mt-4">
         Click here to start
@@ -43,10 +48,10 @@
                 </ul>
                 <div class="audio">
                        
-                    <embed src="audio/sounds3.mp3" type="audio/mp3" width="130px" height="100px" /> 
+                    <embed src="audio/sounds3.mp3" type="audio/mp3" width="130px" height="100px"/> 
                 </div> 
             </div>
-            <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
+            <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px"/>
             <div class="scroll-step short-stop second" data-size="75">
                 <p class="mt-5 fw-bolder">
                     169th Street
