@@ -8,6 +8,12 @@ body{
   background-position: center;
 }
 
+h2{
+  color: bisque;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
 /*STYLE THE CONTAINER AND TRAIN IMAGE*/
 .graphic {
   position: sticky;
@@ -21,9 +27,9 @@ body{
 
 .ball {
   border-radius: 100%;
-  width: 100px;
-  height: 100px;
-  transition: all 10s ease-in-out;
+  width: 300px;
+  height: 300px;
+  transition: all 5s ease-in;
   margin-left: 90px;
 }
 

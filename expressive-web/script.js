@@ -1,3 +1,4 @@
+//this changes the size of the image as you scroll
 document.addEventListener('DOMContentLoaded', async function () {
     function changeTrainPicSize(width, height) {
         console.log('measures', width, height);
@@ -29,15 +30,55 @@ document.addEventListener('DOMContentLoaded', async function () {
         .onStepExit((response) => {
             //detect if it's the last step
             if (response.index == numberSteps - 1) {
-                changeTrainPicSize(400, 400);
+                changeTrainPicSize(500, 500);
             }
         });
 });
 
+
+//AUTOMATIC SCROLLING BY PRESSING ENTER - https://codepen.io/shrutibalasa/pen/jOWgPmY
+//THIS WORKS WHEN YOU TEST IT A NEW FILE BUT IT'S NOT WORKING HERE
+let scrollerID;
+let paused = true;
+let speed = 1; // 1 - Fast | 2 - Medium | 3 - Slow
+let interval = speed * 8;
+
+function startScroll() {
+    let id = setInterval(function () {
+        window.scrollBy(0, 2);
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            // Reached end of page
+            stopScroll();
+        }
+    }, interval);
+    return id;
+}
+console.log('scroll', interval);
+
+function stopScroll() {
+    clearInterval(scrollerID);
+}
+
+document.body.addEventListener('keypress', function (event) {
+    if (event.which == 13 || event.which == 13) { //NOT SURE WHY "WHICH" ARE STRUCKTHROUGH
+        // It's the 'Enter' key
+        if (paused == true) {
+            scrollerID = startScroll();
+            paused = false;
+        }
+        else {
+            stopScroll();
+            paused = true;
+        }
+    }
+}, true);
+
+
+
 //CHANGE THE TEXT FIRST USING CLICK EVENT
 let changeText = document.querySelector('.intro');
 changeText.addEventListener('click', function () {
-changeText.textContent = "STAND CLEAR THE CLOSING DOORS, PLEASE";
+changeText.textContent = "HOVER OVER THE TRAIN ICON AND THEN SCROLL";
 changeText.style.color = 'red';
 changeText.style.position = 'relative';
 });
@@ -46,9 +87,9 @@ changeText.style.position = 'relative';
 
 //MOVE THE TRAIN ONTO THE TRACK
 let moveTrain = document.querySelector('.ball');
-moveTrain.addEventListener('click', function () {
+moveTrain.addEventListener('mouseover', function () {
     moveTrain.style.position = 'relative';
-    moveTrain.style.right = '25em'; //this seems to help 
+    moveTrain.style.right = '24em'; //this centers train on track 
 });
 
 //This works but the image just floats around and doesn't remain fixed as you scroll - also hard to know what initialX/initialY to set b/c final location changes based on the initial despite keeping moveImage() the same
@@ -215,9 +256,4 @@ $('button').click(function () {
 //muter.reset();
 
 
-
-
-
-
-//TRY TO GET THE SCROLLY SECTION AUTOMATICALLY MOVING UP WHEN PAGE LOADS
 

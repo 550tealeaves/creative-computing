@@ -11,7 +11,7 @@
 <body>
     <a href="home.html" class="home-link">Home</a>
     <br />
-    <button>Pause trip</button>
+    <button class="flex">Pause trip</button>
     <div>
         <embed src="audio/169th street.mp3" type="audio/mp3" width="130px" height="100px" class="mt-5" />
         <!--Audio element would not work just wouldn't show up on the DOM, even tried testing on a blank index.html-->
@@ -19,19 +19,20 @@
     </div>
     
     <!--Create the starting statement-->
-    <h3 class="intro scrolling-text mt-4">
+    <h3 class="intro scrolling-text mt-4 flex">
         Click here to start
     </h3>
+    <h2 class="flex">Press enter to start the ride and enter to pause</h2>
     <!--Add a gif of doors closing-->
-    <!-- <div class="giphy">
+    <div class="giphy">
         <div style="width:70%;height:0%;padding-bottom:50%;position:relative;"><iframe
-                src="https://giphy.com/embed/1Y6eCw6i8oDxzQENDM" width="70%" height="100%" style="position:absolute"
+                src="https://giphy.com/embed/1Y6eCw6i8oDxzQENDM" width="40%" height="100%" style="position:absolute"
                 frameBorder="0" class="giphy-embed"></iframe></div>
-    </div> -->
+    </div>
     <!--Add all the stations, links and images-->
     <div id="scrolly">
-        <section class="text-holder"> 
-            <div class="scroll-step short-stop first mt-5" data-size="75">
+        <section class="text-holder flex"> 
+            <div class="scroll-step short-stop first mt-5 flex" data-size="100">
                 <p class="mt-3 fw-bolder">
                     179th Street
                 </p>
@@ -50,7 +51,7 @@
                 </div> 
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px"/>
-            <div class="scroll-step short-stop second" data-size="75">
+            <div class="scroll-step short-stop second flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                     169th Street
                 </p>
@@ -68,7 +69,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step short-stop third" data-size="75">
+            <div class="scroll-step short-stop third flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                 Parsons Blvd
                 </p>
@@ -85,7 +86,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step med-stop fourth" data-size="75">
+            <div class="scroll-step med-stop fourth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                 Sutphin Blvd
                 </p>
@@ -103,7 +104,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step short-stop fifth" data-size="75">
+            <div class="scroll-step short-stop fifth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                 Briarwood-Van Wyck Blvd
                 </p>
@@ -121,7 +122,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step short-stop sixth" data-size="75">
+            <div class="scroll-step short-stop sixth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                 Kew Gardens-Union Tpke
                 </p>
@@ -139,7 +140,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step short-stop seventh" data-size="75">
+            <div class="scroll-step short-stop seventh flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                     75th Avenue
                 </p>
@@ -153,7 +154,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step long-stop eighth" data-size="75">
+            <div class="scroll-step long-stop eighth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                 71st Ave-Forest Hills
                 </p>
@@ -174,7 +175,7 @@
                 </div> 
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step longest-stop ninth" data-size="75">
+            <div class="scroll-step longest-stop ninth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                     Jackson Heights-Roosevelt Ave
                 </p>
@@ -193,7 +194,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step med-stop tenth" data-size="75">
+            <div class="scroll-step med-stop tenth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                     21st Street-Queensbridge
                 </p>
@@ -214,7 +215,7 @@
                 </div> 
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step med-stop eleventh" data-size="75">
+            <div class="scroll-step med-stop eleventh flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                 Roosevelt Island
                 </p>
@@ -235,7 +236,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step med-stop twelfth" data-size="75">
+            <div class="scroll-step med-stop twelfth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                 Lexington Ave-63rd Street
                 </p>
@@ -256,7 +257,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step short-stop thirteenth" data-size="75">
+            <div class="scroll-step short-stop thirteenth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                 57th Street
                 </p>
@@ -277,7 +278,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step short-stop fourteenth" data-size="75">
+            <div class="scroll-step short-stop fourteenth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                     47-50th Street-Rockefeller Center
                 </p>
@@ -298,7 +299,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step short-stop fifteenth" data-size="75">
+            <div class="scroll-step short-stop fifteenth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                     42nd Street-Bryant Park
                 </p>
@@ -319,7 +320,7 @@
                 </div>
             </div>
             <embed src="audio/sounds.mp3" type="audio/mp3" width="130px" height="100px" />
-            <div class="scroll-step sixteenth" data-size="75">
+            <div class="scroll-step sixteenth flex" data-size="100">
                 <p class="mt-5 fw-bolder">
                     34th Street-Herald Square
                 </p>
