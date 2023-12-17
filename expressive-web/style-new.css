@@ -1,0 +1,341 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(22, 20, 20);
+  background-image: url(images/train-tracks.svg);
+  background-repeat: repeat-y;
+  /*will repeat image vertically*/
+  background-size: 30%;
+  background-position: center;
+}
+
+h2{
+  color: bisque;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+/*STYLE THE CONTAINER AND TRAIN IMAGE*/
+.graphic {
+  position: sticky;
+  top: 20%;
+  left: 70%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.ball {
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  transition: all 5s ease-in;
+  margin-left: 90px;
+}
+
+img-edit{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*STYLE THE SECTION AND SCROLLY*/
+section {
+  flex-basis: 50%;
+}
+
+.text-holder{
+  color: white;
+}
+
+#scrolly {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  position: relative;
+}
+
+
+/*STYLE THE STATIONS*/
+.scroll-step {
+  height: 600px;
+  width: 360px;
+  border: none;
+  color: bisque;
+  font-weight: 700;
+  
+}
+
+/*Use linear gradient to style station (rgb(a,b,c) x% y% - x% = where color starts on page, y% = where it terminates.*/
+
+/*Platforms with only a local track*/
+.second,.fourth,.fifth,.seventh,.tenth,.eleventh{
+  background: linear-gradient(to right,
+        rgb(96, 95, 95) 20% 75%,
+        rgb(224, 122, 53) 75% 85%,
+        rgb(96, 95, 95) 85% 95%,
+        rgb(229, 194, 20) 95%);
+}
+
+/*Platforms that have express/local track*/
+.first,.sixth,.ninth{
+  background: linear-gradient(to right,
+        rgb(218, 166, 45) 0% 10%,
+        rgb(117, 105, 79) 10% 90%,
+        rgb(218, 166, 45) 90%);
+}
+
+.third{
+  background: linear-gradient(to right,
+        rgb(229, 194, 20) 0% 5%,
+        rgb(96, 95, 95) 5% 15%,
+        rgb(224, 122, 53) 15% 25%,
+        rgb(96, 95, 95) 25% 75%,
+        rgb(224, 122, 53) 75% 85%,
+        rgb(96, 95, 95) 85% 95%,
+        rgb(229, 194, 20) 95%);
+}
+
+
+
+.eighth{
+  background: linear-gradient(to right,
+        rgb(218, 166, 45) 0% 7%,
+        rgb(224, 122, 53) 7% 10%,
+        rgb(117, 105, 79) 10% 90%,
+        rgb(224, 122, 53) 90%, 93%,
+        rgb(218, 166, 45) 93%);
+}
+
+.twelfth,.thirteenth{
+  background: linear-gradient(to right,
+        rgb(218, 166, 45) 0% 10%,
+        rgb(150, 138, 132) 10% 90%,
+        rgb(218, 166, 45) 90%);
+}
+
+.fourteenth{
+  background: linear-gradient(to right,
+        rgb(218, 166, 45) 0% 10%,
+        rgb(51, 40, 33) 10% 90%,
+        rgb(218, 166, 45) 90%);
+}
+
+.fifteenth{
+  background: linear-gradient(to right,
+        rgb(218, 166, 45) 0% 10%,
+        rgb(56, 45, 37) 10% 20%,
+        rgb(126, 113, 94) 20% 80%,
+        rgb(56, 45, 37) 80%, 90%,
+        rgb(218, 166, 45) 90%);
+}
+
+.sixteenth{
+  background: linear-gradient(to right,
+    rgb(218, 166, 45) 0% 10%,
+    rgb(101, 84, 72) 10% 15%,
+    rgb(96, 96, 108) 15% 30%,
+    rgb(173, 101, 90) 30% 70%,
+    rgb(96, 96, 108) 70%, 85%,
+    rgb(101, 84, 72) 85% 90%,
+    rgb(218, 166, 45) 90%);
+}
+
+
+/*STYLE STATION NAMES*/
+p{
+  border: 2px solid black;
+  background-color: black;
+  font-size: 24px;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+/*STYLE HOME LINK*/
+.home-link{
+    color: orange;
+    font-size: 12px;
+    left: 4px;
+    position: sticky;
+    z-index: 1; /*This will bring the element forward and place it on top of another element provided the two are on the same level (non-nested)*/
+}
+
+.home-link:hover{
+    color: silver;
+}
+
+.stations{
+    text-align: center;
+}
+
+
+/*STYLE THE STATION CONTAINER, SIGHT IMAGES, AND LINKS*/
+.sights{
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 18px;
+    align-items: center;
+}
+
+
+ul{
+  list-style: none;
+  text-align: center;
+}
+
+ul,a{
+  color: rgb(108, 247, 163);
+}
+
+ul,a,img{
+  margin: 3px;
+}
+
+ul,a:hover{
+  color: rgb(134, 51, 189);
+}
+
+
+/*SPACE OUT STATIONS*/
+.short-stop{
+    margin-bottom: 130%;
+}
+
+.med-stop{
+  margin-bottom: 200%;
+}
+
+.long-stop{
+  margin-bottom: 350%;
+}
+
+.longest-stop{
+  margin-bottom: 600%;
+}
+
+.overlay-text {
+  display: flex;
+    flex-direction: row;
+    height: auto;
+    position: relative;
+  top: 20%;
+  left: 0%;
+  transform: translate(5%, -10%);
+  animation-duration: 10s;
+  animation-name: slidein;
+}
+
+/*STYLE SCROLLY ELEMENTS*/
+.intro{
+  color: bisque;
+  animation: 2s linear 5s infinite alternate slidein;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.intro.visible{
+  opacity: 1;
+}
+
+.intro,
+.end {
+  height: 200px;
+}
+
+.end {
+  margin-top: 200px;
+  color: bisque;
+  font-size: 20px;
+  text-align: center;
+  text-wrap: wrap;
+  animation-name: fadeInOut, moveLeft300px, bounce;
+    animation-duration: 5.5s, 5s, 1s;
+    animation-iteration-count: 2, 1, 5;
+    animation-delay: 3s;
+  
+}
+
+
+.scrolling-text {
+  position: relative;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+
+button{
+  color: blueviolet;
+  font-weight: 700;
+  background: linear-gradient(rgb(255, 94, 0) 40%,
+    yellow 30%,
+    rgb(176, 176, 199) 65%);
+  margin: 30px auto;
+  border: 2px solid rgb(234, 241, 21);
+  border-radius: 10%;
+}
+
+
+
+@keyframes scroll-left {
+  from {
+    left: 100%;
+    width: 500%;
+  }
+
+  to {
+    left: -100%;
+    width: 500%;
+  }
+}
+
+
+
+@keyframes fadeInOut{
+  from {
+      left: 100%;
+      width: 500%;
+    }
+  
+    to {
+      left: -100%;
+      width: 500%;
+    }
+}  
+
+
+/*/
+/* @keyframes slidein {
+  from {
+    top: 10%; div container starts from 10% at top of page */
+    /* left: 50%; div moves to the left to the middle of the screen */
+   /* margin-right: 25%; /*moves the div to the left [ use 50% to move to middle of the screen]*/
+ /* } */
+/*
+  to {
+    bottom: 50%; /*div moves to the bottom of the screen*/
+  /* }
+} */
+/* **/ 
+
+
+
+@media (max-width: 1200px) {
+  img {
+      max-width: 100%;
+      max-height: 100%;
+  }
+
+  p {
+      font-size: 16px;
+  }
+
+  ul,
+  li {
+      font-size: 10px;
+  }
+
+  a{
+      font-size: 18px;
+  }
+}
