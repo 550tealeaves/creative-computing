@@ -34,6 +34,52 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
 });
 
+//CHANGE THE TEXT FIRST USING CLICK EVENT
+let changeText = document.querySelector('.intro');
+changeText.addEventListener('click', function () {
+changeText.textContent = "STAND CLEAR THE CLOSING DOORS, PLEASE";
+changeText.style.color = 'red';
+changeText.style.position = 'relative';
+});
+
+
+
+//MOVE THE TRAIN ONTO THE TRACK
+let moveTrain = document.querySelector('.ball');
+moveTrain.addEventListener('click', function () {
+    moveTrain.style.position = 'relative';
+    moveTrain.style.right = '25em'; //this seems to help 
+});
+
+//This works but the image just floats around and doesn't remain fixed as you scroll - also hard to know what initialX/initialY to set b/c final location changes based on the initial despite keeping moveImage() the same
+// var image = document.getElementById('movingImage');
+
+// // Set initial position
+// //initialX = 20 & initial y = 10 puts the image at the bottom
+// var initialX = -5;
+// var initialY = -10;
+
+// // Set the interval for animation
+// var interval = setInterval(moveImage, 3); //lower the #, slower it moves
+
+// function moveImage() {
+//     // Update position
+//     initialX += 8; // Change this value to control horizontal movement
+//     initialY += 7; // Change this value to control vertical movement
+
+//     // Apply new position
+//     image.style.left = initialX + 'px';
+//     image.style.bottom = initialY + 'px';
+
+//     //Optional: Stop the animation after a certain condition (e.g., reached a specific position)
+//     //initialX>=625 puts it at the center track
+//     if (initialX >= 625) {
+//         clearInterval(interval);
+//     }
+// }
+
+
+
 //CHANGE THE STARTING STATEMENT WITH CLICK AND THEN USE scrollLeft FUNCTION TO MOVE IT ACROSS THE SCREEN
 // let changeText = document.querySelector('.intro');
 // changeText.addEventListener('click', function(scrollLeft){
@@ -47,64 +93,47 @@ document.addEventListener('DOMContentLoaded', async function () {
 // scrollLeft();
 
 
-//ALTERNATIVE WAY TO WRITE//
 
-//CHANGE THE TEXT FIRST USING CLICK EVENT
-let changeText = document.querySelector('.intro');
-changeText.addEventListener('click', function () {
-changeText.textContent = "STAND CLEAR THE CLOSING DOORS, PLEASE";
-changeText.style.color = 'red';
-changeText.style.position = 'relative';
-});
+// //Used this https://stackoverflow.com/questions/51254897/javascript-move-image-across-page-on-click-and-reset-image-to-original-location
+// var moveTrain = null;
+// var animate;
 
-//MOVE THE TRAIN ONTO THE TRACK
-// let moveTrain = document.querySelector('.ball');
-// moveTrain.addEventListener('click', function(){
-//     // moveTrain.style.transform = 'rotate(20deg)';
+// function init() {
+//     moveTrain = document.getElementById('ball');
 //     moveTrain.style.position = 'relative';
-//     moveTrain.style.right= '165%';
-// });
-
-//Used this https://stackoverflow.com/questions/51254897/javascript-move-image-across-page-on-click-and-reset-image-to-original-location
-var moveTrain = null;
-var animate;
-
-function init() {
-    moveTrain = document.getElementById('ball');
-    moveTrain.style.position = 'relative';
-    moveTrain.style.top = '400px';
-}
+//     moveTrain.style.top = '400px';
+// }
 
 
-shiftTrain = moveTrain;
-shiftTrain.addEventListener('click', function (){
-    function moveTop(target) {
-        moveTrain.style.top = parseInt(moveTrain.style.top) - 10 + 'px';
-    if (parseInt(moveTrain.style.top) < target) {
-        moveTrain.style.top = target + 'px';
-    }
+// shiftTrain = moveTrain;
+// shiftTrain.addEventListener('click', function (){
+//     function moveTop(target) {
+//         moveTrain.style.top = parseInt(moveTrain.style.top) - 10 + 'px';
+//     if (parseInt(moveTrain.style.top) < target) {
+//         moveTrain.style.top = target + 'px';
+//     }
 
-    if (parseInt(moveTrain.style.top) - 10 > target) {
-        animate = setTimeout(function () { moveTop(target); }, 20);
-    }
-    else {
-        //add the wait here, currently 5 seconds
-        animate = setTimeout(function () { moveBack(400); }, 5000);
-    }
-    }
+//     if (parseInt(moveTrain.style.top) - 10 > target) {
+//         animate = setTimeout(function () { moveTop(target); }, 20);
+//     }
+//     else {
+//         //add the wait here, currently 5 seconds
+//         animate = setTimeout(function () { moveBack(400); }, 5000);
+//     }
+//     }
 
-    function moveBack(target) {
-        moveTrain.style.top = parseInt(moveTrain.style.top) + 10 + 'px';
-    if (parseInt(moveTrain.style.top) > target) {
-        moveTrain.style.top = target + 'px';
-    }
+//     function moveBack(target) {
+//         moveTrain.style.top = parseInt(moveTrain.style.top) + 10 + 'px';
+//     if (parseInt(moveTrain.style.top) > target) {
+//         moveTrain.style.top = target + 'px';
+//     }
 
-    if (parseInt(moveTrain.style.top) + 10 < target) {
-        animate = setTimeout(function () { moveBack(400); }, 20);
-    }
-    }
+//     if (parseInt(moveTrain.style.top) + 10 < target) {
+//         animate = setTimeout(function () { moveBack(400); }, 20);
+//     }
+//     }
 
-})
+// })
 
 
 
@@ -113,7 +142,7 @@ shiftTrain.addEventListener('click', function (){
 //imgObj.style.top = '0px'; 
 //}
 
-window.onload = init;
+// window.onload = init;
 
 
 
@@ -163,6 +192,8 @@ window.onload = init;
 // }
 
 
+
+//NOT SURE IF ATTEMPT #4 WORKS BUT IT DOESN'T SHOW ERRORS
 var sound = true;
 
 function muter() {

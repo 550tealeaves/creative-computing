@@ -13,11 +13,10 @@ body{
   position: sticky;
   top: 20%;
   left: 70%;
-  /* background: none; not working */
   height: 300px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
 .ball {
@@ -26,14 +25,13 @@ body{
   height: 100px;
   transition: all 10s ease-in-out;
   margin-left: 90px;
-  /* mix-blend-mode: multiply; */
 }
 
-.img-edit {
+img-edit{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
 }
+
 
 /*STYLE THE SECTION AND SCROLLY*/
 section {
@@ -54,7 +52,7 @@ section {
 
 /*STYLE THE STATIONS*/
 .scroll-step {
-  height: 500px;
+  height: 600px;
   width: 360px;
   border: none;
   color: bisque;
