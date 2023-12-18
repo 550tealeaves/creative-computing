@@ -42,11 +42,21 @@ body {
     margin: 15px;
 }
 
-/*Must set width/height to 0 and adust border bottom, left, & r to create triangle*/
+/*Must set width/height to 0 and adust border bottom, left, & r (transparent) to create triangle*/
 .triangle{
     width: 0;
     height: 0;
     border-bottom: 150px solid rgb(9, 42, 250);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    margin: 15px;
+}
+
+/*set w/h = 0, border-top has to be biggest & border-left/right should be transparent*/
+.triangle-up{
+    width: 0;
+    height: 0;
+    border-top: 150px solid pink;
     border-left: 75px solid transparent;
     border-right: 75px solid transparent;
     margin: 15px;
