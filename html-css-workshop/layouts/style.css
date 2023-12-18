@@ -23,7 +23,7 @@ body {
 
 /*need width and height to create a square*/
 .square {
-    background: rgb(175, 180, 8);
+    background: rgb(253, 255, 191);
     width: 150px;
     height: 150px;
     margin: 15px;
@@ -36,10 +36,19 @@ body {
 /*Need width, height, and border-radius to create a circle*/
 .circle{
     background-color: greenyellow;
-    width: 120px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 80%; /*circle requires radius*/
     margin: 15px;
 }
 
+/*Must set width/height to 0 and adust border bottom, left, & r to create triangle*/
+.triangle{
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid rgb(9, 42, 250);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    margin: 15px;
+}
 
