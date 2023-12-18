@@ -13,16 +13,17 @@ body {
 }
 
 .outer-cont {
-    background: lightgray;
-    border: 1px solid black;
+    background: rgb(233, 101, 101);
+    border: 3px dashed black;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
+/*need width and height to create a square*/
 .square {
-    background: black;
+    background: rgb(175, 180, 8);
     width: 150px;
     height: 150px;
     margin: 15px;
@@ -31,4 +32,14 @@ body {
 .inner.cont{
     border: 2px solid cornflowerblue;
 }
+
+/*Need width, height, and border-radius to create a circle*/
+.circle{
+    background-color: greenyellow;
+    width: 120px;
+    height: 140px;
+    border-radius: 80%; /*circle requires radius*/
+    margin: 15px;
+}
+
 

@@ -9,13 +9,13 @@ body {
 }
 
 .cont {
-    width: 50%;
-    height: 50%;
+    width: 50%; /*50% of width of screen for outer & 1/2 that for inner*/
+    height: 50%; /*50% of height of screen & 1/2 that for inner*/
 }
 
 .outer {
     background: darkgray;
-    height: 300px auto;
+    height: 300px auto; /*doesn't look like this is applied - height is 50%*/
 }
 
 .inner {
