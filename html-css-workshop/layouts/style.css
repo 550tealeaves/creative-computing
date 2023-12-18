@@ -21,9 +21,9 @@ body {
     justify-content: space-between;
 }
 
-/*need width and height to create a square*/
+/*need equal width and height to create a square*/
 .square {
-    background: rgb(253, 255, 191);
+    background: rgb(250, 254, 137);
     width: 150px;
     height: 150px;
     margin: 15px;
@@ -52,3 +52,10 @@ body {
     margin: 15px;
 }
 
+/*Must have diff width/height*/
+.rectangle{
+    background-color: indigo;
+    width: 50px;
+    height: 150px;
+    margin: 15px;
+}
