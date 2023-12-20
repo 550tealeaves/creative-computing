@@ -29,6 +29,15 @@ body {
     margin: 15px;
 }
 
+/*add rotate to turn square around*/
+.diamond{
+    background: rgb(119, 46, 180);
+    width: 100px;
+    height: 100px;
+    margin: 35px;
+    rotate: 45deg;
+}
+
 .inner.cont{
     border: 2px solid cornflowerblue;
 }
