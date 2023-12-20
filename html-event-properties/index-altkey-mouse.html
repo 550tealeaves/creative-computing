@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltKey Property</title>
+</head>
+<body onmousedown="isKeyPressed(event)" style="border:1px solid black;padding:8px">  <!--need the onmousedown attribute for event to work-->
+    <h1>Mouse Events</h1>
+    <h2>The altKey Property</h2>
+    
+    <p>Click in this document.</p>
+    <p>Click in this document when you hold down the Alt key.</p>
+    <p id="demo"></p>
+    
+
+
+    <script>
+    //The altKey property returns true if the ALT key is pressed when a mouse event occurs. Otherwise it returns false.
+    function isKeyPressed(event) { 
+      let text = "";  //set text to blank
+      //add if statement and store the responses in variable "text"
+      if (event.altKey) {
+        text = "The Alt key was pressed!";
+      } else {
+        text = "The Alt key was NOT pressed!";
+      }
+      document.getElementById("demo").innerHTML = text; //show the contents from "text" variable on HTML w/in the element w/ ID demo
+    }
+    </script>
+    
+</body>
+</html>

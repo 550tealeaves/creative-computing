@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>altKey Property</title>
+</head>
+<body>
+    <h1>Keyboard Events</h1>
+<h2>The altKey Property</h2>
+
+<p>Press a key on the keyboard in the input field to find out if the ALT key was pressed.</p>
+
+<input type="text" onkeydown="isKeyPressed(event)"> <!--Must have the onkeydown attribute for event to work-->
+
+<p id="demo"></p>
+
+<script>
+  //The altKey property returns true if the ALT key is pressed when a keyboard event occurs. Otherwise it returns false.
+    function isKeyPressed(event) {
+  const x = document.getElementById("demo"); //select element w/ ID demo
+  //create if statement - if event.keyboardevent {show message on HTML else show another message on HTML}
+  if (event.altKey) {
+    x.innerHTML = "The ALT key was pressed!";
+  } else {
+    x.innerHTML = "The ALT key was NOT pressed!";
+  }
+}
+</script>
+</body>
+</html>
