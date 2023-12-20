@@ -42,6 +42,8 @@ body {
     margin: 15px;
 }
 
+/*When creating triangles, you are technically creating squares but making one side (border) transparent instead of solid*/
+
 /*Must set width/height to 0 and adust border bottom, left, & r (transparent) to create triangle*/
 .triangle-down{
     width: 0;
