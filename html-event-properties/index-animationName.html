@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Name </title>
+    <style>
+        p{
+            font-size: 25px;
+        }
+
+        span{
+            font-weight: 900;
+            color: darkred;
+        }
+
+        #myDIV {
+        width: 100%;
+        height: 50px;
+        padding: 16px;
+        background: orange;
+        position: relative;
+        font-size: 22px;
+        text-align: center;
+        animation: mymove 5s infinite; /*ANIMATION NAME + duration*/
+        }
+
+        /*must add keyframes to define animation "move"*/
+        /*Will start from 0 pt (start of div and go down 200px*/
+        @keyframes mymove { 
+        from {top: 0px;}
+        to {top: 200px;}
+        }
+    </style>
+</head>
+<body>
+    <!--The animationName property returns the name of the animation, when an animation event occurs.-->
+    <h1>Animation Events</h1>
+    <h2>The animationName Property</h2>
+    
+    <p>This example uses the addEventListener() method to attach an "animationstart" event to a DIV element.</p>
+    <p>The animationName property <span>returns the animation name used in this animation</span> :</p>
+    
+    <div id="myDIV"></div>
+
+    <script>
+        const div = document.getElementById("myDIV"); //select element w/ ID myDiv
+        div.addEventListener("animationstart", myStartFunction); //add eventListener + function
+
+        function myStartFunction(event) {
+            this.innerHTML = "The animation-name is: " + event.animationName;
+        } //this function will display the name of the animation - which is listed in the CSS portion - mymove
+    </script>
+</body>
+</html>   
