@@ -42,6 +42,7 @@
     <p>The animationName property <span>returns the animation name used in this animation</span> :</p>
     
     <div id="myDIV"></div>
+    <div id="demo"></div>
 
     <script>
         const div = document.getElementById("myDIV"); //select element w/ ID myDiv
@@ -50,6 +51,10 @@
         function myStartFunction(event) {
             this.innerHTML = "The animation-name is: " + event.animationName;
         } //this function will display the name of the animation - which is listed in the CSS portion - mymove
+
+        let x = 5;
+        let y = 10;
+        document.getElementById("demo").innerHTML = x+y; //will show the sum results on the HTML instead of doing console log
     </script>
 </body>
 </html>   
