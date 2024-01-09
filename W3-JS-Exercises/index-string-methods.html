@@ -13,6 +13,16 @@
             color: rgb(157, 236, 39);
             font-style: italic;
         }
+
+        h3{
+            color: darkmagenta;
+            text-decoration: underline;
+        }
+
+        h4{
+            color: olivedrab;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -21,10 +31,103 @@
     <br>
     <div id="lower"></div>
     <br>
-    <div id="slice"></div>
-    <br>
     <div id="before"></div>
     <div id="string"></div>
+    <br>
+    <div id="orig"></div>
+    <br>
+    <div id="replace-orig"></div>
+    <br>
+    <br>
+    <div id="replace-global-orig"></div>
+    <br>
+    <div id="replace-global-final"></div>
+    <br>
+    <br>
+    <div id="replace-all-orig"></div>
+    <br>
+    <div id="replace-all-final"></div>
+    <br>
+    <br>
+    <div id="replace-all-orig2"></div>
+    <br>
+    <div id="replace-all-final2"></div>
+    <br>
+    <br>
+    <h3>Extracting String Characters</h3>
+    <div id="character"></div>
+    <br>
+    <div id="char-code"></div>
+    <br>
+    <div id="at"></div>
+    <br>
+    <div id="at-two"></div>
+    <br>
+    <br>
+    <h3>Extracting String Parts</h3>
+    <h4>Original string - Apple, Banana, Kiwi!</h4>
+    <div id="slice"></div>
+    <br>
+    <br>
+    <div id="slice-one"></div>
+    <br>
+    <div id="slice-neg"></div>
+    <br>
+    <br>
+    <div id="slice-two"></div>
+    <br>
+    <br>
+    <div id="substring"></div>
+    <br>
+    <div id="substring-two"></div>
+    <br>
+    <br>
+    <div id="substr"></div>
+    <br>
+    <div id="substr-two"></div>
+    <br>
+    <br>
+    <br>
+    <h3>Trim whitespace</h3>
+    <div id="trim"></div>
+    <br>
+    <div id="trim-start"></div>
+    <br>
+    <div id="trim-end"></div>
+    <br>
+    <br>
+    <h3>String Padding</h3>
+    <div id="pad-start"></div>
+    <br>
+    <div id="pad-two"></div>
+    <br>
+    <div id="pad-num"></div>
+    <br>
+    <div id="pad-end"></div>
+    <br>
+    <div id="pad-three"></div>
+    <br>
+    <div id="pad-four"></div>
+    <br>
+    <br>
+    <div id="repeat"></div>
+    <br>
+    <br>
+    <h3>Splits</h3>
+    <div id="split"></div>
+    <br>
+    <div id="split-one"></div>
+    <br>
+    <br>
+    <div id="split-orig"></div>
+    <br>
+    <div id="split-two"></div>
+    <br>
+    <br>
+    <div id="split-orig-two"></div>
+    <br>
+    <div id="split-three"></div>
+
 
     <script>
         //UPPERCASE - .toUpperCase() will capitalize entire string
@@ -37,16 +140,171 @@
         feel = feel.toLowerCase();
         document.getElementById("lower").innerHTML = (feel); //the man exclaimed, you have no balls!
 
-        //SLICE - .slice() method - use slice to return "bananas"
-        let txt = "I refuse to eat bananas any day";
-        let x = txt.slice(16, 23); //characters 16-23 (INCLUDES spaces)
-        document.getElementById("slice").innerHTML = (x); //returns bananas
-
-        //REPLACE - .replace() method - replaces word "buying" with "eating"
+        //REPLACE - .replace() method - replaces 1st match replaces word "buying" with "eating"
         let newTxt = "I love buying cheese.";
         document.getElementById("before").innerHTML = (newTxt); //I love buying cheese
         newTxt = newTxt.replace("buying", "eating");
         document.getElementById("string").innerHTML = (newTxt); //I love eating cheese 
+
+        //replace() method is case sensitive - to ignore that - use regular expression w/ an /i flag for insensitive
+        //regular expression DO NOT use quotes
+        let newTextTwo = "Please visit MicRoSoft to learn more about JS";
+        document.getElementById("orig").innerHTML = (newTextTwo + " --- orig string that will be replaced w/ insensitive match");
+        let newTextThree = newTextTwo.replace(/MICROSOFT/i, "W3Schools"); //will search for THE FIRST MATCH of Microsoft, regardless of case spelling
+        document.getElementById("replace-orig").innerHTML = (newTextThree + " --- used regular expression w/ /i flag - /MICROSOFT/i so it would replace the word regardless of case"); 
+
+        //To replace ALL matches, ues regular express w/ /g flag (global match)
+        let replaceText = "Please visit Microsoft and Microsoft!";
+        document.getElementById("replace-global-orig").innerHTML = (replaceText + " --- this is orig text that will be replaced using global match");
+        let global = replaceText.replace(/Microsoft/g, "W3Schools"); //use global match to replace ALL case spelling of Microsoft
+        document.getElementById("replace-global-final").innerHTML = (global + " --- used global match to find all matches");
+
+
+        //REPLACEALL() method - lets you replace all instances of the string (case sensitive)
+        let newTextFour = "How much wood could a wood chuck chuck if a woodchuck could chuck wood?";
+        document.getElementById("replace-all-orig").innerHTML = (newTextFour + " --- orig string where all 'wood' will be replaced");
+        let replaceThis = newTextFour.replaceAll("wood", "WooD");
+        document.getElementById("replace-all-final").innerHTML = (replaceThis); //How much WooD could a WooD chuck chuck if a WooDchuck could chuck WooD?
+
+        let newTextFive = "How much wood could a wood CHuck chuCK if a woodchuck could Chuck wood?"
+        document.getElementById("replace-all-orig2").innerHTML = (newTextFive + " --- orig string where all 'chuck' will be replaced using global replaceAll()");
+        let replaceAllThis = newTextFour.replaceAll(/chuck/g, "CHucK");
+        document.getElementById("replace-all-final2").innerHTML = (replaceAllThis); //How much wood could a wood CHucK CHucK if a woodCHucK could CHucK wood?
+
+
+        //EXTRACTING STRING CHARACTERS - 3 methods -charAt(), charCodeAt(), name.at()
+        //CHARAT() - returns character at a specified index (position) in string
+        let text = "Welcome Globe"
+        let char = text.charAt(8);
+        document.getElementById("character").innerHTML = (char + " -- is the character that has index of 8"); //shows 8th character (includes space) - G
+
+        //CHARCODEAT() method returns code of character at specified index in string - returns a UTF-16 code (int b/w 0-65535)
+        let charText = "HELLO WORLD";
+        let code = text.charCodeAt(6); //101
+        document.getElementById("char-code").innerHTML = (code + " --- this is the UTF-16 code"); //returns 101
+
+        //AT() method - returns character at specified index (position) - allows use of negative indexes, unlike charAt()
+        let name = "W3Schools";
+        let letter = name.at(2); //returns 3rd letter - S
+        document.getElementById("at").innerHTML = (letter + " -- is the 3rd letter (index 2) in W3Schools");
+        //Alternative
+        let nameTwo = "W3Schools";
+        let letterTwo = name[5]; //returns o
+        document.getElementById("at-two").innerHTML = (letterTwo + " -- is the 6th letter (index 5) in W3Schools");
+
+        //EXTRACTING STRING PARTS - 3 methods - .splice(), .substring(), .substr()
+        //SLICE - returns extracted part as new string - 2 parameters (start, end)
+        //.slice() method - use slice to return "bananas"
+        let txt = "I refuse to eat bananas any day";
+        let x = txt.slice(16, 23); //characters 16-23 (INCLUDES spaces)
+        document.getElementById("slice").innerHTML = (x + " -- was spliced from the sentence \"I refuse to eat bananas any day\""); //returns bananas
+
+        //don't have to use 2 parameters - method will slice out rest of string
+        let textSlice = "Apple, Banana, Kiwi!";
+        let part = textSlice.slice(9); //extracts 9th index (10th position) and up (removes 0-8 indexes)
+        document.getElementById("slice-one").innerHTML = (part + " -- is extracted from \"Apple, Banana, Kiwi!\" It's the 9th index position and up"); //nana, Kiwi!
+
+        //slice can take negative parameters and position is counted from end of string
+        let textNeg = "Apple, Banana, Kiwi!";
+        let partNeg = textNeg.slice(-15); //extracts from 15th index (16th pos) start counting from end
+        document.getElementById("slice-neg").innerHTML = (partNeg + " -- is extracted from \"Apple, Banana, Kiwi!\" It starts counting indexes from end of string"); // returns , Banana, Kiwi!
+
+        //slice can have two negative parameters
+        let textTwo = "Apple, Banana, Kiwi!";
+        let partTwo = textTwo.slice(-12, -6); //goes from 6th to 12th indexes starting from end
+        document.getElementById("slice-two").innerHTML = (partTwo + " -- goes from the 6th to 12th indexes starting from end"); //returns anana, + space after comma
+
+        //SUBSTRING() - sim to slice() but start/end values < 0 are treated as 0
+        let str = "Apple, Banana, Kiwi!";
+        let partString = str.substring(1, 4); //returns ppl (starts at 1st index and then stops at 4th - excludes the 4th - only returns 1,2,3)
+        document.getElementById("substring").innerHTML = (partString + " -- returns substring w/ indexes 1,2,3 (excludes 4th)"); //ppl
+
+        //if you omit 2nd parameter, substring() slices out the rest of the string
+        let strSub = "Apple, Banana, Kiwi!";
+        let partStringSub = strSub.substring(4); //starts at 4th index (e) & returns the rest
+        document.getElementById("substring-two").innerHTML = (partStringSub + " -- is the substring returned when you omit the 2nd parameter"); // e, Banana, Kiwi! 
+
+        //SUBSTR() method - starts at 1st parameter & 2nd parameter tells the length of the extracted part
+        let strSubstr = "Apple, Banana, Kiwi!";
+        let partSubstr = str.substr(10, 6); //starts at 10th index (a) and extends 6 characters - returns ana, K
+        document.getElementById("substr").innerHTML = (partSubstr + " --- starts at 10th index (a) and extends 6 characters"); //returns ana, K
+
+        //if you omit 2nd parameter, substr() slices out the rest of the string
+        let strThree = "Apple, Banana, Kiwi!";
+        let partThree = strThree.substr(3); //returns everything starting at 3rd index (l)
+        document.getElementById("substr-two").innerHTML = (partThree + " --- substr() method that returns everything after 3rd index"); //le, Banana, Kiwi!
+
+        //TRIMMING WHITESPACE
+        //TRIM() method - removes whitespace from both sides of string
+        let text1 = "     Portugal would be a great place to visit in summer     ";
+        let text2 = text1.trim();
+        document.getElementById("trim").innerHTML = (text2); 
+
+        //TRIMSTART() method removes whitespace from start of string 
+        let textTrim =  "     Portugal would be a great place to visit in summer     ";     
+        let textTwoTrim = textTrim.trimStart();
+        document.getElementById("trim-start").innerHTML = (textTwoTrim + " --- trimStart() only removes whitespace at start of string");  //doesn't really show it well on HTML
+
+        //TRIMEND() method removes whitespace from end of string
+        let textEnd = "     Portugal would be a great place to visit in summer         ";
+        let textEndTwo = textEnd.trimEnd();
+        document.getElementById("trim-end").innerHTML = (textEndTwo); //doesn't show well on HTML
+        
+
+        //STRING PADDING
+        //PADSTART() method - pads string from start w/ another string until given length reached
+        let textThree = "5";
+        let padded = textThree.padStart(4, "0"); //pads string w/ 0 until reaches length 4 - string has to be 4 characters long - add 3 0s at START of string
+        document.getElementById('pad-start').innerHTML = (padded + " --- from padStart() that pads string from start w/ another string until given length reached"); //0005
+
+        let textFour = "7";
+        let paddedOne = textFour.padStart(10, "a"); //string is 10 characters long - add 9 a's at start, then 7
+        document.getElementById("pad-two").innerHTML = (paddedOne + " --- uses padStart() to create string that's 10 characters long"); //aaaaaaaaa7
+
+        //PADStart() with numbers - must convert number to string first
+        let numb = 14;
+        let textFive = numb.toString(); //converts 14 to "14"
+        let paddedTwo = textFive.padStart(23, "Umi"); //will repeat Umi for 21 characters - and then add "14" as last 2 - 21+2 = 23
+        document.getElementById("pad-num").innerHTML = (paddedTwo + " --- had to convert integer to string first and then use padStart()"); //UmiUmiUmiUmiUmiUmiUmi14
+
+        //PADEND() pads string at the end w/ another repeated string until reaches length
+        let textSix = "10";
+        let paddedThree = textSix.padEnd(12, "Fox"); //total 12 characters (1st 2 = 10, so 10 characters of repeating Fox)
+        document.getElementById("pad-end").innerHTML = (paddedThree + " --- padEnd() adds repeating string to end of another string"); //10FoxFoxFoxF
+
+        let textSeven = "stunning";
+        let paddedFour = textSeven.padEnd(28, 'beautiful gowns');
+        document.getElementById("pad-three").innerHTML = (paddedFour); // returns stunningbeautiful gownsbeaut
+
+        let numbTwo = 884;
+        let textEight = numbTwo.toString(); //converts to "884"
+        let paddedFive = textEight.padEnd(16, "P"); //will add 13 P's after (3) 884
+        document.getElementById("pad-four").innerHTML = (paddedFive); // 884PPPPPPPPPPPPP
+
+        //REPEAT() method returns string w/ # of copies of string - doesn't change orig
+        let textNine = "Wrinkle, the duck, ran a marathon";
+        let result = textNine.repeat(6);
+        document.getElementById("repeat").innerHTML = (result); //repeats string 6x, no space b/w end & start of next
+
+
+        //SPLIT() - can convert string to an array 
+        let textTen = "TV, DVD, DVR, VCR";
+        document.getElementById("split").innerHTML = (textTen + " --- orig string that will be split into array by commas");
+        let commaSplit = textTen.split(","); //split on commas
+        document.getElementById("split-one").innerText = (commaSplit + " --- do console log and it will show as array");
+        console.log("comma", commaSplit); //array w/ 4 items
+
+        let textEleven = "I have a lovely bunch of coconuts";
+        document.getElementById("split-orig").innerHTML = (textEleven + " --- orig string that will be split into array by spaces");
+        let spaceSplit = textEleven.split(" "); //splits on space
+        document.getElementById("split-two").innerHTML = (spaceSplit);
+        console.log('space', spaceSplit); //array w/ 7 items
+
+        let vegetables = "Cucumber|Celery|Cabbage|Cauliflower|Carrots|Capers";
+        document.getElementById("split-orig-two").innerHTML = (vegetables + " --- orig string that will be split into array by pipes");
+        let pipeSplit = vegetables.split("|"); //splits on pipes
+        document.getElementById("split-three").innerHTML = (pipeSplit);
+        console.log('pipe', pipeSplit); //array w/ 6 items
 
     </script>
 </body>
