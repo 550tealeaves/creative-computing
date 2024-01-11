@@ -14,6 +14,8 @@
             color: white;
             margin: 30px;
             padding: 15px 20px;
+            border: 10px solid rgb(55, 253, 253);
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -27,19 +29,26 @@
     <!--Click button and triggers myFunction function-->
     <button onclick="myFunction()">Click Here</button>
     <br>
-    <!--Will change background color of div when mouseover - use this-->
-    <div onmouseover="this.style.backgroundColor='red'">exampleDiv</div>
+    <!--Will the styling of the div when cursor does mouseover - use this-->
+    <div onmouseover="this.style.backgroundColor='red'; this.style.color = 'yellow'; this.style.fontStyle = 'italic'; this.style.fontSize = '18px'">Place cursor here to see magic</div>
 
     <script>
         //HERE IS HOW TO ADD EVENT IN JS
         //create variable & select element
         let btn = document.querySelector("button"); 
         //define eventListener - could also use this.style
+        //use camelCase for styles that are separated by - ex: font-style = fontStyle
         btn.addEventListener('mouseover', function(){ //mouseover element
             btn.style.transform = 'skew(30deg)'; //rotate button 30 degrees
             btn.style.backgroundColor = 'navy'; //background color changes to navy
             btn.style.color = 'yellow'; //font color changes to yellow
             btn.style.opacity = '0.6'; //opacity added
+            btn.style.border = "6px dashed red"; //adds a border 
+            btn.style.borderRadius = '24px'; //changes border radius
+            btn.style.margin = "80px"; //adds 80px of margin
+            btn.style.padding = '52px 33px'; //adds 52px & 33px of padding
+            btn.style.textDecoration = 'underline'; //adds underline
+            btn.style.fontWeight = '800';
         });
 
         //Define the function to run when button is clicked
