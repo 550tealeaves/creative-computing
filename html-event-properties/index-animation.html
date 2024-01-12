@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animations</title>
+    <title>Animations- MDN ex</title>
     <style>
         h1{
             color: magenta;
-            text-decoration: underline wavy;
+            text-decoration: underline wavy indigo;
             font-style: italic;
             border: 4mm ridge rgba(50, 220, 78, 0.6);
             border-radius: 2px;
         }
 
+        /*this class was added to id="watchme" in JS*/
         .slidein {
             animation-duration: 3s;
             animation-name: slidein;
-            animation-iteration-count: 3;
+            animation-iteration-count: 5;
             animation-direction: alternate;
             }
 
@@ -35,6 +36,7 @@
     </style>
 </head>
 <body>
+    <!--Used JS to add a class="slidein" & add animation event listeners -->
     <h1 id="watchme">Watch me move</h1>
     <p>
         This example shows how to use CSS animations to make <code>H1</code>
@@ -44,30 +46,33 @@
         In addition, we output some text each time an animation event fires, so you
         can see them in action.
     </p>
+    <!--Li created in JS with statements will appear in this ul-->
     <ul id="output"></ul>
 
     <script>
+        //TARGET THE H1 AND ADD ANIMATION EVENT LISTENERS
         const element = document.getElementById("watchme");
             element.addEventListener("animationstart", listener, false);
             element.addEventListener("animationend", listener, false);
             element.addEventListener("animationiteration", listener, false);
 
-            element.className = "slidein";
+            element.className = "slidein"; //add this class to the targeted element
 
+            //CREATE FUNCTION THAT ADDS LI ELEMENT & ADDS TIME STATEMENTS FOR ANIMATION
             function listener(event) {
-                const l = document.createElement("li");
+                const liAdd = document.createElement("li"); //create li element
                 switch (event.type) {
-                    case "animationstart":
-                        l.textContent = `Started: elapsed time is ${event.elapsedTime}`;
+                    case "animationstart": //when the animation starts, it prints this statement on pg
+                        liAdd.textContent = `Started: elapsed time is ${event.elapsedTime}`;
                         break;
-                    case "animationend":
-                        l.textContent = `Ended: elapsed time is ${event.elapsedTime}`;
+                    case "animationend": //will print on pg when animation ends
+                        liAdd.textContent = `Ended: elapsed time is ${event.elapsedTime}`;
                         break;
-                    case "animationiteration":
-                        l.textContent = `New loop started at time ${event.elapsedTime}`;
+                    case "animationiteration": //each time animation restarts, prints this statement w/ new start time
+                        liAdd.textContent = `New loop started at time ${event.elapsedTime}`;
                         break;
                 }
-                document.getElementById("output").appendChild(l);
+                document.getElementById("output").appendChild(liAdd); //add the li to ul element w/ this ID
             }
 
     </script>
