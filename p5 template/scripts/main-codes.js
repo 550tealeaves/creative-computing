@@ -7,6 +7,17 @@ function setup() {
         ellipse(x, 300, 25, 25);
     }
 
+    //loop - create several circles seperated by 50px 
+    for (let x = 0; x <= width; x += 50) {
+        fill(25, 106, 210); //color
+        ellipse(x, 100, 115, 25); //starts 100 pixels down - ellipse as width of 115 - overlaps
+    }
+
+    for (let x = 0; x <= width; x += 50) {
+        fill(90, 6, 10);
+        ellipse(x, 200, 15, 150);
+    }
+
     //intro to conditionals - console log says "uh close enough"
     let year = 2019;
 
