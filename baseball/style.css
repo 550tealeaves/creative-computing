@@ -15,4 +15,7 @@ h1{
 img {
     max-width: 100%;
     height: 100%;
+    display: block; /*centers image*/
+    margin-left: auto; /*makes it responsive*/
+    margin-right: auto; /*makes it responsive*/
   }
