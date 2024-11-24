@@ -1,5 +1,7 @@
 body{
     background-color: rgb(249, 252, 246);
+    margin: 0;
+    padding: 0;
 }
 h1{
     font-style: italic;
@@ -18,4 +20,8 @@ img {
     display: block; /*centers image*/
     margin-left: auto; /*makes it responsive*/
     margin-right: auto; /*makes it responsive*/
+  }
+
+  canvas {
+      display: block;
   }
