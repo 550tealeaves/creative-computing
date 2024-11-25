@@ -51,10 +51,10 @@ function mouseWheel(event) {
   
   // Check constraints
   if (delta > 0) {
-    //zoom in
-    if (currentImageWidth > 3 * width) {
-      currentImageWidth = 3 * width;
-      currentImageHeight = 3 * height;
+    //zoom in - higher the # = the more you zoom in
+    if (currentImageWidth > 4 * width) {
+      currentImageWidth = 4 * width;
+      currentImageHeight = 4 * height;
       //max zoom
     }
   } else if (delta < 0) {
