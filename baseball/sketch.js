@@ -16,6 +16,8 @@ function setup() {
     h = toh = img.height;
     x = tox = w / 1.25; //higher the #, the more the image moves left
     y = toy = h / 2; //higher the #, the more the image moves up
+
+    imageMode(CENTER); //centers the image
 }
 
 function draw() {
