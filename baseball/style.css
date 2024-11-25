@@ -25,3 +25,22 @@ img {
   canvas {
       display: block;
   }
+
+  button{
+    border: 1px 2px red solid;
+    border-radius: 15px;
+    padding: 3px;
+    margin: 10px;
+    color: brown;
+    background-color: gold;
+    /*move the button to the center*/
+    position: absolute;
+    left: 50%; 
+    top: 18%;
+    transform: translate(-50%, -50%);
+  }
+
+  button:hover{
+    color: gold;
+    background-color: brown;
+  }
