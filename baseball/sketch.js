@@ -4,7 +4,7 @@ var x, y, tox, toy;
 var zoom = .005; //zoom step per mouse tick 
 
 function preload() {
-    img = loadImage("Baseball.png");
+    img = loadImage("baseball.png");
 }
 
 //code from here: https://gist.github.com/companje/5478fff07a18a1f4806df4cf77ae1048

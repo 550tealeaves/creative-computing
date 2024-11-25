@@ -1,4 +1,9 @@
 body{
-    background-image: url("Baseball.png");
-    width: 100%;
+    background-image: url("baseball-field.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+h1{
+    color: yellow;
 }
