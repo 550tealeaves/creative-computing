@@ -1,0 +1,55 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+
+/* body{
+    background-color: rgb(249, 252, 246);
+    margin: 0;
+    padding: 0;
+} */
+h1{
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    background: linear-gradient(to right,
+                    #041E42,
+                    silver,
+                    #BF0D3E);
+            background-clip: text; /*determines the background painting area for gradient, if not added, it would just color background instead of text*/
+            color: transparent; 
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+    display: block; /*centers image*/
+    margin-left: auto; /*makes it responsive*/
+    margin-right: auto; /*makes it responsive*/
+  }
+
+  canvas {
+      display: block;
+  }
+
+  button{
+    border: 1px 2px red solid;
+    border-radius: 15px;
+    padding: 3px;
+    margin: 10px;
+    color: brown;
+    background-color: gold;
+    /*move the button to the center*/
+    position: absolute;
+    left: 50%; 
+    top: 7%;
+    transform: translate(-50%, -50%);
+  }
+
+  button:hover{
+    color: gold;
+    background-color: brown;
+  }
