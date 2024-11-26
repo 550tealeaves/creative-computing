@@ -1,19 +1,10 @@
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-  margin: 0;
-}
-
-
-/* body{
+body{
     background-color: rgb(249, 252, 246);
     margin: 0;
     padding: 0;
-} */
+}
 h1{
     font-style: italic;
-    font-size: 20px;
     text-align: center;
     background: linear-gradient(to right,
                     #041E42,
@@ -45,7 +36,7 @@ img {
     /*move the button to the center*/
     position: absolute;
     left: 50%; 
-    top: 7%;
+    top: 18%;
     transform: translate(-50%, -50%);
   }
 
