@@ -15,11 +15,15 @@ function setup() {
   h = currentImageHeight = img.height;
   x = tox = w / 2;
   y = toy = h / 2;
+  playerWidth = 200;
+  playerHeight = 250;
+
+  player.resize(playerWidth, playerHeight); //this doesn't work to change size, it changes the resolution
 }
 
 function draw() {
   background(0);
-  image(player, mouseX, 11,15,15);
+  //image(player, mouseX, 11,15,15); //this line doesn't do anything
 
   //tween/smooth motion
   x = lerp(x, tox, 0.1);
@@ -28,7 +32,8 @@ function draw() {
   h = lerp(h, currentImageHeight, 0.1);
 
   image(img, x - w / 2, y - h / 2, w, h);
-  image(player, x - w / 5, y - h / 9, w, h);
+  image(player, x - playerWidth / 2, y - playerHeight / 3, playerWidth, playerHeight); //#s decrease = moves pic up and left
+
 }
 
 function mouseDragged() {
