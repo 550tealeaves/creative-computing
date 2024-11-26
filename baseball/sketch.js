@@ -1,10 +1,12 @@
 var img;
+var player;
 var w, h, currentImageWidth, currentImageHeight;
 var x, y, tox, toy;
 var zoom = 0.01; //zoom step per mouse tick
 
 function preload() {
   img = loadImage("baseball.png");
+  player = loadImage("player.png");
 }
 
 function setup() {
@@ -17,6 +19,7 @@ function setup() {
 
 function draw() {
   background(0);
+  image(player, mouseX, 11,15,15);
 
   //tween/smooth motion
   x = lerp(x, tox, 0.1);
@@ -25,6 +28,7 @@ function draw() {
   h = lerp(h, currentImageHeight, 0.1);
 
   image(img, x - w / 2, y - h / 2, w, h);
+  image(player, x - w / 5, y - h / 9, w, h);
 }
 
 function mouseDragged() {
