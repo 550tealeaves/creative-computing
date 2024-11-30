@@ -32,8 +32,7 @@ function draw() {
   h = lerp(h, currentImageHeight, 0.1);
 
   image(img, x - w / 2, y - h / 2, w, h);
-  image(player, x - playerWidth / 2, y - playerHeight / 3, playerWidth, playerHeight); //#s decrease = moves pic up and left
-
+  image(player, mouseX-50, mouseY-50, 100, 100) //moves player image based on cursor position mouseX-50 (moves cursor to right and puts it on img, mouseY-50 moves cursor down img, if no #s, then default cursor is up and to left of img) - last 2 numbers adjusts size (w,h) - https://editor.p5js.org/mellerbr/sketches/Jhz5uwM5
 }
 
 function mouseDragged() {
