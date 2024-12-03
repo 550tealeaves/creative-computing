@@ -8,6 +8,7 @@ function preload() {
   img = loadImage("baseball.png");
   player = loadImage("player.png");
   jackie = loadImage("jackie.PNG");
+  hank = loadImage("hank-aaron.png");
 }
 
 function setup() {
@@ -35,6 +36,7 @@ function draw() {
   image(img, x - w / 2, y - h / 2, w, h);
   image(player, mouseX-50, mouseY-50, 100, 100); //moves player image based on cursor position mouseX-50 (moves cursor to right and puts it on img, mouseY-50 moves cursor down img, if no #s, then default cursor is up and to left of img) - last 2 numbers adjusts size (w,h) - https://editor.p5js.org/mellerbr/sketches/Jhz5uwM5
   image(jackie, x - 130, y + 130, 100, 100);
+  image(hank, x - 220, y - 130, 100, 100);
 }
 
 function mouseDragged() {
