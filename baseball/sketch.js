@@ -1,7 +1,7 @@
 var baseball;
 var w, h, tow, toh;
 var x, y, tox, toy;
-var zoom = .005; //zoom step per mouse tick 
+//var zoom = .005; //zoom step per mouse tick 
 
 function preload() {
     baseball = loadImage("baseball.png")
