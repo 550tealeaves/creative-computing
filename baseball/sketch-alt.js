@@ -1,62 +1,34 @@
-var img;
+var baseball;
 var w, h, tow, toh;
 var x, y, tox, toy;
 var zoom = .005; //zoom step per mouse tick 
 
 function preload() {
-    img = loadImage("baseball.png");
+    baseball = loadImage("baseball.png")
+    player = loadImage("player.png");
+    jackie = loadImage("jackie.PNG");
+    hank = loadImage("hank-aaron.png");
+    satchel = loadImage("satchel-paige.png");
 }
 
 //code from here: https://gist.github.com/companje/5478fff07a18a1f4806df4cf77ae1048
 
 function setup() {
-    //noCursor(); //if active, no cursor shows on the screen
     createCanvas(windowWidth, windowHeight);
-    w = tow = img.width;
-    h = toh = img.height;
-    x = tox = w / 1.25; //higher the #, the more the image moves left
-    y = toy = h / 2; //higher the #, the more the image moves up
+    w = currentImageWidth = baseball.width;
+    h = currentImageHeight = baseball.height;
+    x = tox = w / 2;
+    y = toy = h / 2;
+  }
 
-    imageMode(CENTER); //centers the image
-}
+
 
 function draw() {
     background(255); //change background color to white
 
-    //tween/smooth motion
-    x = lerp(x, tox, .1);
-    y = lerp(y, toy, .1);
-    w = lerp(w, tow, .1);
-    h = lerp(h, toh, .1);
-
-    image(img, x - w / 2, y - h / 2, w, h);
-}
-
-function mouseDragged() {
-    tox += mouseX - pmouseX;
-    toy += mouseY - pmouseY;
-}
-
-function mouseWheel(event) {
-    var e = -event.delta;
-
-    if (e > 0) { //zoom in
-        for (var i = 0; i < e; i++) {
-            if (tow > 30 * width) return; //max zoom
-            tox -= zoom * (mouseX - tox);
-            toy -= zoom * (mouseY - toy);
-            tow *= zoom + 1;
-            toh *= zoom + 1;
-        }
-    }
-
-    if (e < 0) { //zoom out
-        for (var i = 0; i < -e; i++) {
-            if (tow < width) return; //min zoom
-            tox += zoom / (zoom + 1) * (mouseX - tox);
-            toy += zoom / (zoom + 1) * (mouseY - toy);
-            toh /= zoom + 1;
-            tow /= zoom + 1;
-        }
-    }
+    image(baseball, x - w / 2, y - h / 2, windowWidth, windowHeight);
+    image(player, mouseX-50, mouseY-50, 100, 100); //moves player image based on cursor position mouseX-50 (moves cursor to right and puts it on img, mouseY-50 moves cursor down img, if no #s, then default cursor is up and to left of img) - last 2 numbers adjusts size (w,h) - https://editor.p5js.org/mellerbr/sketches/Jhz5uwM5
+    image(jackie, x/3, y/2.55, 100, 100);
+    image(hank, x/3.4, y/7.2, 100, 100);
+    image(satchel, x/2.5, y/4.15, 100, 100);
 }
