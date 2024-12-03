@@ -1,9 +1,17 @@
-body{
+/* body{
     background-image: url("baseball-field.jpg");
     background-repeat: no-repeat;
     background-size: auto;
-}
+} */
 
 h1{
-    color: yellow;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    background: linear-gradient(to right,
+                    #041E42,
+                    silver,
+                    #BF0D3E);
+            background-clip: text; /*determines the background painting area for gradient, if not added, it would just color background instead of text*/
+            color: transparent; 
 }
