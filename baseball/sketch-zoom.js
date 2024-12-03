@@ -10,6 +10,8 @@ function preload() {
   jackie = loadImage("jackie.PNG");
   hank = loadImage("hank-aaron.png");
   satchel = loadImage("satchel-paige.png");
+  larry = loadImage("larry-doby.png");
+  moses = loadImage("moses-fleetwood-walker.png");
 }
 
 function setup() {

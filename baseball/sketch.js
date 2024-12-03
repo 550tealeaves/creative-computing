@@ -10,6 +10,7 @@ function preload() {
     hank = loadImage("hank-aaron.png");
     satchel = loadImage("satchel-paige.png");
     larry = loadImage("larry-doby.png");
+    moses = loadImage("moses-fleetwood-walker.png");
 }
 
 //code from here: https://gist.github.com/companje/5478fff07a18a1f4806df4cf77ae1048
@@ -35,4 +36,5 @@ function draw() {
     image(hank, x/3.4, y/7.2, 100, 100);
     image(satchel, x/2.5, y/4.15, 100, 100);
     image(larry, x/2.5, y/26, 100, 100);
+    image(moses, x/2.61, y/2.20, 65, 65);
 }
