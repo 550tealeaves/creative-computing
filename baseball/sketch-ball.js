@@ -25,6 +25,10 @@ function setup() {
     h = currentImageHeight = baseball.height;
     x = tox = w / 2;
     y = toy = h / 2;
+    // fieldWidth = 100;
+    // fieldHeight = 100;
+
+    // baseball.resize(fieldWidth, fieldHeight);
   }
 
 
@@ -36,13 +40,13 @@ function draw() {
     image(player, mouseX-50, mouseY-50, 100, 100); //moves player image based on cursor position mouseX-50 (moves cursor to right and puts it on img, mouseY-50 moves cursor down img, if no #s, then default cursor is up and to left of img) - last 2 numbers adjusts size (w,h) - https://editor.p5js.org/mellerbr/sketches/Jhz5uwM5
     
     // ADD THE IMAGES WITH AN X/Y, W/H - Smaller the divisor for x = moves pic to the right. Smaller divsior for y = moves the pic down
-    image(jackie, x/3, y/2.55, 100, 100); //batter
+    image(jackie, x/8, y/4.55, 100, 100); //batter
     image(hank, x/3.8, y/5.1, 100, 100); //runner
     image(satchel, x/2.5, y/4.15, 100, 100); //pitcher
     image(larry, x/2.5, y/26, 100, 100); //center-fielder
     image(moses, x/2.61, y/2.20, 65, 65); //catcher
     image(frank, x/5.3, y/10, 60, 100); //left fielder
-    image(mookie, x/1.8, y/10, 100, 100); //right fielder
+    image(mookie, x+500, y-120, 100, 100); //right fielder
     image(jeter, x/3, y/8.2, 80, 100); //shortstop
     image(prince, x/1.8, y/4, 80, 100); //first baseman
 }
