@@ -4,7 +4,7 @@ var x, y, tox, toy;
 //var zoom = .005; //zoom step per mouse tick 
 
 function preload() {
-    baseball = loadImage("baseball.png")
+    baseball = loadImage("baseball-field.png")
     player = loadImage("player.png");
     jackie = loadImage("jackie.PNG");
     hank = loadImage("hank-aaron.png");
@@ -42,7 +42,7 @@ function draw() {
     image(larry, x/2.5, y/26, 100, 100); //center-fielder
     image(moses, x/2.61, y/2.20, 65, 65); //catcher
     image(frank, x/5.3, y/10, 60, 100); //left fielder
-    image(mookie, x/1.8, y/10, 100, 100); //right fielder
+    image(mookie, x+500, y-120, 100, 100); //right fielder
     image(jeter, x/3, y/8.2, 80, 100); //shortstop
     image(prince, x/1.8, y/4, 80, 100); //first baseman
 }
