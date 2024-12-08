@@ -4,7 +4,7 @@ var x, y, tox, toy;
 //var zoom = .005; //zoom step per mouse tick 
 
 function preload() {
-    baseball = loadImage("baseball-field.png")
+
     player = loadImage("player.png");
     jackie = loadImage("jackie.PNG");
     hank = loadImage("hank-aaron.png");
