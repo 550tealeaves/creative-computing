@@ -35,14 +35,16 @@ function draw() {
     image(field, x - w / 2, y - h / 2, windowWidth, windowHeight);
     image(player, mouseX-50, mouseY-50, 100, 100); //moves player image based on cursor position mouseX-50 (moves cursor to right and puts it on img, mouseY-50 moves cursor down img, if no #s, then default cursor is up and to left of img) - last 2 numbers adjusts size (w,h) - https://editor.p5js.org/mellerbr/sketches/Jhz5uwM5
     
-    // ADD THE IMAGES WITH AN X/Y, W/H - Smaller the divisor for x = moves pic to the right. Smaller divsior for y = moves the pic down
-    image(jackie, x/3, y/2.55, 100, 100); //batter
-    image(hank, x/3.8, y/5.1, 100, 100); //runner
-    image(satchel, x/2.5, y/4.15, 100, 100); //pitcher
-    image(larry, x/2.5, y/26, 100, 100); //center-fielder
-    image(moses, x/2.61, y/2.20, 65, 65); //catcher
-    image(frank, x/5.3, y/10, 60, 100); //left fielder
-    image(mookie, x+500, y-120, 100, 100); //right fielder
-    image(jeter, x/3, y/8.2, 80, 100); //shortstop
-    image(prince, x/1.8, y/4, 80, 100); //first baseman
+    // ADD THE IMAGES WITH AN X/Y, W/H - Smaller the divisor for x = moves pic to the right. Smaller divisor for y = moves the pic down
+    //The higher the positive # of X, more it moves to right, the higher the positive # of y, the more it moves down - higher the # neg # of y, moves pic up
+    
+    image(jackie, x+200, y+250, 100, 100); //batter
+    image(hank, x+100, y+8, 100, 100); //runner
+    image(satchel, x+300, y+75, 100, 100); //pitcher
+    image(larry, x+330, y-170, 100, 100); //center-fielder
+    image(moses, x+290, y+300, 65, 65); //catcher
+    image(frank, x+90, y-130, 60, 100); //left fielder
+    image(mookie, x+550, y-100, 100, 100); //right fielder
+    image(jeter, x+220, y-80, 80, 100); //shortstop
+    image(prince, x+480, y+80, 70, 100); //first baseman
 }
