@@ -1,10 +1,10 @@
-var baseball;
+var field;
 var w, h, tow, toh;
 var x, y, tox, toy;
 //var zoom = .005; //zoom step per mouse tick 
 
 function preload() {
-
+    field = loadImage("field.png");
     player = loadImage("player.png");
     jackie = loadImage("jackie.PNG");
     hank = loadImage("hank-aaron.png");
@@ -21,8 +21,8 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    w = currentImageWidth = baseball.width;
-    h = currentImageHeight = baseball.height;
+    w = currentImageWidth = field.width;
+    h = currentImageHeight = field.height;
     x = tox = w / 2;
     y = toy = h / 2;
   }
@@ -32,7 +32,7 @@ function setup() {
 function draw() {
     background(255); //change background color to white
 
-    image(baseball, x - w / 2, y - h / 2, windowWidth, windowHeight);
+    image(field, x - w / 2, y - h / 2, windowWidth, windowHeight);
     image(player, mouseX-50, mouseY-50, 100, 100); //moves player image based on cursor position mouseX-50 (moves cursor to right and puts it on img, mouseY-50 moves cursor down img, if no #s, then default cursor is up and to left of img) - last 2 numbers adjusts size (w,h) - https://editor.p5js.org/mellerbr/sketches/Jhz5uwM5
     
     // ADD THE IMAGES WITH AN X/Y, W/H - Smaller the divisor for x = moves pic to the right. Smaller divsior for y = moves the pic down
