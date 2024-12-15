@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
 }
-h1{
+/* h1{
     font-style: italic;
     font-size: 20px;
     text-align: center;
@@ -12,8 +12,8 @@ h1{
                     silver,
                     #BF0D3E);
             background-clip: text; /*determines the background painting area for gradient, if not added, it would just color background instead of text*/
-            color: transparent; 
-}
+            /* color: transparent; 
+} */
 
 img {
     max-width: 100%;
@@ -37,7 +37,7 @@ img {
     /*move the button to the center*/
     position: absolute;
     left: 50%; 
-    top: 8%;
+    top: 1%;
     transform: translate(-50%, -50%);
   }
 
