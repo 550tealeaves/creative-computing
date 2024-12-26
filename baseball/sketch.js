@@ -15,6 +15,8 @@ function preload() {
     mookie = loadImage("mookie-betts.png");
     jeter = loadImage("derek-jeter.png");
     prince = loadImage("prince-fielder.png");
+    randolph = loadImage("willie-randolph.png");
+    bonilla = loadImage("bobby-bonilla.png");
 }
 
 //code from here: https://gist.github.com/companje/5478fff07a18a1f4806df4cf77ae1048
@@ -38,13 +40,15 @@ function draw() {
     // ADD THE IMAGES WITH AN X/Y, W/H - Smaller the divisor for x = moves pic to the right. Smaller divisor for y = moves the pic down
     //The higher the positive # of X, more it moves to right, the higher the positive # of y, the more it moves down - higher the # neg # of y, moves pic up
     
-    image(jackie, x+200, y+250, 100, 100); //batter
-    image(hank, x+100, y+8, 100, 100); //runner
-    image(satchel, x+300, y+75, 100, 100); //pitcher
+    image(jackie, x+240, y+250, 100, 100); //batter
+    image(hank, x+140, y+10, 100, 100); //runner
+    image(satchel, x+330, y+75, 100, 100); //pitcher
     image(larry, x+330, y-170, 100, 100); //center-fielder
-    image(moses, x+290, y+300, 65, 65); //catcher
+    image(moses, x+330, y+300, 65, 65); //catcher
     image(frank, x+90, y-130, 60, 100); //left fielder
     image(mookie, x+550, y-100, 100, 100); //right fielder
     image(jeter, x+220, y-80, 80, 100); //shortstop
-    image(prince, x+480, y+80, 70, 100); //first baseman
+    image(prince, x+540, y+80, 70, 100); //first baseman
+    image(randolph, x+300, y-80, 150, 100); //second baseman
+    image(bonilla, x+70, y+80, 100, 100); //third baseman
 }
