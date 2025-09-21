@@ -1,6 +1,17 @@
 //this changes the size of the image as you scroll
 document.addEventListener('DOMContentLoaded', async function () {
-    // ... scrollama setup
+    function changeTrainPicSize(width, height) {
+        console.log('measures', width, height);
+        let trainPic = document.querySelector('.ball');
+        trainPic.style.width = width + 'px';
+        trainPic.style.height = height + 'px';
+    }
+
+    // instantiate the scrollama
+    const scroller = scrollama();
+
+    let numberSteps = document.querySelectorAll('.scroll-step').length;
+    console.log(numberSteps);
 
     scroller
         .setup({ step: '.scroll-step' })
@@ -25,8 +36,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 a.currentTime = 0;
             });
         });
-});  // ✅ this closes the DOMContentLoaded block
-
+}); 
 
 //AUTOMATIC SCROLLING BY PRESSING ENTER - https://codepen.io/shrutibalasa/pen/jOWgPmY
 //THIS WORKS WHEN YOU TEST IT A NEW FILE BUT IT'S NOT WORKING HERE
