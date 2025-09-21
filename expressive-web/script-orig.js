@@ -1,31 +1,39 @@
 //this changes the size of the image as you scroll
 document.addEventListener('DOMContentLoaded', async function () {
-    // ... scrollama setup
+    function changeTrainPicSize(width, height) {
+        console.log('measures', width, height);
+        let trainPic = document.querySelector('.ball');
+        trainPic.style.width = width + 'px';
+        trainPic.style.height = height + 'px';
+    }
 
+    // instantiate the scrollama
+    const scroller = scrollama();
+
+    let numberSteps = document.querySelectorAll('.scroll-step').length;
+    console.log(numberSteps);
+
+    // setup the instance, pass callback functions
     scroller
-        .setup({ step: '.scroll-step' })
+        .setup({
+            step: '.scroll-step',
+        })
         .onStepEnter((response) => {
-            // resize train, etc.
+            let desiredSize = response.element.getAttribute('data-size');
 
-            // 🎵 PLAY AUDIO when entering a step
-            const audios = response.element.querySelectorAll("audio");
-            document.querySelectorAll("audio").forEach(a => {
-                a.pause();
-                a.currentTime = 0;
-            });
-            audios.forEach(a => a.play());
+            if (desiredSize) {
+                changeTrainPicSize(desiredSize, desiredSize);
+            }
+
+            // { element, index, direction }
         })
         .onStepExit((response) => {
-            // resize at last step, etc.
-
-            // 🎵 STOP AUDIO when leaving step
-            const audios = response.element.querySelectorAll("audio");
-            audios.forEach(a => {
-                a.pause();
-                a.currentTime = 0;
-            });
+            //detect if it's the last step
+            if (response.index == numberSteps - 1) {
+                changeTrainPicSize(500, 500);
+            }
         });
-});  // ✅ this closes the DOMContentLoaded block
+});
 
 
 //AUTOMATIC SCROLLING BY PRESSING ENTER - https://codepen.io/shrutibalasa/pen/jOWgPmY
