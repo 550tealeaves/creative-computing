@@ -24,13 +24,26 @@ document.addEventListener('DOMContentLoaded', async function () {
                 a.pause();
                 a.currentTime = 0;
             });
-            audios.forEach(a => a.play());
-        })
+            if (audios.length > 0) {
+          // play the first audio
+          audios[0].play();
+
+          // if there's a second, wait until the first ends
+          if (audios.length > 1) {
+              audios[0].addEventListener("ended", () => {
+                  audios[1].play();
+              }, { once: true });
+          }
+      }
+  })
         .onStepExit((response) => {
             // resize at last step, etc.
+            if (response.index == numberSteps - 1) {
+                changeTrainPicSize(500, 500);
+            }
 
-            // 🎵 STOP AUDIO when leaving step
-            const audios = response.element.querySelectorAll("audio");
+      // 🎵 STOP AUDIO when leaving step
+        const audios = response.element.querySelectorAll("audio");
             audios.forEach(a => {
                 a.pause();
                 a.currentTime = 0;
