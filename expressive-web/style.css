@@ -33,6 +33,18 @@ h2{
   margin-left: 90px;
 }
 
+/*Code to try to make it responsive*/
+/* .ball{
+  position: absolute;
+  left: 50%;                   /* place in horizontal center */
+  /* transform: translateX(-50%); keep centered regardless of size */
+  /* bottom: 5vh;                 adjust to sit on the "track" */
+  /* width: 20vw;                 default responsive size */
+  /* max-width: 400px;            safety limit */
+  /* height: auto; */
+  /* border-radius: 100%; */
+/* } */
+
 img-edit{
   display: flex;
   flex-direction: column;
@@ -303,15 +315,15 @@ button{
     }
 }  
 
-.ball {
+/* .ball {
   position: absolute;
   left: 50%;                   /* place in horizontal center */
-  transform: translateX(-50%); /* keep centered regardless of size */
-  bottom: 5vh;                 /* adjust to sit on the "track" */
-  width: 20vw;                 /* default responsive size */
-  max-width: 400px;            /* safety limit */
-  height: auto;
-}
+  /* transform: translateX(-50%); /* keep centered regardless of size */
+  /*bottom: 5vh;                 /* adjust to sit on the "track" */
+  /*width: 20vw;                 /* default responsive size */
+  /*max-width: 400px;            /* safety limit */
+  /*height: auto;
+} */ 
 
 .ball.on-track {
   bottom: 10vh; /* moves train onto track when hovered */

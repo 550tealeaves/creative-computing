@@ -1,3 +1,4 @@
+//Responsive code but train doesn't move yet
 //CHANGES THE IMAGE SIZE AS YOU SCROLL
 document.addEventListener('DOMContentLoaded', async function () {
     function changeTrainPicSize(widthPercent, heightPercent) {
@@ -118,18 +119,9 @@ document.querySelector('button').addEventListener('click', muter);
 
 
 
+//Non-responsive code but the train moves
 
-
-
-
-
-
-
-
-
-
-
-// //CHANGES THE IMAGE SIZE AS YOU SCROLL
+//CHANGES THE IMAGE SIZE AS YOU SCROLL
 // document.addEventListener('DOMContentLoaded', async function () {
 //     function changeTrainPicSize(width, height) {
 //         console.log('measures', width, height);
@@ -263,7 +255,7 @@ document.querySelector('button').addEventListener('click', muter);
 //     muter();
 // });
 
-// //muter.reset();
+//muter.reset();
 
 
 
