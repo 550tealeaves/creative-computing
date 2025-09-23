@@ -303,6 +303,20 @@ button{
     }
 }  
 
+.ball {
+  position: absolute;
+  left: 50%;                   /* place in horizontal center */
+  transform: translateX(-50%); /* keep centered regardless of size */
+  bottom: 5vh;                 /* adjust to sit on the "track" */
+  width: 20vw;                 /* default responsive size */
+  max-width: 400px;            /* safety limit */
+  height: auto;
+}
+
+.ball.on-track {
+  bottom: 10vh; /* moves train onto track when hovered */
+}
+
 
 /*/
 /* @keyframes slidein {
