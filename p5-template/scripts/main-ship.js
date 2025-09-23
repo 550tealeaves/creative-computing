@@ -88,7 +88,7 @@
         drawGrid();
     }
 
-    // CREATE THE PORT HOLES ALONGSIDE THE HULL
+    // CREATE THE PORT HOLES ALONGSIDE THE HULL BUT KEEPING CANVAS BASEWIDTH
     function drawGrid() {
         fill('#ccad00');
 
