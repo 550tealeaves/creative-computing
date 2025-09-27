@@ -16,3 +16,8 @@ main {
 h2 {
     font-weight: 400;
 }
+
+footer{
+    text-align: center;
+    font-size: 10px;
+}
