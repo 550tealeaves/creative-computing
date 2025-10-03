@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doughnut custom properties</title>
+</head>
+<body>
+     <!--Create a canvas for responsiveness-->
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <!--Run chart.js from a CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                data: [{id: 'Sales', nested: {value: 1500}}, {id: 'Purchases', nested: {value: 500}}],
+                backgroundColor: ['gold', 'silver'],
+                borderColor: ['lightgreen', 'orangered']
+                }]
+            },
+            options: {
+                parsing: {
+                key: 'nested.value'
+                }
+            }
+        });
+
+
+    </script>
+</body>
+</html>

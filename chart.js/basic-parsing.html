@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Parsing</title>
+</head>
+<body>
+    <!--Create a canvas for responsiveness-->
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <!--Run chart.js from a CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        const data = [{x: 'Jan', net: 100, cogs: 50, gm: 50}, {x: 'Feb', net: 120, cogs: 55, gm: 75}];
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb'],
+                datasets: [{
+                label: 'Net sales',
+                data: data,
+                parsing: {
+                    yAxisKey: 'net'
+                },
+                backgroundColor: '#CCFFD6',
+                borderColor: '#FFC7B3',
+                borderWidth: 2
+                }, {
+                label: 'Cost of goods sold',
+                data: data,
+                parsing: {
+                    yAxisKey: 'cogs'
+                },
+                backgroundColor: '#E4FF85',
+                borderColor: '#B7E9FB',
+                borderWidth: 2
+                }, {
+                label: 'Gross margin',
+                data: data,
+                parsing: {
+                    yAxisKey: 'gm'
+                },
+                backgroundColor: '#FFCCE0',
+                borderColor: '#610C79',
+                borderWidth: 2
+                }]
+            },
+        });
+
+    </script>
+</body>
+</html>

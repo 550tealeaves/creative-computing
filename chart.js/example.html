@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar Chart example</title>
+    <title>Example</title>
 </head>
 <body>
     <!--Create a canvas for responsiveness-->
@@ -18,11 +18,13 @@
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Apple', 'Pineapples', 'Cherries', 'Kiwi', 'Peaches', 'Raspberries'],
                 datasets: [{
                     label: '# of Votes',
                     data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
+                    borderWidth: 3,
+                    borderColor: 'brown',
+                    backgroundColor: ['#ECBD32', '#32EC61', '#3261EC', '#EC32BD', '#96FF1F', '#C21E24']
                 }]
             },
             options: {

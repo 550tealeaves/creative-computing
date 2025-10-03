@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line scale</title>
+</head>
+<body>
+     <!--Create a canvas for responsiveness-->
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <!--Run chart.js from a CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [{
+                data: {
+                    January: 10,
+                    February: 20
+                },
+                borderColor: 'red'
+                }]
+            }
+        });
+
+
+    </script>
+</body>
+</html>

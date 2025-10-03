@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font example</title>
+</head>
+<body>
+    <!--Create a canvas for responsiveness-->
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <!--Run chart.js from a CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [{
+                data: {
+                    January: 10,
+                    February: 17
+                },
+                borderColor: 'red'
+                }]
+            }
+        });
+
+        
+        Chart.defaults.font.size = 20; //this works
+        let chart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            font: {
+                                size: 8 //this does not
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
