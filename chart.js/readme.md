@@ -1,0 +1,1 @@
+Chart.js is a JavaScript library that helps easily construct interative charts. It provides plugins, chart types, and customization. It also works well with JavaScript frameworks. 
