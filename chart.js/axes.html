@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axes</title>
+</head>
+<body>
+    <!--Create a canvas for responsiveness-->
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <!--Run chart.js from a CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        data: [20, 50, 100, 75, 25, 0],
+                        label: 'Left dataset',
+                        // Creating 2 Y axes = use yAxisID to map datasets
+                        // This binds the dataset to the left y axis
+                        yAxisID: 'left-y-axis',
+                        borderColor: 'green'
+
+                    }, {
+                        data: [0.1, 0.5, 1.0, 2.0, 1.5, 0],
+                        label: 'Right dataset',
+
+                        // This binds the dataset to the right y axis
+                        yAxisID: 'right-y-axis',
+                        borderColor: 'purple'
+                    }], //labels axis
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+                },
+                options: {
+                    scales: {
+                        'left-y-axis': {
+                            type: 'linear',
+                            position: 'left',
+                            reverse: true //reverses scale
+
+                        },
+                        'right-y-axis': {
+                            type: 'linear',
+                            position: 'right',
+                            alignToPixels: true
+                        }
+                    }
+                }
+            });
+
+    </script>
+</body>
+</html>
