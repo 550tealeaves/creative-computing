@@ -15,12 +15,13 @@
     <script>
         const ctx = document.getElementById('myChart');
 
-        const data = [{x: 'Jan', net: 100, cogs: 50, gm: 50}, {x: 'Feb', net: 120, cogs: 55, gm: 75}];
+        //x values for month and labels must match or else data won't display properly
+        const data = [{x: 'Jan', net: 100, cogs: 50, gm: 50}, {x: 'Feb', net: 120, cogs: 55, gm: 75}, {x: 'Mar', net: 69, cogs: 87, gm: 102}, {x: 'Apr', net: 135, cogs: 91, gm: 111}, {x: 'May', net: 47, cogs: 12, gm: 35}];
 
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Jan', 'Feb'],
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
                 datasets: [{
                 label: 'Net sales',
                 data: data,
