@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>D3 Polar Clock</title>
+
+  <!-- D3.js -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #111;
+      font-family: Arial, sans-serif;
+    }
+
+    #clock {
+      width: 600px;
+      height: 600px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .background {
+      fill: none;
+      stroke: #292929;
+      stroke-width: 20;
+    }
+
+    .hours {
+      fill: none;
+      stroke: #ff5555;
+      stroke-width: 20;
+      stroke-linecap: round;
+    }
+
+    .minutes {
+      fill: none;
+      stroke: #55aaff;
+      stroke-width: 20;
+      stroke-linecap: round;
+    }
+
+    .seconds {
+      fill: none;
+      stroke: #55dd88;
+      stroke-width: 20;
+      stroke-linecap: round;
+    }
+
+    .digital-time {
+      fill: white;
+      font-size: 42px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+
+    .date {
+      fill: #888;
+      font-size: 16px;
+      text-anchor: middle;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="clock"></div>
+
+<script>
+
+  // --------------------------------------------------
+  // Setup
+  // --------------------------------------------------
+
+  const width = 600;
+  const height = 600;
+
+  const centerX = width / 2;
+  const centerY = height / 2;
+
+  const svg = d3
+    .select("#clock")
+    .append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`);
+
+  const group = svg
+    .append("g")
+    .attr("transform", `translate(${centerX}, ${centerY})`);
+
+
+  // --------------------------------------------------
+  // Ring configuration
+  // --------------------------------------------------
+
+  const ringData = [
+    {
+      name: "hours",
+      radius: 210,
+      colorClass: "hours",
+      max: 12
+    },
+    {
+      name: "minutes",
+      radius: 155,
+      colorClass: "minutes",
+      max: 60
+    },
+    {
+      name: "seconds",
+      radius: 100,
+      colorClass: "seconds",
+      max: 60
+    }
+  ];
+
+
+  // --------------------------------------------------
+  // Create the rings
+  // --------------------------------------------------
+
+  const rings = {};
+
+  ringData.forEach(ring => {
+
+    const arc = d3
+      .arc()
+      .innerRadius(ring.radius - 10)
+      .outerRadius(ring.radius + 10)
+      .startAngle(0)
+      .cornerRadius(10);
+
+    // Background circle
+    group
+      .append("path")
+      .datum({
+        startAngle: 0,
+        endAngle: Math.PI * 2
+      })
+      .attr("class", "background")
+      .attr("d", arc);
+
+
+    // Progress arc
+    const progress = group
+      .append("path")
+      .attr("class", ring.colorClass);
+
+    rings[ring.name] = {
+      arc: arc,
+      progress: progress,
+      max: ring.max
+    };
+
+  });
+
+
+  // --------------------------------------------------
+  // Center text
+  // --------------------------------------------------
+
+  const digitalTime = group
+    .append("text")
+    .attr("class", "digital-time")
+    .attr("y", 300);
+
+  const dateText = group
+    .append("text")
+    .attr("class", "date")
+    .attr("y", 260);
+
+
+  // --------------------------------------------------
+  // Update clock
+  // --------------------------------------------------
+
+  function updateClock() {
+
+    const now = new Date();
+
+    const hours = now.getHours() % 12;
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+
+    // ----------------------------
+    // Hours
+    // ----------------------------
+
+    const hourAngle =
+      (hours / 12) * Math.PI * 2;
+
+    rings.hours.progress
+      .datum({
+        startAngle: 0,
+        endAngle: hourAngle
+      })
+      .attr("d", rings.hours.arc);
+
+
+    // ----------------------------
+    // Minutes
+    // ----------------------------
+
+    const minuteAngle =
+      (minutes / 60) * Math.PI * 2;
+
+    rings.minutes.progress
+      .datum({
+        startAngle: 0,
+        endAngle: minuteAngle
+      })
+      .attr("d", rings.minutes.arc);
+
+
+    // ----------------------------
+    // Seconds
+    // ----------------------------
+
+    const secondAngle =
+      (seconds / 60) * Math.PI * 2;
+
+    rings.seconds.progress
+      .datum({
+        startAngle: 0,
+        endAngle: secondAngle
+      })
+      .attr("d", rings.seconds.arc);
+
+
+    // ----------------------------
+    // Digital time
+    // ----------------------------
+
+    digitalTime.text(
+      now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      })
+    );
+
+
+    // ----------------------------
+    // Date
+    // ----------------------------
+
+    dateText.text(
+      now.toLocaleDateString([], {
+        weekday: "long",
+        month: "long",
+        day: "numeric"
+      })
+    );
+
+  }
+
+
+  // Initial update
+  updateClock();
+
+
+  // Update every 250ms
+  setInterval(updateClock, 250);
+
+</script>
+
+</body>
+</html>
+

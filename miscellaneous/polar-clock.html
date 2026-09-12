@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>D3 Polar Calendar Clock</title>
+
+  <!-- D3.js -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #111;
+      font-family: Arial, sans-serif;
+    }
+
+    #clock {
+      width: min(95vw, 700px);
+      height: min(95vw, 700px);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* -----------------------------------------------
+       Background tracks
+       ----------------------------------------------- */
+
+    .background {
+      fill: none;
+      stroke: #292929;
+      stroke-width: 14;
+    }
+
+
+    /* -----------------------------------------------
+       Calendar rings
+       ----------------------------------------------- */
+
+    .year {
+      fill: none;
+      stroke: #b56cff;
+      stroke-width: 14;
+      stroke-linecap: round;
+    }
+
+    .month {
+      fill: none;
+      stroke: #ff75a8;
+      stroke-width: 14;
+      stroke-linecap: round;
+    }
+
+    .day {
+      fill: none;
+      stroke: #ffd500;
+      stroke-width: 14;
+      stroke-linecap: round;
+    }
+
+
+    /* -----------------------------------------------
+       Time rings
+       ----------------------------------------------- */
+
+    .hours {
+      fill: none;
+      stroke: #cf0000;
+      stroke-width: 14;
+      stroke-linecap: round;
+    }
+
+    .minutes {
+      fill: none;
+      stroke: #90fbff;
+      stroke-width: 14;
+      stroke-linecap: round;
+    }
+
+    .seconds {
+      fill: none;
+      stroke: #8eff88;
+      stroke-width: 14;
+      stroke-linecap: round;
+    }
+
+
+    /* -----------------------------------------------
+       Center text
+       ----------------------------------------------- */
+
+    .digital-time {
+      fill: white;
+      font-size: 38px;
+      stroke: blueviolet;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+
+    .date {
+      fill: #aaa;
+      stroke: deeppink;
+      font-size: 15px;
+      text-anchor: middle;
+    }
+
+
+    /* -----------------------------------------------
+       Ring labels
+       ----------------------------------------------- */
+
+    .ring-label {
+      fill: #ffffff;
+      font-size: 11px;
+      /* font-weight: bold; */
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div id="clock"></div>
+
+<script>
+
+  // ============================================================
+  // BASIC SETUP
+  // ============================================================
+
+  const width = 800;
+  const height = 800;
+
+  const centerX = width / 2;
+  const centerY = height / 2;
+
+  const svg = d3
+    .select("#clock")
+    .append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`);
+
+  const group = svg
+    .append("g")
+    .attr(
+      "transform",
+      `translate(${centerX}, ${centerY})`
+    );
+
+
+  // ============================================================
+  // RING DEFINITIONS
+  // ============================================================
+
+  /*
+   * The rings are ordered from outside → inside:
+   *
+   * YEAR
+   * MONTH
+   * DAY
+   * HOUR
+   * MINUTE
+   * SECOND
+   */
+
+  const ringData = [
+
+    {
+      name: "year",
+      radius: 275,
+      colorClass: "year"
+    },
+
+    {
+      name: "month",
+      radius: 225,
+      colorClass: "month"
+    },
+
+    {
+      name: "day",
+      radius: 175,
+      colorClass: "day"
+    },
+
+    {
+      name: "hours",
+      radius: 125,
+      colorClass: "hours"
+    },
+
+    {
+      name: "minutes",
+      radius: 85,
+      colorClass: "minutes"
+    },
+
+    {
+      name: "seconds",
+      radius: 45,
+      colorClass: "seconds"
+    }
+
+  ];
+
+
+  // ============================================================
+  // CREATE RINGS
+  // ============================================================
+
+  const rings = {};
+
+  ringData.forEach(ring => {
+
+    const arc = d3
+      .arc()
+      .innerRadius(ring.radius - 7)
+      .outerRadius(ring.radius + 7)
+      .startAngle(0)
+      .cornerRadius(7);
+
+
+    // --------------------------------------------
+    // Background track
+    // --------------------------------------------
+
+    group
+      .append("path")
+      .datum({
+        startAngle: 0,
+        endAngle: Math.PI * 2
+      })
+      .attr("class", "background")
+      .attr("d", arc);
+
+
+    // --------------------------------------------
+    // Progress arc
+    // --------------------------------------------
+
+    const progress = group
+      .append("path")
+      .attr("class", ring.colorClass);
+
+
+    // Store references
+    rings[ring.name] = {
+      arc: arc,
+      progress: progress
+    };
+
+  });
+
+
+  // ============================================================
+  // RING LABELS
+  // ============================================================
+
+  ringData.forEach(ring => {
+
+    group
+      .append("text")
+      .attr("class", "ring-label")
+      .attr("x", 0)
+      .attr("y", -ring.radius)
+      .text(ring.name.toUpperCase());
+
+  });
+
+
+  // ============================================================
+  // CENTER DISPLAY
+  // ============================================================
+
+  const digitalTime = group
+    .append("text")
+    .attr("class", "digital-time")
+    //.attr("y", 5); original 
+    //.attr("x", -340);
+    .attr("y", 355);
+
+
+  const dateText = group
+    .append("text")
+    .attr("class", "date")
+    //.attr("y", 32); original
+    .attr("y", 315);
+
+
+  // ============================================================
+  // HELPER: DAYS IN A MONTH
+  // ============================================================
+
+  function daysInMonth(year, month) {
+
+    /*
+     * JavaScript months are zero-based:
+     *
+     * January = 0
+     * February = 1
+     * ...
+     * December = 11
+     */
+
+    return new Date(
+      year,
+      month + 1,
+      0
+    ).getDate();
+
+  }
+
+
+  // ============================================================
+  // HELPER: DAYS IN A YEAR
+  // ============================================================
+
+  function daysInYear(year) {
+
+    const start = new Date(year, 0, 1);
+
+    const end = new Date(year + 1, 0, 1);
+
+    return (
+      (end - start) /
+      (1000 * 60 * 60 * 24)
+    );
+
+  }
+
+
+  // ============================================================
+  // UPDATE CLOCK
+  // ============================================================
+
+  function updateClock() {
+
+    const now = new Date();
+
+
+    // ========================================================
+    // DATE VALUES
+    // ========================================================
+
+    const year = now.getFullYear();
+
+    const month = now.getMonth();
+
+    const day = now.getDate();
+
+
+    // ========================================================
+    // TIME VALUES
+    // ========================================================
+
+    const hours = now.getHours() % 12;
+
+    const minutes = now.getMinutes();
+
+    const seconds = now.getSeconds();
+
+    const milliseconds = now.getMilliseconds();
+
+
+    // ========================================================
+    // YEAR PROGRESS
+    // ========================================================
+
+    const startOfYear =
+      new Date(year, 0, 1);
+
+    const startOfNextYear =
+      new Date(year + 1, 0, 1);
+
+    const yearProgress =
+      (now - startOfYear) /
+      (startOfNextYear - startOfYear);
+
+
+    // ========================================================
+    // MONTH PROGRESS
+    // ========================================================
+
+    const startOfMonth =
+      new Date(year, month, 1);
+
+    const startOfNextMonth =
+      new Date(year, month + 1, 1);
+
+    const monthProgress =
+      (now - startOfMonth) /
+      (startOfNextMonth - startOfMonth);
+
+
+    // ========================================================
+    // DAY PROGRESS
+    // ========================================================
+
+    const startOfDay =
+      new Date(
+        year,
+        month,
+        day
+      );
+
+    const startOfNextDay =
+      new Date(
+        year,
+        month,
+        day + 1
+      );
+
+    const dayProgress =
+      (now - startOfDay) /
+      (startOfNextDay - startOfDay);
+
+
+    // ========================================================
+    // TIME PROGRESS
+    // ========================================================
+
+    /*
+     * We include milliseconds so the clock moves
+     * continuously rather than jumping every second.
+     */
+
+    const smoothSeconds =
+      seconds +
+      milliseconds / 1000;
+
+
+    const smoothMinutes =
+      minutes +
+      smoothSeconds / 60;
+
+
+    const smoothHours =
+      hours +
+      smoothMinutes / 60;
+
+
+    // ========================================================
+    // DRAW YEAR
+    // ========================================================
+
+    const yearAngle =
+      yearProgress *
+      Math.PI *
+      2;
+
+    rings.year.progress
+      .datum({
+        startAngle: 0,
+        endAngle: yearAngle
+      })
+      .attr("d", rings.year.arc);
+
+
+    // ========================================================
+    // DRAW MONTH
+    // ========================================================
+
+    const monthAngle =
+      monthProgress *
+      Math.PI *
+      2;
+
+    rings.month.progress
+      .datum({
+        startAngle: 0,
+        endAngle: monthAngle
+      })
+      .attr("d", rings.month.arc);
+
+
+    // ========================================================
+    // DRAW DAY
+    // ========================================================
+
+    const dayAngle =
+      dayProgress *
+      Math.PI *
+      2;
+
+    rings.day.progress
+      .datum({
+        startAngle: 0,
+        endAngle: dayAngle
+      })
+      .attr("d", rings.day.arc);
+
+
+    // ========================================================
+    // DRAW HOURS
+    // ========================================================
+
+    const hourAngle =
+      (smoothHours / 12) *
+      Math.PI *
+      2;
+
+    rings.hours.progress
+      .datum({
+        startAngle: 0,
+        endAngle: hourAngle
+      })
+      .attr("d", rings.hours.arc);
+
+
+    // ========================================================
+    // DRAW MINUTES
+    // ========================================================
+
+    const minuteAngle =
+      (smoothMinutes / 60) *
+      Math.PI *
+      2;
+
+    rings.minutes.progress
+      .datum({
+        startAngle: 0,
+        endAngle: minuteAngle
+      })
+      .attr("d", rings.minutes.arc);
+
+
+    // ========================================================
+    // DRAW SECONDS
+    // ========================================================
+
+    const secondAngle =
+      (smoothSeconds / 60) *
+      Math.PI *
+      2;
+
+    rings.seconds.progress
+      .datum({
+        startAngle: 0,
+        endAngle: secondAngle
+      })
+      .attr("d", rings.seconds.arc);
+
+
+    // ========================================================
+    // CENTER TIME
+    // ========================================================
+
+    digitalTime.text(
+      now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      })
+    );
+
+
+    // ========================================================
+    // CENTER DATE
+    // ========================================================
+
+    dateText.text(
+      now.toLocaleDateString([], {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+      })
+    );
+
+  }
+
+
+  // ============================================================
+  // START
+  // ============================================================
+
+  updateClock();
+
+  setInterval(updateClock, 100);
+
+</script>
+
+</body>
+</html>
+
