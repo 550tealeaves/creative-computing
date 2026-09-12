@@ -229,10 +229,11 @@
 
     const arc = d3
       .arc()
-      .innerRadius(ring.radius - 7)
-      .outerRadius(ring.radius + 7)
+      //edit radius to change the radius look (looks hollowed)
+      .innerRadius(ring.radius - 15)
+      .outerRadius(ring.radius + 16)
       .startAngle(0)
-      .cornerRadius(7);
+      .cornerRadius(4); //higher # the rounder the paths
 
 
     // --------------------------------------------
