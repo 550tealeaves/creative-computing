@@ -22,13 +22,13 @@
       align-items: center;
       justify-content: center;
 
-      background: #111;
+      background: #fffdf6;
       font-family: Arial, sans-serif;
     }
 
     #clock {
-      width: 600px;
-      height: 600px;
+      width: 700px;
+      height: 700px;
     }
 
     svg {
@@ -38,40 +38,42 @@
 
     .background {
       fill: none;
-      stroke: #292929;
+      stroke: #ff88eb49;
       stroke-width: 20;
     }
 
     .hours {
       fill: none;
-      stroke: #ff5555;
+      stroke: #57e200;
       stroke-width: 20;
       stroke-linecap: round;
     }
 
     .minutes {
       fill: none;
-      stroke: #55aaff;
+      stroke: #ff0400;
       stroke-width: 20;
       stroke-linecap: round;
     }
 
     .seconds {
       fill: none;
-      stroke: #55dd88;
+      stroke: #6833a9;
       stroke-width: 20;
       stroke-linecap: round;
     }
 
     .digital-time {
-      fill: white;
-      font-size: 42px;
+      fill: rgb(59, 177, 255);
+      stroke: navy;
+      font-size: 28px;
       font-weight: bold;
       text-anchor: middle;
     }
 
     .date {
-      fill: #888;
+      fill: #1c0eb8;
+      stroke: indigo;
       font-size: 16px;
       text-anchor: middle;
     }
@@ -177,12 +179,12 @@
   const digitalTime = group
     .append("text")
     .attr("class", "digital-time")
-    .attr("y", 300);
+    .attr("y", 280);
 
   const dateText = group
     .append("text")
     .attr("class", "date")
-    .attr("y", 260);
+    .attr("y", 250);
 
 
   // --------------------------------------------------
