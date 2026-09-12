@@ -22,7 +22,7 @@
       align-items: center;
       justify-content: center;
 
-      background: #fffdf6;
+      background: #fffcf0;
       font-family: Arial, sans-serif;
     }
 
@@ -142,10 +142,11 @@
 
     const arc = d3
       .arc()
-      .innerRadius(ring.radius - 10)
+      /*edit radius to change the radius look (looks hollowed)*/
+      .innerRadius(ring.radius - 20)
       .outerRadius(ring.radius + 10)
       .startAngle(0)
-      .cornerRadius(10);
+      .cornerRadius(15); //higher # the rounder the paths
 
     // Background circle
     group
