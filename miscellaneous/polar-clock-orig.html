@@ -1,0 +1,518 @@
+<!-- Created by Mike Bostock https://observablehq.com/@mbostock/polar-clock-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Polar Clock</title>
+
+    <!-- D3.js version 6  -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <style>
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgb(255, 255, 255);
+
+            font-family: sans-serif;
+        }
+
+        #chart {
+            width: 90vw;
+            max-width: 954px;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div id="chart"></div>
+
+
+    <script>
+
+        // ==================================================
+        // SETTINGS
+        // ==================================================
+
+        const width = 954;
+        const height = width;
+
+        const radius = width / 1.67;
+
+        const armRadius = radius / 22;
+
+        const dotRadius = armRadius - 9;
+
+
+        // ==================================================
+        // COLOR SCALE
+        // ==================================================
+
+        // color the circles on the clock
+        const color = d3.scaleSequential(
+            [0, 2 * Math.PI],
+            d3.interpolatePuRd  // this is the color scale
+        );
+
+
+        // ==================================================
+        // ARC ARM
+        // ==================================================
+
+        const arcArm = d3.arc()
+
+            .startAngle(
+                d => armRadius / d.radius
+            )
+
+            .endAngle(
+                d => -Math.PI - armRadius / d.radius
+            )
+
+            .innerRadius(
+                d => d.radius - armRadius
+            )
+
+            .outerRadius(
+                d => d.radius + armRadius
+            )
+
+            .cornerRadius(
+                armRadius
+            );
+
+
+        // ==================================================
+        // CLOCK FIELDS
+        // ==================================================
+
+        const fields = [
+
+            // ----------------------------------------------
+            // MONTH
+            // ----------------------------------------------
+
+            {
+                radius: 0.2 * radius,
+                interval: d3.timeYear,
+                subinterval: d3.timeMonth,
+                format: d3.timeFormat("%b")
+            },
+
+
+            // ----------------------------------------------
+            // DAY OF MONTH
+            // ----------------------------------------------
+
+            {
+                radius: 0.3 * radius,
+                interval: d3.timeMonth,
+                subinterval: d3.timeDay,
+                format: d3.timeFormat("%d")
+            },
+
+
+            // ----------------------------------------------
+            // DAY OF WEEK
+            // ----------------------------------------------
+
+            {
+                radius: 0.4 * radius,
+                interval: d3.timeWeek,
+                subinterval: d3.timeDay,
+                format: d3.timeFormat("%a")
+            },
+
+
+            // ----------------------------------------------
+            // HOUR
+            // ----------------------------------------------
+
+            {
+                radius: 0.6 * radius,
+                interval: d3.timeDay,
+                subinterval: d3.timeHour,
+                format: d3.timeFormat("%H")
+            },
+
+
+            // ----------------------------------------------
+            // MINUTE
+            // ----------------------------------------------
+
+            {
+                radius: 0.7 * radius,
+                interval: d3.timeHour,
+                subinterval: d3.timeMinute,
+                format: d3.timeFormat("%M")
+            },
+
+
+            // ----------------------------------------------
+            // SECOND
+            // ----------------------------------------------
+
+            {
+                radius: 0.8 * radius,
+                interval: d3.timeMinute,
+                subinterval: d3.timeSecond,
+                format: d3.timeFormat("%S")
+            }
+
+        ];
+
+
+        // ==================================================
+        // CREATE SVG
+        // ==================================================
+
+        const svg = d3.select("#chart")
+
+            .append("svg")
+
+            .attr(
+                "viewBox",
+                [0, 0, width, height]
+            )
+
+            .attr(
+                "text-anchor",
+                "middle"
+            )
+
+            .style(
+                "display",
+                "block"
+            )
+
+            .style(
+                "font",
+                "500 14px sans-serif"
+            );
+
+
+        // ==================================================
+        // CLOCK CENTER
+        // ==================================================
+
+        const clock = svg.append("g")
+
+            .attr(
+                "transform",
+                `translate(${width / 2}, ${height / 2})`
+            );
+
+
+        // ==================================================
+        // CREATE THE SIX FIELDS
+        // ==================================================
+
+        const field = clock
+
+            .selectAll(".field")
+
+            .data(fields)
+
+            .join("g")
+
+            .attr("class", "field");
+
+
+        // ==================================================
+        // OUTER CIRCLES
+        // ==================================================
+
+        field
+
+            .append("circle")
+
+            .attr("fill", "none")
+
+            .attr(
+                "stroke",
+                "currentColor"
+            )
+
+            .attr(
+                "stroke-width",
+                2.5
+            )
+
+            .attr(
+                "r",
+                d => d.radius
+            );
+
+
+        // ==================================================
+        // CREATE TICKS FOR EACH FIELD
+        // ==================================================
+
+        const fieldTick = field
+
+            .selectAll(".field-tick")
+
+            .data(d => {
+
+                const date = d.interval(
+                    new Date(2000, 0, 1)
+                );
+
+                d.range = d.subinterval.range(
+                    date,
+                    d.interval.offset(date, 1)
+                );
+
+                return d.range.map(
+                    t => ({
+                        time: t,
+                        field: d
+                    })
+                );
+
+            })
+
+            .join("g")
+
+            .attr(
+                "class",
+                "field-tick"
+            )
+
+            .attr(
+                "transform",
+                (d, i) => {
+
+                    const angle =
+                        i /
+                        d.field.range.length *
+                        2 *
+                        Math.PI -
+                        Math.PI / 2;
+
+                    return `
+                        translate(
+                            ${Math.cos(angle) * d.field.radius},
+                            ${Math.sin(angle) * d.field.radius}
+                        )
+                    `;
+                }
+            );
+
+
+        // ==================================================
+        // TICK DOTS
+        // ==================================================
+
+        const fieldCircle = fieldTick
+
+            .append("circle")
+
+            .attr(
+                "r",
+                dotRadius
+            )
+
+            .attr(
+                "fill",
+                "white"
+            )
+
+            .style(
+                "color",
+                (d, i) => {
+
+                    const angle =
+                        i /
+                        d.field.range.length *
+                        2 *
+                        Math.PI;
+
+                    return color(angle);
+                }
+            )
+
+            .style(
+                "transition",
+                "fill 750ms ease-out"
+            );
+
+
+        // ==================================================
+        // LABELS
+        // ==================================================
+
+        fieldTick
+
+            .append("text")
+
+            .attr(
+                "dy",
+                "0.35em"
+            )
+
+            .attr(
+                "fill",
+                "#222"
+            )
+
+            .text(
+                d =>
+                    d.field
+                        .format(d.time)
+                        .slice(0, 2)
+            );
+
+
+        // ==================================================
+        // FOCUS INDICATOR
+        // ==================================================
+
+        const fieldFocus = field
+
+            .append("circle")
+
+            .attr(
+                "r",
+                dotRadius
+            )
+
+            .attr(
+                "fill",
+                "none"
+            )
+
+            .attr(
+                "stroke",
+                "#f99fea"
+            )
+
+            .attr(
+                "stroke-width",
+                5
+            )
+
+            .attr(
+                "cy",
+                d => -d.radius
+            )
+
+            .style(
+                "transition",
+                "transform 500ms ease"
+            );
+
+
+        // ==================================================
+        // UPDATE CLOCK
+        // ==================================================
+
+        function update(then) {
+
+            for (const d of fields) {
+
+                // Beginning of current interval
+                const start =
+                    d.interval(then);
+
+
+                // Position within interval
+                const index =
+                    d.subinterval.count(
+                        start,
+                        then
+                    );
+
+
+                // Detect when the field wraps around
+                d.cycle =
+                    (d.cycle || 0) +
+                    (index < d.index);
+
+
+                // Save current position
+                d.index = index;
+            }
+
+
+            // ----------------------------------------------
+            // Highlight current tick
+            // ----------------------------------------------
+
+            fieldCircle
+
+                .attr(
+                    "fill",
+                    (d, i) => {
+
+                        return i === d.field.index
+                            ? "currentColor"
+                            : "white";
+                    }
+                );
+
+
+            // ----------------------------------------------
+            // Rotate focus indicator
+            // ----------------------------------------------
+
+            fieldFocus
+
+                .attr(
+                    "transform",
+                    d => {
+
+                        const rotation =
+                            (
+                                d.index /
+                                d.range.length +
+                                d.cycle
+                            ) * 360;
+
+                        return `rotate(${rotation})`;
+                    }
+                );
+
+        }
+
+
+        // ==================================================
+        // START CLOCK
+        // ==================================================
+
+        update(new Date());
+
+
+        setInterval(
+            () => update(new Date()),
+            1000
+        );
+
+
+    </script>
+
+</body>
+
+</html>
+
