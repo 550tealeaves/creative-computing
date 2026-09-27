@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chart.js Bubble Chart</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <h1 style="text-align: center; font-size: 22px; color: brown;">Bubble Chart</h1>
+
+    <canvas id="myChart"></canvas>
+
+
+    <script>
+
+        // -------------------------
+        // DATA
+        // -------------------------
+
+        const data = {
+
+            datasets: [{
+
+                label: 'My First Dataset',
+
+                data: [{
+                    x: 10,
+                    y: 25,
+                    r: 18
+                }, {
+                    x: 42,
+                    y: 8,
+                    r: 32
+                }, {
+                    x: 29,
+                    y: 19,
+                    r: 39,
+                }, {
+                    x: 4,
+                    y: 22,
+                    r: 45
+                }],
+
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 205, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                ],
+            }]
+
+        };
+
+
+        // -------------------------
+        // CHART CONFIGURATION
+        // -------------------------
+
+        const config = {
+
+            type: 'bubble',
+
+            data: data,
+
+            //OPTIONS ADDS GLOBAL CHANGES TO CHART
+            options: {}
+            //options: {hoverBorderWidth: 7} - radius added when hovering over markers
+
+        };
+
+
+        // -------------------------
+        // CREATE CHART
+        // -------------------------
+
+        const myChart = new Chart(
+
+            document.getElementById('myChart'),
+
+            config
+
+        );
+
+    </script>
+
+</body>
+
+</html>

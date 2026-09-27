@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 22px; color: coral;">Bubble Chart with Options</h1>
+
+    <canvas id="myChart"></canvas>
+
+    <script>
+        const myChart = new Chart(
+    document.getElementById('myChart'),
+
+    {
+        type: 'bubble',
+
+        data: {
+            datasets: [{
+                label: 'Monthly Data',
+                data: [
+                    {
+                        x: 17,
+                        y: 53,
+                        r: 41
+                    }, {
+                        x: 6,
+                        y: 9,
+                        r: 20
+                    }, {
+                        x: 24,
+                        y: 49,
+                        r: 40
+                    }, {
+                        x: 33,
+                        y: 22,
+                        r: 11
+                    }
+                ],
+                backgroundColor: [
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(201, 103, 107, 0.7)',
+                    'rgba(150, 200, 280, 0.7)',
+                    'rgba(39,152,127, 0.7)'
+                ]            
+            }]
+        },
+
+        //OPTIONS MAKE GLOBAL CHANGES TO CHART
+        options: {
+            pointStyle: 'rectRounded', //changes shape of marker (default=circle)
+            rotation: 77, //rotates marker
+            hoverRadius: 12, //radius added when hovering over marker
+            hoverBorderWidth: 5, //border width when hovering
+            hoverBorderColor: ['limegreen', 'steelblue', 'crimson', 'violet'] //colors border on hover
+        
+        }
+    }
+);
+    </script>
+</body>
+</html>
