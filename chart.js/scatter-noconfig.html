@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatter Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; color: mediumslateblue; font-size: 22px;">Scatter Chart</h1>
+
+    <canvas id="myChart"></canvas>
+
+    <script>
+        const myChart = new Chart(
+    document.getElementById('myChart'),
+
+    {
+        type: 'scatter',
+
+        data: {
+            datasets: [{
+                label: 'Scatter dataset',
+                data: [{
+                        x: -10,
+                        y: 0
+                    }, {
+                        x: 0,
+                        y: 10
+                    }, {
+                        x: 10,
+                        y: 3,
+                    }, {
+                        x: 0.5,
+                        y: 5.5
+                    }
+                ],
+                backgroundColor: [
+                    'rgb(235, 99, 132)',
+                    'rgb(55, 59, 64)',
+                    'rgb(155, 205, 86)',
+                    'rgb(75, 192, 192)'
+                ],
+            }]
+        },
+
+        options: {
+            scales: {
+                x: {
+                    type: 'linear',
+                    position: 'top'
+                }
+            },
+            pointStyle: 'triangle',
+            pointRadius: 10,
+            pointBorderWidth: 3,
+            hoverBorderWidth: 2,
+            hoverBorderColor: 'brown',
+        }
+    }
+);
+    </script>
+</body>
+</html>
