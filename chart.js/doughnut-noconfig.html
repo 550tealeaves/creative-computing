@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doughnut</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 24px; color: cornflowerblue;">Doughnut Chart</h1>
+
+    <canvas id="myChart"></canvas>
+
+    <script>
+        const myChart = new Chart(
+    document.getElementById('myChart'),
+
+    {
+        type: 'doughnut',
+
+        data: {
+            labels: [
+                'Red',
+                'Blue',
+                'Yellow',
+                'Green',
+                'Brown',
+                'Purple'
+            ],
+
+            datasets: [{
+                label: 'Monthly Data',
+                data: [300, 50, 100, 128, 72, 149],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 22, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(12, 224, 30)',
+                    'rgb(150, 75, 22, 0.7)',
+                    'rgb(153, 50, 204)'
+                ]
+            }]
+        },
+
+        options: {
+            hoverBorderColor: 'silver',
+            hoverBorderWidth: 7,
+            spacing: 14, //adds space b/w pieces
+            borderRadius: 87 //higher # rounds edges of pieces
+        }
+    }
+);
+    </script>
+</body>
+</html>

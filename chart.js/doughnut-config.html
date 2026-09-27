@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chart.js Bubble Chart</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <h1 style="text-align: center; font-size: 22px; color: brown;">Doughnut Chart</h1>
+
+    <canvas id="myChart"></canvas>
+
+
+    <script>
+
+        // -------------------------
+        // DATA
+        // -------------------------
+
+        const data = {
+
+            labels: [
+                'Red',
+                'Blue',
+                'Yellow',
+                'Green'
+            ],
+
+            datasets: [{
+
+                label: 'My First Dataset',
+
+                data: [300, 50, 100, 128],
+
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 22, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(12, 224, 30)'
+                ],
+                hoverOffset: 4
+            }]
+
+        };
+
+
+        // -------------------------
+        // CHART CONFIGURATION
+        // -------------------------
+
+        const config = {
+
+            type: 'doughnut',
+
+            data: data,
+
+            //OPTIONS ADDS GLOBAL CHANGES TO CHART
+            options: {}
+            //options: {hoverBorderWidth: 7} - radius added when hovering over markers
+
+        };
+
+
+        // -------------------------
+        // CREATE CHART
+        // -------------------------
+
+        const myChart = new Chart(
+
+            document.getElementById('myChart'),
+
+            config
+
+        );
+
+    </script>
+
+</body>
+
+</html>
