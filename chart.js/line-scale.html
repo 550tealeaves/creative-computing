@@ -20,6 +20,7 @@
             type: 'line',
             data: {
                 datasets: [{
+                label: 'Lines',
                 data: {
                     January: 10,
                     February: 20,
@@ -27,8 +28,18 @@
                     April: 15,
                     May: 28
                 },
-                borderColor: 'red'
-                }]
+                //Include Options here
+                borderColor: 'red',
+                hoverBackgroundColor: 'green',
+                hoverBorderWidth: 6,
+                hoverBorderColor: 'gold',
+                pointBackgroundColor: 'aqua',
+                pointHoverRadius: 9,
+                tension: 12, //Bezier curve tension of the line. Set to 0 to draw straight lines.
+                borderCapStyle: 'square',
+                borderJoinStyle: 'bevel'
+                }],
+
             }
         });
 
