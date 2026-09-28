@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Line Chart</title>
+    <title>Mixed Chart</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -31,16 +31,18 @@
                 'September',
                 'October'
             ],
-
+            //Set type for each chart
+            //To create separate options for each chart, add the options in the chart sections, NOT in the global options below
             datasets: [{
+                //Bar chart
                 type: 'bar',
                 label: 'Bar dataset',
                 data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-                borderColor: 'rgb(195, 99, 155)',
-                backgroundColor: 'rgba(255, 9, 132, 0.3)'
+                borderColor: '#4f3572',
+                backgroundColor: 'rgba(79, 243, 92, 0.2)'
             }, 
             {
-                //Line chart
+                //Bubble chart
                 type: 'bubble',
                 label: 'Bubble Dataset',
                 data: [{
@@ -85,22 +87,22 @@
                         r: 8
                     }
                 ],
-                borderColor: 'rgb(50, 160, 235)'
+                borderColor: 'rgb(255, 42, 194)',
+                hoverBorderColor: 'gold',
             }
         ]
         },
-
+        //GLOBAL OPTIONS THAT AFFECT ENTIRE CHART
         options: {
             scales: {
                 y: {
                     beginAtZero: true
                 }
             },
-            stepped: true,
             pointStyle: 'crossRot',
             pointRadius: 7,
             pointBorderWidth: 3,
-            hoverBorderWidth: 4
+            hoverBorderWidth: 4,
         }
     }
 );
