@@ -32,22 +32,53 @@
                 'January',
                 'February',
                 'March',
-                'April'
+                'April',
+                'May',
+                'June',
+                'August'
             ],
             //Must specify chart type on each dataset
             datasets: [{
                 //Bar chart
                 type: 'bar',
                 label: 'Bar Dataset',
-                data: [10, 20, 30, 40],
+                data: [10, 20, 30, 40, 50, 60, 70],
                 borderColor: 'rgb(195, 99, 155)',
                 backgroundColor: 'rgba(255, 9, 132, 0.3)'
             }, 
-            {   //Line chart
-                type: 'line',
-                label: 'Line Dataset',
-                data: [17, 44, 8, 29],
-                fill: true, //this will fill the area below if true. If false, doesn't
+            {   //Bubble chart
+                type: 'bubble',
+                label: 'Bubble Dataset',
+                data: [{
+                    x: 5,
+                    y: 25,
+                    r: 18
+                }, {
+                    x: 42,
+                    y: 8,
+                    r: 32
+                }, {
+                    x: 29,
+                    y: 19,
+                    r: 9,
+                }, {
+                    x: 4,
+                    y: 22,
+                    r: 45
+                }, {
+                    x: 3,
+                    y: 27,
+                    r: 29
+                }, {
+                    x: 5,
+                    y: 64,
+                    r: 41
+                }, {
+                    x: 19,
+                    y: 52,
+                    r: 23
+                }
+            ],
                 borderColor: 'rgb(50, 160, 235)'
             }
         ]
