@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polar Area Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 22px; color: coral;">Polar Area Chart with Options</h1>
+
+    <canvas id="myChart"></canvas>
+
+    <script>
+        const myChart = new Chart(
+    document.getElementById('myChart'),
+
+    {
+        type: 'polarArea',
+
+        data: {
+            labels:[
+                'Orange',
+                'Green',
+                'Yellow',
+                'Purple',
+                'Blue'
+            ],
+            datasets: [{
+                label: 'Polar Area Data',
+                data: [11, 16, 7, 3, 14],
+                backgroundColor: [
+                    'rgb(255, 99, 12)',
+                    'rgb(75, 212, 192)',
+                    'rgb(255, 205, 86)',
+                    'rgb(201, 23, 247)',
+                    'rgb(54, 162, 235)'
+                ]            
+            }]
+        },
+
+        //OPTIONS MAKE GLOBAL CHANGES TO CHART
+        options: {
+            hoverRadius: 12, //radius added when hovering over marker
+            hoverBorderWidth: 5, //border width when hovering
+            hoverBorderColor: ['limegreen', 'steelblue', 'crimson', 'violet'], //colors border on hover
+            circular: false, //false makes it triangular shape,
+            borderAlign: 'inner' //borders do not overlap
+        
+        }
+    }
+);
+    </script>
+</body>
+</html>
