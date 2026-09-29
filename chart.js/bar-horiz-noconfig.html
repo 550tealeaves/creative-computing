@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horiz bar chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 22px; color: slateblue;">Bar chart with options</h1>
+
+    <canvas id="myChart"></canvas>
+
+    <script>
+        const myChart = new Chart(
+    document.getElementById('myChart'),
+
+    {
+        type: 'bar',
+
+        data: {
+            labels: ['January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+            ],
+
+            datasets: [{
+                label: 'Monthly Data',
+                data: [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40,
+                    71,
+                    25,
+                    63,
+                    18,
+                    31
+                ],
+                backgroundColor: ['rgba(255, 9, 132, 0.3)',
+                    'rgba(255, 159, 64, 0.3)',
+                    'rgba(255, 205, 86, 0.3)',
+                    'rgba(75, 192, 192, 0.3)',
+                    'rgba(54, 162, 235, 0.3)',
+                    'rgba(153, 102, 255, 0.3)',
+                    'rgba(201, 203, 207, 0.3)',
+                    'rgba(250, 200, 180, 0.3)',
+                    'rgba(39,52,127, 0.3)',
+                    'rgba(245,99,167, 0.3)',
+                    'rgba(183,116,253, 0.3)',
+                    'rgba(117,243,71, 0.3)'
+                ]
+            }]
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            indexAxis: 'y' //creates horizontal bars
+        }
+    }
+);
+    </script>
+</body>
+</html>
